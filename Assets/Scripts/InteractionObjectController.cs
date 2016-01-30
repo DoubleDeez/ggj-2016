@@ -22,7 +22,8 @@ public class InteractionObjectController : MonoBehaviour {
 	
 	}
     
-    void OnTriggerEnter(Collider Other) {
+    void OnTriggerEnter2D(Collider2D Other) {
+        Debug.Log(Other.gameObject.tag);
         if(Other.gameObject.tag.Equals("Player")) {
             InteractionIcon.GetComponent<Renderer>().enabled = true;
             InteractionObjectDefault.GetComponent<Renderer>().enabled = false;
@@ -30,7 +31,7 @@ public class InteractionObjectController : MonoBehaviour {
         }
     }
     
-    void OnTriggerExit(Collider Other) {
+    void OnTriggerExit2D(Collider2D Other) {
         if(Other.gameObject.tag.Equals("Player")) {
             InteractionIcon.GetComponent<Renderer>().enabled = false;
             InteractionObjectDefault.GetComponent<Renderer>().enabled = true;
