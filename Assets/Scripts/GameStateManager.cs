@@ -28,28 +28,20 @@ public class GameStateManager : MonoBehaviour {
     public GameObject Grandpa;
     public GameObject Child;
     
-<<<<<<< f06a844daa3b8a433f95d82c2cb29cb3fa0b65f1
-    private GameState CurrentState;
     private bool GameIsPaused;
     private bool InputDisabled;
-=======
     private GameState CurrentGrandpaState;
     private GameState CurrentChildState;
     
     private Dictionary<string, bool> Flags;
->>>>>>> Interactions are now tracked and able to be added via editor. Performing logic on interaction requires hard coding
 
 	// Use this for initialization
 	void Start () {
         Flags = new Dictionary<string, bool>();
         GameIsPaused = false;
-<<<<<<< f06a844daa3b8a433f95d82c2cb29cb3fa0b65f1
         InputDisabled = false;
-        CurrentState = GameStates[0];
-=======
         CurrentGrandpaState = GrandpaStates[0];
         CurrentChildState = ChildStates[0];
->>>>>>> Interactions are now tracked and able to be added via editor. Performing logic on interaction requires hard coding
         Player grandpaPlayer = Grandpa.GetComponent<Player>();
         grandpaPlayer.SetHints(CurrentGrandpaState.Hints);
         Player childPlayer = Child.GetComponent<Player>();
