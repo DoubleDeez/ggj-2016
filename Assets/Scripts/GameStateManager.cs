@@ -7,13 +7,13 @@ public class GameStateManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+	   GameIsPaused = false;
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-	
+	   ListenForPause();
 	}
     
     public bool IsGamePaused()
@@ -23,6 +23,19 @@ public class GameStateManager : MonoBehaviour {
     
     private void ListenForPause()
     {
-        GameIsPaused = Input.GetKey(KeyCode.Escape) || Input.GetButton("Pause");
+        bool pausePressed = Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause");
+        if(pausePressed)
+        {
+            Debug.Log("Game Paused");
+            GameIsPaused = !GameIsPaused;
+            if(GameIsPaused)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+        }
     }
 }

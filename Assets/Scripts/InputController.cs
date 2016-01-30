@@ -2,7 +2,8 @@
 using System.Collections;
 
 /// <summary>
-/// The InputController has hardcoded
+/// The InputController has hardcoded strings corresponding to Buttons and Joystick Axis in 
+///  the Unity Input Manager. Changes there have to be reflected here...
 /// </summary>
 public class InputController : MonoBehaviour {
 
@@ -22,12 +23,14 @@ public class InputController : MonoBehaviour {
     private BoxCollider2D PlayerCollider;
     private float VariableVelocity;
     
-    private string Prefix="P1";
+    private int PlayerNumber=1;
+    
     private string JumpButton="Jump";
     private string HorizontalAxis="Horizontal";
     private string InteractButton="Interact";
     private string ActionButton="Action";
     private string Pause="Pause";
+    private string Keyboard="Keyboard";
 
 	// Use this for initialization
 	void Start () 
@@ -47,13 +50,14 @@ public class InputController : MonoBehaviour {
            PlayerCollider = gameObject.GetComponent<BoxCollider2D>();
            if(MainPlayer!=null && PlayerPhysics!=null)
            {
-               Prefix = MainPlayer.PlayerNumber.ToString();
-               Debug.Log("Setting up for input Player "+Prefix);
+               PlayerNumber = MainPlayer.PlayerNumber;
+               Debug.Log("Setting up for input Player "+PlayerNumber);
                
-               JumpButton = string.Format("P{0}{1}",Prefix,JumpButton);
-               HorizontalAxis = string.Format("P{0}{1}",Prefix,HorizontalAxis);
-               InteractButton = string.Format("P{0}{1}",Prefix,InteractButton);
-               ActionButton = string.Format("P{0}{1}",Prefix,ActionButton); 
+               JumpButton = string.Format("P{0}{1}",PlayerNumber,JumpButton); //TODO: Fix problems with Jump buttons
+               HorizontalAxis = string.Format("P{0}{1}",PlayerNumber,HorizontalAxis);
+               InteractButton = string.Format("P{0}{1}",PlayerNumber,InteractButton);
+               ActionButton = string.Format("P{0}{1}",PlayerNumber,ActionButton);
+               Keyboard = string.Format("P{0}{1}",PlayerNumber,Keyboard); 
            }
        }
        
@@ -94,10 +98,22 @@ public class InputController : MonoBehaviour {
             
         }
 
-        float horizontalIn = Input.GetAxis(HorizontalAxis);
+        float horizontalJoystickIn = Input.GetAxis(HorizontalAxis);
+        float keyboardIn = Input.GetAxis(Keyboard);
+        if(Mathf.Abs(keyboardIn) > 0.1f)
+        {
+             gameObject.transform.Translate(Time.deltaTime * VariableVelocity * keyboardIn,0,0);
+        }
+        else
+        {
+            gameObject.transform.Translate(Time.deltaTime * VariableVelocity * horizontalJoystickIn,0,0);
+        }
 
-        gameObject.transform.Translate(Time.deltaTime * VariableVelocity * horizontalIn,0,0);
-
+    }
+    
+    private void SetInputStrings()
+    {
+        
     }
     
     private bool IsGrounded()
