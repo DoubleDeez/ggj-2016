@@ -6,27 +6,54 @@ public class GameStateManager : MonoBehaviour {
     [System.Serializable]
     public class GameState {
         public string StateName;
-        public List<string> GrandpaStateHints;
-        public List<string> ChildStateHints;
+        public List<string> Hints;
     }
     
-    public List<GameState> GameStates;
+    [System.Serializable]
+    public class LevelInteraction {
+        [TooltipAttribute("This must match the name of the interaction object")]
+        public string InteractionName;
+        public bool IsPlayerColliding;
+        public bool HasBeenInteracted;
+    }
+    
+    [System.Serializable]
+    public class GameLevel {
+        public List<LevelInteraction> Interactions;
+    }
+    
+    public List<GameLevel> GameLevels;
+    public List<GameState> GrandpaStates;
+    public List<GameState> ChildStates;
     public GameObject Grandpa;
     public GameObject Child;
     
+<<<<<<< f06a844daa3b8a433f95d82c2cb29cb3fa0b65f1
     private GameState CurrentState;
     private bool GameIsPaused;
     private bool InputDisabled;
+=======
+    private GameState CurrentGrandpaState;
+    private GameState CurrentChildState;
+    
+    private Dictionary<string, bool> Flags;
+>>>>>>> Interactions are now tracked and able to be added via editor. Performing logic on interaction requires hard coding
 
 	// Use this for initialization
 	void Start () {
+        Flags = new Dictionary<string, bool>();
         GameIsPaused = false;
+<<<<<<< f06a844daa3b8a433f95d82c2cb29cb3fa0b65f1
         InputDisabled = false;
         CurrentState = GameStates[0];
+=======
+        CurrentGrandpaState = GrandpaStates[0];
+        CurrentChildState = ChildStates[0];
+>>>>>>> Interactions are now tracked and able to be added via editor. Performing logic on interaction requires hard coding
         Player grandpaPlayer = Grandpa.GetComponent<Player>();
-        grandpaPlayer.SetHints(CurrentState.GrandpaStateHints);
+        grandpaPlayer.SetHints(CurrentGrandpaState.Hints);
         Player childPlayer = Child.GetComponent<Player>();
-        childPlayer.SetHints(CurrentState.ChildStateHints);
+        childPlayer.SetHints(CurrentChildState.Hints);
 	}
 	
 	// Update is called once per frame
@@ -46,6 +73,22 @@ public class GameStateManager : MonoBehaviour {
     public bool IsInputDisabled()
     {
         return InputDisabled;
+    }
+    
+    public LevelInteraction FindLevelInteraction(string interactionName) {
+        foreach(GameLevel level in GameLevels) {
+            foreach(LevelInteraction interaction in level.Interactions) {
+                if(interaction.InteractionName.Equals(interactionName)) {
+                    return interaction;
+                }
+            }
+        }
+        
+        return null;
+    }
+    
+    public void DoInteraction(LevelInteraction interaction) {
+        
     }
     
     private void ListenForPause()
