@@ -7,6 +7,7 @@ public class ChatBubbleController : MonoBehaviour {
     [TooltipAttribute("How many seconds to show each line of text")]
     public float ChatSpeed = 2.0f;
     public float AnimationSpeed = 1.0f;
+    public int FontSize = 50;
     public Vector2 Padding = new Vector2(10,15);
     public Text TextObject;
     public RectTransform Canvas;
@@ -17,8 +18,9 @@ public class ChatBubbleController : MonoBehaviour {
     
     void OnValidate() {
         TextObject.text = ChatText[0];
+        TextObject.fontSize = FontSize;
         GUIStyle style = new GUIStyle();
-        style.fontSize = 50;
+        style.fontSize = FontSize;
         Canvas.sizeDelta = (style.CalcSize(new GUIContent(ChatText[0])) + Padding) / 100;
     }
 	
