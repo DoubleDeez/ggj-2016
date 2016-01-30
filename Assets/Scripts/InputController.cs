@@ -9,33 +9,42 @@ public class InputController : MonoBehaviour {
 /// <summary>
 /// Editor Variables
 /// </summary>
-    public GameObject PlayerObject;
-    public float PlayerVelocity = 10.0f;
-    public float PlayerJumpHeight = 1.0f;
+    public float PlayerVelocity = 6.0f;
+    public float PlayerJumpHeight = 6.0f;
 
 /// <summary>
 /// Private Variables
 /// </summary>
+    private GameStateManager GameState;
+
     private Player MainPlayer;
     private Rigidbody2D PlayerPhysics;
+    private BoxCollider2D PlayerCollider;
+    private float VariableVelocity;
+    
     private string Prefix="P1";
     private string JumpButton="Jump";
     private string HorizontalAxis="Horizontal";
     private string InteractButton="Interact";
     private string ActionButton="Action";
+    private string Pause="Pause";
 
 	// Use this for initialization
 	void Start () 
     {
-	   if(PlayerObject==null)
+       GameState = FindObjectOfType<GameStateManager>();
+       
+	   if(GameState==null)
        {
-           Debug.Log("InputController has null PlayerToControl. Disabling!");
+           Debug.Log("GameStateManager missing! Abort!");
            this.enabled = false;
+           return;
        }
        else
        {
-           MainPlayer = PlayerObject.GetComponent<Player>();
-           PlayerPhysics = PlayerObject.GetComponent<Rigidbody2D>();
+           MainPlayer = gameObject.GetComponent<Player>();
+           PlayerPhysics = gameObject.GetComponent<Rigidbody2D>();
+           PlayerCollider = gameObject.GetComponent<BoxCollider2D>();
            if(MainPlayer!=null && PlayerPhysics!=null)
            {
                Prefix = MainPlayer.PlayerNumber.ToString();
@@ -46,58 +55,54 @@ public class InputController : MonoBehaviour {
                InteractButton = string.Format("P{0}{1}",Prefix,InteractButton);
                ActionButton = string.Format("P{0}{1}",Prefix,ActionButton); 
            }
-           else
-           {
-               Debug.Log("FAILED");
-           }
-           Debug.Log(InteractButton);
-           
        }
+       
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        if (!GameIsPaused())
+        if (!GameState.IsGamePaused())
         {
             ReadPlayerInput();
         }
 	}
 
-    // Has the game paused
-    bool GameIsPaused()
-    {
-        // Read all the keys
-        
-        return false;
-    }
-
     // Check and read Input
-    void ReadPlayerInput()
+    private void ReadPlayerInput()
     {
         if(Input.GetButton(InteractButton))
         {
             Debug.Log("Interacted!");
         }
         
-        if(Input.GetButton(JumpButton) && PlayerPhysics.velocity.y < 9.8f)
+        if(IsGrounded())
         {
-            //Give an additional force
-            PlayerPhysics.AddForce(
-                new Vector2(0, PlayerJumpHeight ),
-                ForceMode2D.Impulse
-            );
+            VariableVelocity = PlayerVelocity;
+            
+            if(Input.GetButtonDown(JumpButton))
+            {
+                PlayerPhysics.AddForce(
+                    new Vector2(0, PlayerPhysics.mass * PlayerJumpHeight ),
+                    ForceMode2D.Impulse
+                );
+            }
         }
-        
+        else
+        {
+            VariableVelocity -= Time.deltaTime*PlayerVelocity/2;
+            
+        }
+
         float horizontalIn = Input.GetAxis(HorizontalAxis);
-        
-        if(horizontalIn != 0)
-        {
-            Vector2 axisIn = new Vector2(horizontalIn,0);
-            axisIn *= PlayerVelocity;
-            PlayerPhysics.AddForce(axisIn);
-            Debug.Log(axisIn);
-        }
-        
+
+        gameObject.transform.Translate(Time.deltaTime * VariableVelocity * horizontalIn,0,0);
+
     }
+    
+    private bool IsGrounded()
+    {
+        return PlayerPhysics.velocity.y < 0.001f && PlayerPhysics.velocity.y > -0.001f;
+    }
+    
 }

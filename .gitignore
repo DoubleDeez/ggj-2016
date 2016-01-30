@@ -30,3 +30,6 @@ sysinfo.txt
 
 # VSCode
 .vscode/*
+
+# Build/Binaries
+build/
