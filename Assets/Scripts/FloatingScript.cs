@@ -7,8 +7,6 @@ public class FloatingScript : MonoBehaviour {
     public float FloatingSpeed = 1.0f;
     
     private bool GoingUp;
-    
-    private float FLOAT_TOLERANCE = 0.00005f;
 
 	// Use this for initialization
 	void Start () {

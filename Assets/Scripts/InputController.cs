@@ -27,6 +27,7 @@ public class InputController : MonoBehaviour {
     
     private int PlayerNumber=1;
     private bool IsMoving=false;
+    private bool IsInteracting=false;
     private float TranslationMovement;
     
     private string JumpButton="Jump";
@@ -83,9 +84,12 @@ public class InputController : MonoBehaviour {
     // Check and read Input
     private void ReadPlayerInput()
     {
-        if(Input.GetButton(InteractButton))
-        {
-            Debug.Log("Interacted!");
+        IsInteracting = Input.GetButton(InteractButton);
+        if(IsInteracting) {
+            foreach(GameStateManager.LevelInteraction interaction in MainPlayer.GetLevelInteractionsColliding()) {
+                interaction.HasBeenInteracted = true;
+                GameState.DoInteraction(interaction);
+            }
         }
         
         if(IsGrounded())
@@ -136,6 +140,10 @@ public class InputController : MonoBehaviour {
         {
             PlayerAnimator.SetInteger("state",1);
         }
+    }
+    
+    public bool Interacted() {
+        return IsInteracting;
     }
     
 }
