@@ -23,10 +23,8 @@ public class GameStateManager : MonoBehaviour {
         GameIsPaused = false;
         CurrentState = GameStates[0];
         Player grandpaPlayer = Grandpa.GetComponent<Player>();
-        grandpaPlayer.ClearHints();
         grandpaPlayer.SetHints(CurrentState.GrandpaStateHints);
         Player childPlayer = Child.GetComponent<Player>();
-        childPlayer.ClearHints();
         childPlayer.SetHints(CurrentState.ChildStateHints);
 	}
 	
