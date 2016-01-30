@@ -80,7 +80,40 @@ public class GameStateManager : MonoBehaviour {
     }
     
     public void DoInteraction(LevelInteraction interaction) {
-        
+        // Grandpa Interactions
+        if(interaction.InteractionName.Equals("Football")) {
+            // @TODO : Grandpa needs to say a message here
+            // @TODO : Make heirloom glow
+            Flags.Add("FOOTBALL_TELEPORT", true);
+            SetCurrentGrandpaState("GlowingHeirloom");
+        } else if(interaction.InteractionName.Equals("HeirloomGrandpa")) {
+            // @TODO : Activate dpad UI with football - can now tp to backyard
+            Flags.Add("GRANDPA_HEIRLOOM", true);
+            SetCurrentGrandpaState("No hints");
+        } else if(interaction.InteractionName.Equals("Diary")) {
+            // @TODO : Activate dpad UI with diary - can now tp to bedroom
+            Flags.Add("DIARY_TELEPORT", true);
+            SetCurrentGrandpaState("No hints");
+        } else if(interaction.InteractionName.Equals("CribBox")) {
+            // @TODO : Activate dpad UI with diary - can now tp to baby room
+            Flags.Add("BABY_TELEPORT", true);
+            SetCurrentGrandpaState("No hints");
+        } else if(interaction.InteractionName.Equals("BackyardFootbal")) {
+            // @TODO : Kid can tackle, play animation
+            Flags.Add("BACKYARD_FOOTBALL", true);
+            SetCurrentGrandpaState("No hints");
+        } else if(interaction.InteractionName.Equals("SexyTimeCloset")) {
+            Flags.Add("BABY_CHANGE", true);
+        } else if(interaction.InteractionName.Equals("BabyMonitor")) {
+            // 
+            Flags.Add("", true);
+        } else if(interaction.InteractionName.Equals("BabyMobile")) {
+            // @TODO save colour on right and set wallpaper for child
+            Flags.Add("", true);
+        } else if(interaction.InteractionName.Equals("Infant")) {
+            Flags.Add("", true);
+        }
+        // Child's Interactions
     }
     
     private void ListenForPause()
@@ -97,6 +130,22 @@ public class GameStateManager : MonoBehaviour {
             else
             {
                 Time.timeScale = 1;
+            }
+        }
+    }
+    
+    private void SetCurrentGrandpaState(string stateName) {
+        foreach(GameState state in GrandpaStates) {
+            if(state.StateName.Equals(stateName)) {
+                CurrentGrandpaState = state;
+            }
+        }
+    }
+    
+    private void SetCurrentChildState(string stateName) {
+        foreach(GameState state in ChildStates) {
+            if(state.StateName.Equals(stateName)) {
+                CurrentChildState = state;
             }
         }
     }
