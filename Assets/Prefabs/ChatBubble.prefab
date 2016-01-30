@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 476948}
   - 114: {fileID: 11404944}
+  - 114: {fileID: 11487800}
   m_Layer: 0
   m_Name: ChatBubble
   m_TagString: Untagged
@@ -94,13 +95,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChatText:
   - Hello World
-  - 
-  - 
-  - 
-  ChatSpeed: 2
-  AnimationSpeed: 1
+  - How are you?
+  - I am good.
+  - Cool story, bro.
+  ChatTextTime: 2
   FontSize: 60
-  Padding: {x: 10, y: 15}
+  Padding: {x: 25, y: 40}
   TextObject: {fileID: 11469880}
   Canvas: {fileID: 22411020}
 --- !u!114 &11406098
@@ -200,6 +200,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Hello World
+--- !u!114 &11487800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58168120f52f54cd5a439bef2b827939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FloatingAmplitude: 0.25
+  FloatingSpeed: 1.5
 --- !u!222 &22219806
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -246,7 +259,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.67, y: 11.47}
-  m_SizeDelta: {x: 3.45, y: 0.86}
+  m_SizeDelta: {x: 3.6, y: 1.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22411918
 RectTransform:
