@@ -374,7 +374,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!50 &5086990
 Rigidbody2D:
   serializedVersion: 2
@@ -391,7 +391,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6107474
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -521,6 +521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerToFollow: {fileID: 484934}
+  CameraFollowDeadZone: {x: 2, y: 2}
+  CatchUpSpeed: 2
 --- !u!114 &11408918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -670,6 +672,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerToFollow: {fileID: 433858}
+  CameraFollowDeadZone: {x: 2, y: 2}
+  CatchUpSpeed: 2
 --- !u!114 &11476490
 MonoBehaviour:
   m_ObjectHideFlags: 1
