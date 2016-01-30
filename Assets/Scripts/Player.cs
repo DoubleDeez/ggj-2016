@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
+    
+    public int PlayerNumber;
 
 	// Use this for initialization
 	void Start () {
