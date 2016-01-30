@@ -12,6 +12,7 @@ public class InputController : MonoBehaviour {
 /// </summary>
     public float PlayerVelocity = 6.0f;
     public float PlayerJumpHeight = 6.0f;
+    public bool InvertXAxis = false;
 
 /// <summary>
 /// Private Variables
@@ -21,9 +22,12 @@ public class InputController : MonoBehaviour {
     private Player MainPlayer;
     private Rigidbody2D PlayerPhysics;
     private BoxCollider2D PlayerCollider;
+    private Animator PlayerAnimator;
     private float VariableVelocity;
     
     private int PlayerNumber=1;
+    private bool IsMoving=false;
+    private float TranslationMovement;
     
     private string JumpButton="Jump";
     private string HorizontalAxis="Horizontal";
@@ -48,6 +52,7 @@ public class InputController : MonoBehaviour {
            MainPlayer = gameObject.GetComponent<Player>();
            PlayerPhysics = gameObject.GetComponent<Rigidbody2D>();
            PlayerCollider = gameObject.GetComponent<BoxCollider2D>();
+           PlayerAnimator = gameObject.GetComponent<Animator>();
            if(MainPlayer!=null && PlayerPhysics!=null)
            {
                PlayerNumber = MainPlayer.PlayerNumber;
@@ -69,6 +74,7 @@ public class InputController : MonoBehaviour {
         if (!GameState.IsGamePaused())
         {
             ReadPlayerInput();
+            AnimatePlayer();
         }
 	}
 
@@ -100,25 +106,29 @@ public class InputController : MonoBehaviour {
 
         float horizontalJoystickIn = Input.GetAxis(HorizontalAxis);
         float keyboardIn = Input.GetAxis(Keyboard);
-        if(Mathf.Abs(keyboardIn) > 0.1f)
-        {
-             gameObject.transform.Translate(Time.deltaTime * VariableVelocity * keyboardIn,0,0);
-        }
-        else
-        {
-            gameObject.transform.Translate(Time.deltaTime * VariableVelocity * horizontalJoystickIn,0,0);
-        }
-
-    }
-    
-    private void SetInputStrings()
-    {
         
+        TranslationMovement = Mathf.Abs(keyboardIn) > 0.01f ? keyboardIn : horizontalJoystickIn;
+        TranslationMovement *= InvertXAxis ? -1 : 1;
+        
+        gameObject.transform.Translate(Time.deltaTime * VariableVelocity * TranslationMovement,0,0);
     }
     
     private bool IsGrounded()
     {
         return PlayerPhysics.velocity.y < 0.001f && PlayerPhysics.velocity.y > -0.001f;
+    }
+    
+    
+    private void AnimatePlayer()
+    {
+        if(Mathf.Abs(TranslationMovement) < 0.1f)
+        {
+            PlayerAnimator.SetInteger("state",0);
+        }
+        else
+        {
+            PlayerAnimator.SetInteger("state",1);
+        }
     }
     
 }
