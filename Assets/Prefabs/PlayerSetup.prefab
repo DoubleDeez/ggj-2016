@@ -43,6 +43,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 418264}
+  - 114: {fileID: 11417710}
   m_Layer: 0
   m_Name: PlayerSetup
   m_TagString: Untagged
@@ -532,6 +533,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumber: 1
+--- !u!114 &11417710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba41559f1a81e64ca77612ed0db36de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11418438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -682,7 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66385e9081147564baa2ecbdbdb6274b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerNumber: 1
+  PlayerNumber: 2
 --- !u!124 &12414294
 Behaviour:
   m_ObjectHideFlags: 1
@@ -870,8 +882,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22458496}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
