@@ -8,6 +8,10 @@ public class InteractionObjectController : MonoBehaviour {
     public GameObject InteractionIconHighlighted;
     
 	void Start () {
+        // Hide/Show child sprites as appropriate (no highlight)
+        InteractionIcon.GetComponent<Renderer>().enabled = false;
+        InteractionObjectDefault.GetComponent<Renderer>().enabled = true;
+        InteractionIconHighlighted.GetComponent<Renderer>().enabled = false;
 	}
     
     void OnValidate() {

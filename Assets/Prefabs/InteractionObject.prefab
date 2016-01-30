@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionIcon: {fileID: 188852}
-  InteractionObjectDefault: {fileID: 0}
-  InteractionIconHighlighted: {fileID: 0}
+  InteractionObjectDefault: {fileID: 111350}
+  InteractionIconHighlighted: {fileID: 183884}
 --- !u!212 &21229898
 SpriteRenderer:
   m_ObjectHideFlags: 1
