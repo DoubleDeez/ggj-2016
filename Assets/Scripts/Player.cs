@@ -13,7 +13,6 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Hints = new List<string>();
         PlayerHintBubble.SetActive(false);
         ChatPositionDelta = PlayerHintBubble.transform.position - transform.position;
 	}
@@ -49,6 +48,6 @@ public class Player : MonoBehaviour {
     }
     
     public void ClearHints() {
-        Hints.Clear();
+        Hints = new List<string>();
     }
 }
