@@ -1,13 +1,33 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class GameStateManager : MonoBehaviour {
 
     private bool GameIsPaused;
+    
+    [System.Serializable]
+    public class GameState {
+        public string StateName;
+        public List<string> GrandpaStateHints;
+        public List<string> ChildStateHints;
+    }
+    
+    public List<GameState> GameStates;
+    public GameObject Grandpa;
+    public GameObject Child;
+    
+    private GameState CurrentState;
 
 	// Use this for initialization
 	void Start () {
-	   GameIsPaused = false;
+        GameIsPaused = false;
+        CurrentState = GameStates[0];
+        Player grandpaPlayer = Grandpa.GetComponent<Player>();
+        grandpaPlayer.ClearHints();
+        grandpaPlayer.SetHints(CurrentState.GrandpaStateHints);
+        Player childPlayer = Child.GetComponent<Player>();
+        childPlayer.ClearHints();
+        childPlayer.SetHints(CurrentState.ChildStateHints);
 	}
 	
 	// Update is called once per frame
@@ -15,6 +35,9 @@ public class GameStateManager : MonoBehaviour {
     {
 	   ListenForPause();
 	}
+    
+    void OnValidate() {
+    }
     
     public bool IsGamePaused()
     {

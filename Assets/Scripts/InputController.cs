@@ -31,6 +31,7 @@ public class InputController : MonoBehaviour {
     private string ActionButton="Action";
     private string Pause="Pause";
     private string Keyboard="Keyboard";
+    private string HintButton="Hint";
 
 	// Use this for initialization
 	void Start () 
@@ -57,6 +58,7 @@ public class InputController : MonoBehaviour {
                HorizontalAxis = string.Format("P{0}{1}",PlayerNumber,HorizontalAxis);
                InteractButton = string.Format("P{0}{1}",PlayerNumber,InteractButton);
                ActionButton = string.Format("P{0}{1}",PlayerNumber,ActionButton);
+               HintButton = string.Format("P{0}{1}",PlayerNumber,HintButton);
                Keyboard = string.Format("P{0}{1}",PlayerNumber,Keyboard); 
            }
        }
@@ -107,6 +109,10 @@ public class InputController : MonoBehaviour {
         else
         {
             gameObject.transform.Translate(Time.deltaTime * VariableVelocity * horizontalJoystickIn,0,0);
+        }
+        
+        if(Input.GetButton(HintButton)) {
+            MainPlayer.ShowHint();
         }
 
     }

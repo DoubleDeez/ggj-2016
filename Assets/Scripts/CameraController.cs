@@ -29,16 +29,13 @@ public class CameraController : MonoBehaviour {
         Vector3 CamCenter = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2, Screen.height/2, Camera.main.nearClipPlane));
         if(!CatchUp
             && (PlayerToFollow.position.x > CamCenter.x + CameraFollowDeadZone.x
-            || PlayerToFollow.position.x < CamCenter.x - CameraFollowDeadZone.x
-            || PlayerToFollow.position.y > CamCenter.y + CameraFollowDeadZone.y
-            || PlayerToFollow.position.y < CamCenter.y - CameraFollowDeadZone.y)) {
+            || PlayerToFollow.position.x < CamCenter.x - CameraFollowDeadZone.x)) {
             CatchUp = true;   
         }
         
         if(CatchUp) {
             Vector3 position = transform.position;
             position.x = Mathf.Lerp(position.x, PlayerToFollow.position.x, Time.deltaTime * CatchUpSpeed);
-            position.y = Mathf.Lerp(position.y, PlayerToFollow.position.y, Time.deltaTime * CatchUpSpeed);
             transform.position = position;
         }
     }
