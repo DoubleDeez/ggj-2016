@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 
 public class GameStateManager : MonoBehaviour {
-
-    private bool GameIsPaused;
     
     [System.Serializable]
     public class GameState {
@@ -17,10 +15,13 @@ public class GameStateManager : MonoBehaviour {
     public GameObject Child;
     
     private GameState CurrentState;
+    private bool GameIsPaused;
+    private bool InputDisabled;
 
 	// Use this for initialization
 	void Start () {
         GameIsPaused = false;
+        InputDisabled = false;
         CurrentState = GameStates[0];
         Player grandpaPlayer = Grandpa.GetComponent<Player>();
         grandpaPlayer.SetHints(CurrentState.GrandpaStateHints);
@@ -40,6 +41,11 @@ public class GameStateManager : MonoBehaviour {
     public bool IsGamePaused()
     {
         return GameIsPaused;
+    }
+    
+    public bool IsInputDisabled()
+    {
+        return InputDisabled;
     }
     
     private void ListenForPause()
