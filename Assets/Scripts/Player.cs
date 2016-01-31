@@ -7,6 +7,11 @@ public class Player : MonoBehaviour {
     public float HintDisplayTime = 2.0f;
     public GameObject PlayerHintBubble;
     
+    public SpawnPoint UpSpawn;
+    public SpawnPoint DownSpawn;
+    public SpawnPoint LeftSpawn;
+    public SpawnPoint RightSpawn;
+    
     private List<GameStateManager.LevelInteraction> LevelInteractionsColliding;
     private List<string> Hints;
     private Vector3 ChatPositionDelta;
@@ -63,5 +68,26 @@ public class Player : MonoBehaviour {
     
     public List<GameStateManager.LevelInteraction> GetLevelInteractionsColliding() {
         return LevelInteractionsColliding;
+    }
+    
+    //PENDING: Add checks with the GameStateManager
+    public void OnDPadUp()
+    {
+        
+    }
+    
+    public void OnDPadDown()
+    {
+        
+    }
+    
+    public void OnDPadLeft()
+    {
+        
+    }
+    
+    public void OnDPadRight()
+    {
+        
     }
 }

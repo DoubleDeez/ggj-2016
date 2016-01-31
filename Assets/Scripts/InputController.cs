@@ -31,13 +31,6 @@ public class InputController : MonoBehaviour {
     private bool IsInteracting=false;
     private float TranslationMovement;
     
-    private string JumpButton="Jump";
-    private string HorizontalAxis="Horizontal";
-    private string InteractButton="Interact";
-    private string ActionButton="Action";
-    private string Pause="Pause";
-    private string Keyboard="Keyboard";
-    private string HintButton="Hint";
 
 	// Use this for initialization
 	void Start () 
@@ -60,13 +53,7 @@ public class InputController : MonoBehaviour {
            {
                PlayerNumber = (int) XboxInput;
                Debug.Log("Setting up for input Player "+PlayerNumber);
-               
-            //    JumpButton = string.Format("P{0}{1}",PlayerNumber,JumpButton); //TODO: Fix problems with Jump buttons
-            //    HorizontalAxis = string.Format("P{0}{1}",PlayerNumber,HorizontalAxis);
-            //    InteractButton = string.Format("P{0}{1}",PlayerNumber,InteractButton);
-            //    ActionButton = string.Format("P{0}{1}",PlayerNumber,ActionButton);
-            //    HintButton = string.Format("P{0}{1}",PlayerNumber,HintButton);
-            //    Keyboard = string.Format("P{0}{1}",PlayerNumber,Keyboard); 
+               //No setup anymore!
            }
        }
        
@@ -86,6 +73,7 @@ public class InputController : MonoBehaviour {
     // Check and read Input
     private void ReadPlayerInput()
     {
+        //Interactions
         IsInteracting = XCI.GetButton(XboxButton.A);
         if(IsInteracting) {
             foreach(GameStateManager.LevelInteraction interaction in MainPlayer.GetLevelInteractionsColliding()) {
@@ -94,6 +82,7 @@ public class InputController : MonoBehaviour {
             }
         }
         
+        //Jumping
         if(IsGrounded())
         {
             VariableVelocity = PlayerVelocity;
@@ -108,6 +97,7 @@ public class InputController : MonoBehaviour {
             VariableVelocity -= Time.deltaTime*PlayerVelocity/2;
         }
        
+       //Movement (Horizontal only)
         TranslationMovement =  XCI.GetAxis(XboxAxis.LeftStickX,XboxInput);
        
         gameObject.transform.Translate(Time.deltaTime * VariableVelocity * TranslationMovement,0,0);
@@ -115,9 +105,27 @@ public class InputController : MonoBehaviour {
         if(XCI.GetButton(XboxButton.B,XboxInput)) {
             MainPlayer.ShowHint();
         }
+        
+        //DPad - Let the player handle this logic 
+        if(XCI.GetDPad(XboxDPad.Up))
+        {
+            MainPlayer.OnDPadUp();
+        }
+        else if( XCI.GetDPad(XboxDPad.Down))
+        {
+            MainPlayer.OnDPadDown();
+        }
+        else if( XCI.GetDPad(XboxDPad.Left))
+        {
+            MainPlayer.OnDPadLeft();
+        }
+        else if( XCI.GetDPad(XboxDPad.Right))
+        {
+            MainPlayer.OnDPadRight();
+        }
     }
     
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return PlayerPhysics.velocity.y < 0.001f && PlayerPhysics.velocity.y > -0.001f;
     }
