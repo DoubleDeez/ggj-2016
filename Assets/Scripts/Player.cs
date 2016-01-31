@@ -175,10 +175,7 @@ public class Player : MonoBehaviour {
             FadeInOut(TeleportFadeDuration, TeleportFadeSpeed, TeleportFadeTint);
             UpSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
             
-            if(!DEBUG_BypassTeleportRestictions)
-            {
-                HasTakenTeleport = true;
-            }
+            HasTakenTeleport = false;
             
             if(PlayerNumber == 1) {
                 GameManager.SetCurrentGrandpaState("No hints");
