@@ -22,6 +22,8 @@ public class BGMManager : MonoBehaviour
     private Dictionary<string, string> player_scene_map =
         new Dictionary<string, string>();
 
+    private float timer = 0;
+
     // Use this for initialization
     void Start()
     {
@@ -40,9 +42,22 @@ public class BGMManager : MonoBehaviour
         player_scene_map.Add("Backyard", "BackyardBGM");
     }
 
+    
+
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+
+        if(timer > 5){
+            // Periodically disable all audio
+            foreach (string scene_name in scene_list)
+            {
+                AudioSource bgm = GameObject.Find(scene_name).GetComponent<AudioSource>();
+                bgm.volume = 0;
+            }
+        }
+        
         scene_bgms[player_scene_map[teenager.CurrentLevel]].volume = 0.3f;
         scene_bgms[player_scene_map[grandpa.CurrentLevel]].volume = 0.3f;
     }
