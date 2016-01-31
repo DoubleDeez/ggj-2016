@@ -135,7 +135,7 @@ Prefab:
     - target: {fileID: 21206660, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d4b0502c3521274478e903756ba911ec,
+      objectReference: {fileID: 21300000, guid: c916c9a39c31b42678d3fdb88a630609,
         type: 3}
     - target: {fileID: 21206660, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
       propertyPath: m_Color.g
@@ -177,6 +177,22 @@ Prefab:
       propertyPath: UpSpawn
       value: 
       objectReference: {fileID: 1859915554}
+    - target: {fileID: 22420564, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 22420564, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 22407024, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 22407024, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 1.11
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11417710, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
