@@ -37,7 +37,7 @@ public class ChatBubbleController : MonoBehaviour {
                 style.fontSize = FontSize;
                 Canvas.sizeDelta = (style.CalcSize(new GUIContent(ChatText[CycleChatIndex])) + Padding) / 100;
                 if(Time.time > CycleNextLineTime) {
-                    if(CycleChatIndex >= ChatText.Count) {
+                    if(CycleChatIndex == ChatText.Count-1) {
                         if(LoopTrigger) {
                             CycleChatIndex = 0;
                             CycleNextLineTime = Time.time + ChatTextTime;
