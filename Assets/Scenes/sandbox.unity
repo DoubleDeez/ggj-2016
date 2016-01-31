@@ -1045,6 +1045,10 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &314543951 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 158636, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
+  m_PrefabInternal: {fileID: 1223466485}
 --- !u!1 &322651335
 GameObject:
   m_ObjectHideFlags: 0
@@ -6641,7 +6645,7 @@ MonoBehaviour:
   Box: {fileID: 1245035986}
   Medal: {fileID: 575208234}
   Bottlecaps: {fileID: 1910788577}
-  MedicalBills: {fileID: 0}
+  MedicalBills: {fileID: 314543951}
   IsPlayingScript: 1
 --- !u!1 &2102477526
 GameObject:
