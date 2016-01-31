@@ -4,9 +4,17 @@ using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
     
+    public bool DEBUG_BypassTeleportRestictions = false;
+    
     public int PlayerNumber;
     public float HintDisplayTime = 2.0f;
     public GameObject PlayerHintBubble;
+    
+    public float TeleportFadeSpeed = 1.5f;
+    public float TeleportFadeDuration = 2.0f;
+    public Color TeleportFadeTint = Color.white;
+    
+    public Image FadeUI;
     
     public AudioClip WalkingSound;
     public AudioClip RunningSound;
@@ -31,6 +39,11 @@ public class Player : MonoBehaviour {
     
     private bool IsPlayingWalkingSound = false;
     private bool IsPlayingRunningSound = false;
+    
+    private float FadeOpaqueStart = 0.0f;
+    private float FadeOpaqueEnd = 0.0f;
+    private float FadeTransparentStart = 0.0f;
+    private float FadeTransparentEnd = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -45,6 +58,14 @@ public class Player : MonoBehaviour {
 	   PlayerHintBubble.transform.position = transform.position + ChatPositionDelta;
        if(PlayerHintBubble.activeSelf && Time.time > TimeToHideHint) {
            HideHint();
+       }
+       Color color = FadeUI.color;
+       if(Time.time < FadeOpaqueEnd) {
+           color.a = Mathf.Lerp(FadeUI.color.a, 1.0f, (Time.time - FadeOpaqueStart) / (FadeOpaqueEnd - FadeOpaqueStart));
+           FadeUI.color = color;
+       } else if(Time.time > FadeTransparentStart && Time.time < FadeTransparentEnd) {
+           color.a = Mathf.Lerp(FadeUI.color.a, 0.0f, (Time.time - FadeTransparentStart) / (FadeTransparentEnd - FadeTransparentStart));
+           FadeUI.color = color;
        }
 	}
     
@@ -91,19 +112,20 @@ public class Player : MonoBehaviour {
     {
         Heirloom.sprite = HeirloomTop;
         //Teleport to the Footbal Spawn
-        // if( (GameManager.QueryFlag("FOOTBALL_TELEPORT") || GameManager.QueryFlag("WW2_TELEPORT") ) && UpSpawn!=null)
-        // {
-            Debug.Log("Player "+this.PlayerNumber+" Calling Up");
+        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("FOOTBALL_TELEPORT") || GameManager.QueryFlag("WW2_TELEPORT") ) && UpSpawn!=null))
+        {
+            FadeInOut(TeleportFadeDuration, TeleportFadeSpeed, TeleportFadeTint);
             UpSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
-        // }
+        }
     }
     
     public void OnDPadDown()
     {
         Heirloom.sprite = HeirloomDown;
         //Teleport to Main Hub
-        if( (GameManager.QueryFlag("GRANDPA_HEIRLOOM") || GameManager.QueryFlag("CHILD_HEIRLOOM") ) && DownSpawn!=null)
+        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("GRANDPA_HEIRLOOM") || GameManager.QueryFlag("CHILD_HEIRLOOM") ) && DownSpawn!=null))
         {
+            FadeInOut(TeleportFadeDuration, TeleportFadeSpeed, TeleportFadeTint);
             DownSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
         }
     }
@@ -112,8 +134,9 @@ public class Player : MonoBehaviour {
     {
         Heirloom.sprite = HeirloomLeft;
         //Teleport to Diary
-        if( (GameManager.QueryFlag("DIARY_TELEPORT") || GameManager.QueryFlag("BAR_TELEPORT")) && LeftSpawn!=null)
+        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("DIARY_TELEPORT") || GameManager.QueryFlag("BAR_TELEPORT")) && LeftSpawn!=null))
         {
+            FadeInOut(TeleportFadeDuration, TeleportFadeSpeed, TeleportFadeTint);
             LeftSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
         }
     }
@@ -122,8 +145,9 @@ public class Player : MonoBehaviour {
     {
         Heirloom.sprite = HeirloomRight;
         //Teleport to Backyard
-        if( (GameManager.QueryFlag("BABY_TELEPORT") || GameManager.QueryFlag("STREET_TELEPORT")) && RightSpawn!=null)
+        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("BABY_TELEPORT") || GameManager.QueryFlag("STREET_TELEPORT")) && RightSpawn!=null))
         {
+            FadeInOut(TeleportFadeDuration, TeleportFadeSpeed, TeleportFadeTint);
             RightSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
         }
     }
@@ -142,5 +166,13 @@ public class Player : MonoBehaviour {
     
     public void OnDPadDownReleased() {
         Heirloom.sprite = HeirloomStatic;
+    }
+    
+    public void FadeInOut(float duration, float fadeTime, Color tint) {
+        FadeUI.color = tint;
+        FadeOpaqueStart = Time.time;
+        FadeOpaqueEnd = FadeOpaqueStart + fadeTime;
+        FadeTransparentStart = FadeOpaqueEnd + duration;
+        FadeTransparentEnd = FadeTransparentStart + fadeTime;
     }
 }
