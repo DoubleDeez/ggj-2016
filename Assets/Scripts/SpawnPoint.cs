@@ -55,5 +55,6 @@ public class SpawnPoint : MonoBehaviour {
         SpawnPlayer.transform.position = PreviousPlayerPosition;
         IsCountingTime = false;
         Debug.Log("New Respawn Position: "+PreviousPlayerPosition);
+        SpawnPlayer.NotifyTeleportRecall(this);
     }
 }

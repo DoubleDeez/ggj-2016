@@ -44,6 +44,7 @@ public class Player : MonoBehaviour {
     private float TimeToHideHint = 0.0f;
 
     private bool IsAnimatorSchemeAlternate=false;
+    private bool HasTakenTeleport = false; //Take only one teleport at a time
 
     private bool IsPlayingWalkingSound = false;
     private bool IsPlayingRunningSound = false;
@@ -122,10 +123,15 @@ public class Player : MonoBehaviour {
     {
         Heirloom.sprite = HeirloomTop;
         //Teleport to the Footbal Spawn
-        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("FOOTBALL_TELEPORT") || GameManager.QueryFlag("WW2_TELEPORT") ) && UpSpawn!=null))
+        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("FOOTBALL_TELEPORT") || GameManager.QueryFlag("WW2_TELEPORT") ) && UpSpawn!=null && !HasTakenTeleport))
         {
             FadeInOut(TeleportFadeDuration, TeleportFadeSpeed, TeleportFadeTint);
             UpSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
+            
+            if(DEBUG_BypassTeleportRestictions)
+            {
+                HasTakenTeleport = true;
+            }
         }
     }
 
@@ -133,10 +139,15 @@ public class Player : MonoBehaviour {
     {
         Heirloom.sprite = HeirloomDown;
         //Teleport to Main Hub
-        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("GRANDPA_HEIRLOOM") || GameManager.QueryFlag("CHILD_HEIRLOOM") ) && DownSpawn!=null))
+        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("GRANDPA_HEIRLOOM") || GameManager.QueryFlag("CHILD_HEIRLOOM") ) && DownSpawn!=null && !HasTakenTeleport))
         {
             FadeInOut(TeleportFadeDuration, TeleportFadeSpeed, TeleportFadeTint);
             DownSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
+            
+            if(DEBUG_BypassTeleportRestictions)
+            {
+                HasTakenTeleport = true;
+            }
         }
     }
 
@@ -144,10 +155,15 @@ public class Player : MonoBehaviour {
     {
         Heirloom.sprite = HeirloomLeft;
         //Teleport to Diary
-        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("DIARY_TELEPORT") || GameManager.QueryFlag("BAR_TELEPORT")) && LeftSpawn!=null))
+        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("DIARY_TELEPORT") || GameManager.QueryFlag("BAR_TELEPORT")) && LeftSpawn!=null && !HasTakenTeleport))
         {
             FadeInOut(TeleportFadeDuration, TeleportFadeSpeed, TeleportFadeTint);
             LeftSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
+            
+            if(DEBUG_BypassTeleportRestictions)
+            {
+                HasTakenTeleport = true;
+            }
         }
     }
 
@@ -155,10 +171,15 @@ public class Player : MonoBehaviour {
     {
         Heirloom.sprite = HeirloomRight;
         //Teleport to Backyard
-        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("BABY_TELEPORT") || GameManager.QueryFlag("STREET_TELEPORT")) && RightSpawn!=null))
+        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("BABY_TELEPORT") || GameManager.QueryFlag("STREET_TELEPORT")) && RightSpawn!=null && !HasTakenTeleport))
         {
             FadeInOut(TeleportFadeDuration, TeleportFadeSpeed, TeleportFadeTint);
             RightSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
+            
+            if(DEBUG_BypassTeleportRestictions)
+            {
+                HasTakenTeleport = true;
+            }
         }
     }
 
@@ -200,5 +221,14 @@ public class Player : MonoBehaviour {
         FadeOpaqueEnd = FadeOpaqueStart + fadeTime;
         FadeTransparentStart = FadeOpaqueEnd + duration;
         FadeTransparentEnd = FadeTransparentStart + fadeTime;
+    }
+    
+    public void NotifyTeleportRecall(SpawnPoint point)
+    {
+        if(point!=null && HasTakenTeleport)
+        {
+            //We can now teleport to spawn points again
+            HasTakenTeleport = false;
+        }
     }
 }
