@@ -1,9 +1,12 @@
 fileFormatVersion: 2
 guid: e6098107e41fe47498c32ced2b8c607b
-timeCreated: 1454226980
+timeCreated: 1454231158
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: MobileSpriteSheet_0
+    21300002: MobileSpriteSheet_1
+    21300004: MobileSpriteSheet_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,18 +41,81 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 15
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: MobileSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 92
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 51}
+        - {x: -35, y: 19}
+        - {x: -22, y: 10}
+        - {x: 11, y: 11}
+        - {x: -42, y: 8}
+        - {x: -46, y: 4}
+        - {x: -46, y: -51}
+        - {x: 46, y: -51}
+        - {x: 46, y: 45}
+        - {x: 39, y: 51}
+    - name: MobileSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 90
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 51}
+        - {x: -36, y: 19}
+        - {x: -23, y: 10}
+        - {x: 10, y: 11}
+        - {x: -43, y: 8}
+        - {x: -45, y: 6}
+        - {x: -45, y: -51}
+        - {x: 45, y: -51}
+        - {x: 45, y: 45}
+        - {x: 38, y: 51}
+    - name: MobileSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 0
+        width: 90
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 51}
+        - {x: -36, y: 19}
+        - {x: -23, y: 10}
+        - {x: 10, y: 11}
+        - {x: -43, y: 8}
+        - {x: -45, y: 6}
+        - {x: -45, y: -51}
+        - {x: 45, y: -51}
+        - {x: 45, y: 45}
+        - {x: 38, y: 51}
     outline: []
   spritePackingTag: 
   userData: 
