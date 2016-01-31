@@ -16,6 +16,7 @@ public class InputController : MonoBehaviour {
     public float PlayerChargeMultiplier = 3.0f;
     public bool InvertXAxis = false;
     public XboxController XboxInput;
+    public AudioClip playerRunningSound;
 
 /// <summary>
 /// Private Variables
@@ -35,6 +36,8 @@ public class InputController : MonoBehaviour {
     private bool jumpAllowed=true;
     private float TranslationMovement;
     private string _currentDirection = "right";
+
+    private AudioSource audioSource;
 
     private const int KID_PLAYER_NUM = 1;
     private const int GRANDPA_PLAYER_NUM = 2;
@@ -57,6 +60,8 @@ public class InputController : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        audioSource = GetComponent<AudioSource>();
+
        // Define state to name mapping for animations
        state_to_name.Add(0, "Idle");
        state_to_name.Add(1, "Walk");
@@ -233,7 +238,26 @@ public class InputController : MonoBehaviour {
                 currentAnimation = (int) AnimStates.Walk;
             }
         }
+
+        // Play sound effect for animation
+        playSoundForAnim(actualAnimation);
+
         PlayerAnimator.SetInteger("state", currentAnimation);
+    }
+
+    private void playSoundForAnim(int anim) {
+        // @TODO Add sounds for rest of animations
+        if (anim == (int) AnimStates.Charge) {
+            if (!audioSource.isPlaying) {
+                audioSource.clip = playerRunningSound;
+                audioSource.Play();
+            }
+        }
+        else {
+            Debug.LogWarning(
+                System.String.Format("No such sound for anim {0}", anim)
+            );
+        }
     }
 
     public bool Interacted() {
