@@ -22,7 +22,7 @@ public class Player : MonoBehaviour {
     public AudioClip WalkingSound;
     public AudioClip RunningSound;
 
-    public Image Heirloom;
+    public GameObject Heirloom;
     public GameObject UpSpawn;
     public GameObject DownSpawn;
     public GameObject LeftSpawn;
@@ -33,10 +33,10 @@ public class Player : MonoBehaviour {
     public Sprite HeirloomLeft;
     public Sprite HeirloomRight;
     public Sprite HeirloomDown;
-    public Image GateUp;
-    public Image GateLeft;
-    public Image GateRight;
-    public Image GateDown;
+    public GameObject GateUp;
+    public GameObject GateLeft;
+    public GameObject GateRight;
+    public GameObject GateDown;
 
     public Sprite AlternateSprite;
     private Sprite MainSprite;
@@ -66,10 +66,10 @@ public class Player : MonoBehaviour {
         GameManager = FindObjectOfType<GameStateManager>();
         MainSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
         EnableHeirloom(false);
-        GateUp.enabled = false;
-        GateRight.enabled = false;
-        GateDown.enabled = false;
-        GateLeft.enabled = false;
+        GateUp.SetActive(false);
+        GateRight.SetActive(false);
+        GateDown.SetActive(false);
+        GateLeft.SetActive(false);
 	}
     
     void OnEnable()
@@ -138,22 +138,22 @@ public class Player : MonoBehaviour {
     }
     
     public void EnableHeirloom(bool enable) {
-        Heirloom.GetComponent<SpriteRenderer>().enabled = enable;
+        Heirloom.SetActive(enable);
     }
     
     public void EnableGate(string direction) {
         switch(direction) {
             case "up":
-                GateUp.enabled = true;
+                GateUp.SetActive(true);
                 break;
             case "right":
-                GateRight.enabled = true;
+                GateRight.SetActive(true);
                 break;
             case "down":
-                GateDown.enabled = true;
+                GateDown.SetActive(true);
                 break;
             case "left":
-                GateLeft.enabled = true;
+                GateLeft.SetActive(true);
                 break;
         }
     }
@@ -161,7 +161,7 @@ public class Player : MonoBehaviour {
     //@TODO : Confirm the order in which the check should go
     public void OnDPadUp()
     {
-        Heirloom.sprite = HeirloomTop;
+        Heirloom.GetComponent<Image>().sprite = HeirloomTop;
         //Teleport to the Footbal Spawn
         if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("FOOTBALL_TELEPORT") || GameManager.QueryFlag("WW2_TELEPORT") ) && UpSpawn!=null && !HasTakenTeleport))
         {
@@ -177,7 +177,7 @@ public class Player : MonoBehaviour {
 
     public void OnDPadDown()
     {
-        Heirloom.sprite = HeirloomDown;
+        Heirloom.GetComponent<Image>().sprite = HeirloomDown;
         //Teleport to Main Hub
         if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("GRANDPA_HEIRLOOM") || GameManager.QueryFlag("CHILD_HEIRLOOM") ) && DownSpawn!=null && !HasTakenTeleport))
         {
@@ -193,7 +193,7 @@ public class Player : MonoBehaviour {
 
     public void OnDPadLeft()
     {
-        Heirloom.sprite = HeirloomLeft;
+        Heirloom.GetComponent<Image>().sprite = HeirloomLeft;
         //Teleport to Diary
         if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("DIARY_TELEPORT") || GameManager.QueryFlag("BAR_TELEPORT")) && LeftSpawn!=null && !HasTakenTeleport))
         {
@@ -209,7 +209,7 @@ public class Player : MonoBehaviour {
 
     public void OnDPadRight()
     {
-        Heirloom.sprite = HeirloomRight;
+        Heirloom.GetComponent<Image>().sprite = HeirloomRight;
         //Teleport to Backyard
         if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("BABY_TELEPORT") || GameManager.QueryFlag("STREET_TELEPORT")) && RightSpawn!=null && !HasTakenTeleport))
         {
@@ -224,19 +224,19 @@ public class Player : MonoBehaviour {
     }
 
     public void OnDPadUpReleased() {
-        Heirloom.sprite = HeirloomStatic;
+        Heirloom.GetComponent<Image>().sprite = HeirloomStatic;
     }
 
     public void OnDPadRightReleased() {
-        Heirloom.sprite = HeirloomStatic;
+        Heirloom.GetComponent<Image>().sprite = HeirloomStatic;
     }
 
     public void OnDPadLeftReleased() {
-        Heirloom.sprite = HeirloomStatic;
+        Heirloom.GetComponent<Image>().sprite = HeirloomStatic;
     }
 
     public void OnDPadDownReleased() {
-        Heirloom.sprite = HeirloomStatic;
+        Heirloom.GetComponent<Image>().sprite = HeirloomStatic;
     }
 
 
