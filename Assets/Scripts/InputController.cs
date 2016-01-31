@@ -174,6 +174,7 @@ public class InputController : MonoBehaviour {
             new Vector2(0, PlayerPhysics.mass * PlayerJumpHeight ),
             ForceMode2D.Impulse
         );
+        PlayerAnimator.SetInteger("state", (int)AnimStates.Jump);
     }
     
     //We want our game to support only Xbox Gamepad input.
