@@ -560,7 +560,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -68, y: 0, z: 0}
+  m_LocalPosition: {x: 80.1, y: -26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400286}
@@ -623,7 +623,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -693,9 +693,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.004498586, y: -0.0027395487}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.19025859, y: 0.1867404}
+  m_Size: {x: 0.21, y: 0.38}
 --- !u!61 &6184972
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -779,7 +779,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -814,7 +814,7 @@ Animator:
   m_GameObject: {fileID: 112134}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8e9faca11a579743801fd65f4a32f85, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1457,8 +1457,8 @@ MonoBehaviour:
   PlayerNumber: 1
   HintDisplayTime: 2
   PlayerHintBubble: {fileID: 124788}
-  PrimaryScheme: {fileID: 0}
-  SecondaryScheme: {fileID: 0}
+  PrimaryScheme: {fileID: 9100000, guid: c8e9faca11a579743801fd65f4a32f85, type: 2}
+  SecondaryScheme: {fileID: 9100000, guid: a92a317204ab349a58a9eb647dca9c99, type: 2}
   TeleportFadeSpeed: 1
   TeleportFadeDuration: 1
   TeleportFadeTint: {r: 1, g: 1, b: 1, a: 1}
@@ -1657,8 +1657,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 99
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e01c4d38686d00447ac8c77538bf29b7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!222 &22203198
@@ -1914,7 +1914,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.67, y: 11.47}
-  m_SizeDelta: {x: 3.69, y: 1.11}
+  m_SizeDelta: {x: 3.6, y: 1.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22471696
 RectTransform:
@@ -1932,7 +1932,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.67, y: 11.47}
-  m_SizeDelta: {x: 3.69, y: 1.11}
+  m_SizeDelta: {x: 3.6, y: 1.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22485602
 RectTransform:
