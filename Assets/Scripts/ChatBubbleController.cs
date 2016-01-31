@@ -12,6 +12,7 @@ public class ChatBubbleController : MonoBehaviour {
     public RectTransform Canvas;
     
     public bool IsTriggered = false;
+    public bool LoopTrigger = false;
     
     private bool IsCycling = false;
     private float CycleNextLineTime;
@@ -34,8 +35,13 @@ public class ChatBubbleController : MonoBehaviour {
             Canvas.sizeDelta = (style.CalcSize(new GUIContent(ChatText[CycleChatIndex])) + Padding) / 100;
             if(Time.time > CycleNextLineTime) {
                 if(CycleChatIndex >= ChatText.Count) {
-                    IsCycling = false;
-                    gameObject.SetActive(false);
+                    if(LoopTrigger) {
+                        CycleChatIndex = 0;
+                        CycleNextLineTime = Time.time + ChatTextTime;
+                    } else {
+                        IsCycling = false;
+                        gameObject.SetActive(false);
+                    }
                 } else {
                     CycleChatIndex++;
                     CycleNextLineTime = Time.time + ChatTextTime;
@@ -55,7 +61,7 @@ public class ChatBubbleController : MonoBehaviour {
         Canvas.sizeDelta = (style.CalcSize(new GUIContent(ChatText[chatIndex])) + Padding) / 100;
     }
     
-    public void CycleOnce() {
+    public void Trigger() {
         IsCycling = true;
         gameObject.SetActive(true);
         CycleNextLineTime = Time.time + ChatTextTime;

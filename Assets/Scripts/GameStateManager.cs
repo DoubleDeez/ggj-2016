@@ -121,7 +121,7 @@ public class GameStateManager : MonoBehaviour {
         } else if(interaction.InteractionName.Equals("SexyTimeCloset")) {
             SetFlag("BABY_CHANGE", true);
             SexyTimeDarkness.SetActive(false);
-            Grandpa_SexyTime.GetComponent<ChatBubbleController>().CycleOnce();
+            Grandpa_SexyTime.GetComponent<ChatBubbleController>().Trigger();
         } else if(interaction.InteractionName.Equals("BabyMonitor")) {
             if(QueryFlag("HAS_HEARING")) {
                 SetFlag("HEARD_FIGHTING", true);
