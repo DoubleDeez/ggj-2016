@@ -96,7 +96,7 @@ GameObject:
   - 222: {fileID: 96289664}
   - 114: {fileID: 96289663}
   m_Layer: 5
-  m_Name: Image
+  m_Name: GGJLogo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ GameObject:
   - 222: {fileID: 785888706}
   - 114: {fileID: 785888705}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -544,7 +544,7 @@ GameObject:
   - 222: {fileID: 1941635373}
   - 114: {fileID: 1941635372}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: TeamText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
