@@ -119,9 +119,11 @@ public class InputController : MonoBehaviour
         {
             foreach (GameStateManager.LevelInteraction interaction in MainPlayer.GetLevelInteractionsColliding())
             {
-                interaction.HasBeenInteracted = true;
-                GameState.DoInteraction(interaction);
-                GameObject.Find(interaction.InteractionName).SetActive(false);
+                if(!interaction.HasBeenInteracted) {
+                    interaction.HasBeenInteracted = true;
+                    GameState.DoInteraction(interaction);
+                    GameObject.Find(interaction.InteractionName).SetActive(false);
+                }
             }
         }
 

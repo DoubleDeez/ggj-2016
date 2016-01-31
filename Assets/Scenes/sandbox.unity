@@ -5478,7 +5478,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11469880, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_Text
-      value: HONEY, GET UP!!!
+      value: How's your essay going, sweetie?
       objectReference: {fileID: 0}
     - target: {fileID: 22411020, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_SizeDelta.y
@@ -6500,7 +6500,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1776109441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 128, y: 2.1092625, z: 0}
+  m_LocalPosition: {x: 128, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 331367214}
