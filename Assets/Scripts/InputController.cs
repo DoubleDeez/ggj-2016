@@ -186,17 +186,17 @@ public class InputController : MonoBehaviour {
         }
        
         
-        if(Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKey(KeyCode.A))
         {
             TranslationMovement = -1.0f;
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
             TranslationMovement = 1.0f;
         }
         else
         {
-            TranslationMovement = 0.0f;
+            TranslationMovement = Mathf.Lerp(TranslationMovement,0.0f,Time.deltaTime);
         }
        
         gameObject.transform.Translate(Time.deltaTime * VariableVelocity * TranslationMovement,0,0);
@@ -231,11 +231,11 @@ public class InputController : MonoBehaviour {
             VariableVelocity -= Time.deltaTime*PlayerVelocity/2;
         }
         
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        if(Input.GetKey(KeyCode.LeftArrow))
         {
             TranslationMovement = -1.0f;
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             TranslationMovement = 1.0f;
         }
