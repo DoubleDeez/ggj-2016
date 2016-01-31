@@ -29,6 +29,8 @@ public class GameStateManager : MonoBehaviour {
     public GameObject Grandpa;
     public GameObject Child;
     
+    public IncomingCarScript Car;
+    
     public float DelayToBegin = 3.0f;
     
     public GameObject SexyTimeDarkness;
@@ -177,6 +179,8 @@ public class GameStateManager : MonoBehaviour {
         } else if(interaction.InteractionName.Equals("StreetPa")) {
             if(QueryFlag("CAN_TACKLE") && QueryFlag("STREET_TELEPORT")) {
                 SetFlag("NO_WALKER", true);
+                Car.RunHimDown = false;
+                // Remove grandpa's walker
             }
         }
     }
