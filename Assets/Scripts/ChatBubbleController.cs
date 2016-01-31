@@ -24,7 +24,7 @@ public class ChatBubbleController : MonoBehaviour {
        }
 	}
     
-    void OnValidate() {
+    void OnEnable() {
         UpdateText();
     }
 	
