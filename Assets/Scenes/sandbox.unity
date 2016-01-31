@@ -1065,6 +1065,10 @@ Prefab:
       propertyPath: IsTriggered
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11469880, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_Text
+      value: Did you hear something?
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
   m_IsPrefabParent: 0
@@ -3997,6 +4001,88 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b7f68c0613dbc44f9db81e6fc3d6b16, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1688125023
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1743813258}
+    m_Modifications:
+    - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -63.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -11.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 122914, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_Name
+      value: PreggoIntro
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: IsTriggered
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411020, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 4.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatText.Array.data[0]
+      value: Afternoon, dad!
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411020, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatText.Array.data[1]
+      value: Come on, stretch your legs!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatText.Array.data[2]
+      value: Gimme a hand over here.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatText.Array.data[3]
+      value: I made out like a bandit at the shower!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatTextTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469880, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_Text
+      value: Afternoon, dad!
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1743813257
 GameObject:
   m_ObjectHideFlags: 0
@@ -4030,6 +4116,7 @@ Transform:
   - {fileID: 661795850}
   - {fileID: 875368395}
   - {fileID: 1040150345}
+  - {fileID: 1952495669}
   m_Father: {fileID: 1026043563}
   m_RootOrder: 0
 --- !u!1 &1747586466
@@ -4673,6 +4760,10 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!4 &1952495669 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+  m_PrefabInternal: {fileID: 1688125023}
 --- !u!1 &1994030193
 GameObject:
   m_ObjectHideFlags: 0

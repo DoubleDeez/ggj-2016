@@ -1132,7 +1132,9 @@ MonoBehaviour:
   Grandpa: {fileID: 112134}
   Child: {fileID: 130816}
   DelayToBegin: 3
+  SexyTimeDarkness: {fileID: 0}
   Grandpa_MomSaysWakeUp: {fileID: 0}
+  Grandpa_SexyTime: {fileID: 0}
 --- !u!114 &11401918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1840,6 +1842,7 @@ MonoBehaviour:
   Padding: {x: 25, y: 40}
   TextObject: {fileID: 11459498}
   Canvas: {fileID: 22471696}
+  IsTriggered: 0
 --- !u!114 &11481536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1998,6 +2001,7 @@ MonoBehaviour:
   Padding: {x: 25, y: 40}
   TextObject: {fileID: 11401918}
   Canvas: {fileID: 22467888}
+  IsTriggered: 0
 --- !u!114 &11497340
 MonoBehaviour:
   m_ObjectHideFlags: 1

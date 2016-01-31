@@ -103,6 +103,7 @@ MonoBehaviour:
   Padding: {x: 25, y: 40}
   TextObject: {fileID: 11469880}
   Canvas: {fileID: 22411020}
+  IsTriggered: 0
 --- !u!114 &11406098
 MonoBehaviour:
   m_ObjectHideFlags: 1
