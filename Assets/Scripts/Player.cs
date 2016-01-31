@@ -8,6 +8,9 @@ public class Player : MonoBehaviour {
     public float HintDisplayTime = 2.0f;
     public GameObject PlayerHintBubble;
     
+    public AudioClip WalkingSound;
+    public AudioClip RunningSound;
+    
     public Image Heirloom;
     public GameObject UpSpawn;
     public GameObject DownSpawn;
@@ -25,6 +28,9 @@ public class Player : MonoBehaviour {
     private List<string> Hints;
     private Vector3 ChatPositionDelta;
     private float TimeToHideHint = 0.0f;
+    
+    private bool IsPlayingWalkingSound = false;
+    private bool IsPlayingRunningSound = false;
 
 	// Use this for initialization
 	void Start () {

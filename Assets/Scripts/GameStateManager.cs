@@ -160,6 +160,12 @@ public class GameStateManager : MonoBehaviour {
         return Flags.ContainsKey(name) && Flags[name];
     }
     
+    public void PlaySoundEffect(AudioClip sound) {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = sound;
+        audioSource.Play();
+    }
+    
     private void ListenForPause()
     {
         bool pausePressed = Input.GetKeyDown(KeyCode.Escape) || XCI.GetButtonDown(XboxButton.Start);
