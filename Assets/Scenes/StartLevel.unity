@@ -193,6 +193,46 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 1.11
       objectReference: {fileID: 0}
+    - target: {fileID: 417190, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21221698, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 21221698, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_Color.r
+      value: 0.9191176
+      objectReference: {fileID: 0}
+    - target: {fileID: 21221698, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21221698, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107474, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107474, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107474, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_Size.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107474, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_Size.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 446594, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11417710, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}

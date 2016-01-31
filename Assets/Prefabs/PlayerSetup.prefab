@@ -819,10 +819,16 @@ MonoBehaviour:
   PlayerNumber: 1
   HintDisplayTime: 2
   PlayerHintBubble: {fileID: 120498}
+  Heirloom: {fileID: 0}
   UpSpawn: {fileID: 0}
   DownSpawn: {fileID: 0}
   LeftSpawn: {fileID: 0}
   RightSpawn: {fileID: 0}
+  HeirloomStatic: {fileID: 0}
+  HeirloomTop: {fileID: 0}
+  HeirloomLeft: {fileID: 0}
+  HeirloomRight: {fileID: 0}
+  HeirloomDown: {fileID: 0}
 --- !u!114 &11410588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1359,10 +1365,16 @@ MonoBehaviour:
   PlayerNumber: 2
   HintDisplayTime: 2
   PlayerHintBubble: {fileID: 152370}
+  Heirloom: {fileID: 0}
   UpSpawn: {fileID: 0}
   DownSpawn: {fileID: 0}
   LeftSpawn: {fileID: 0}
   RightSpawn: {fileID: 0}
+  HeirloomStatic: {fileID: 0}
+  HeirloomTop: {fileID: 0}
+  HeirloomLeft: {fileID: 0}
+  HeirloomRight: {fileID: 0}
+  HeirloomDown: {fileID: 0}
 --- !u!114 &11495686
 MonoBehaviour:
   m_ObjectHideFlags: 1
