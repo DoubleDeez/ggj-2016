@@ -79,6 +79,11 @@ public class InputController : MonoBehaviour {
             AnimatePlayer();
             ReadDebug();
         }
+        // Debug work
+        // if(XCI.GetButtonDown(XboxButton.RightBumper,XboxInput))
+        // {
+        //     MainPlayer.SwitchAnimatorController();
+        // }
 	}
 
     // Check and read Input

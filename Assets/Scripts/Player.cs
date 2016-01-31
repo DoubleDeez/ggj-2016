@@ -8,6 +8,9 @@ public class Player : MonoBehaviour {
     public float HintDisplayTime = 2.0f;
     public GameObject PlayerHintBubble;
     
+    public RuntimeAnimatorController PrimaryScheme;
+    public RuntimeAnimatorController SecondaryScheme;
+    
     public Image Heirloom;
     public GameObject UpSpawn;
     public GameObject DownSpawn;
@@ -20,11 +23,15 @@ public class Player : MonoBehaviour {
     public Sprite HeirloomRight;
     public Sprite HeirloomDown;
     
+    public Sprite AlternateSprite;
+    private Sprite MainSprite;
+    
     private GameStateManager GameManager;
     private List<GameStateManager.LevelInteraction> LevelInteractionsColliding;
     private List<string> Hints;
     private Vector3 ChatPositionDelta;
     private float TimeToHideHint = 0.0f;
+    private bool IsAnimatorSchemeAlternate=false;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +39,7 @@ public class Player : MonoBehaviour {
         PlayerHintBubble.SetActive(false);
         ChatPositionDelta = PlayerHintBubble.transform.position - transform.position;
         GameManager = FindObjectOfType<GameStateManager>();
+        MainSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
 	}
 	
 	// Update is called once per frame
@@ -136,5 +144,20 @@ public class Player : MonoBehaviour {
     
     public void OnDPadDownReleased() {
         Heirloom.sprite = HeirloomStatic;
+    }
+    
+    public void SwitchAnimatorController()
+    {
+        if(IsAnimatorSchemeAlternate)
+        {
+            gameObject.GetComponent<Animator>().runtimeAnimatorController = PrimaryScheme;
+            gameObject.GetComponent<SpriteRenderer>().sprite = MainSprite;
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().runtimeAnimatorController = SecondaryScheme;
+            gameObject.GetComponent<SpriteRenderer>().sprite = MainSprite;
+        }
+        IsAnimatorSchemeAlternate = !IsAnimatorSchemeAlternate;
     }
 }
