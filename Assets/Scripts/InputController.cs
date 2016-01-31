@@ -275,12 +275,6 @@ public class InputController : MonoBehaviour
         {
             MainPlayer._playSound(playerWalkingSound);
         }
-        else
-        {
-            Debug.LogWarning(
-                System.String.Format("No such sound for anim {0}", anim)
-            );
-        }
     }
 
     public bool Interacted()
