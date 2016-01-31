@@ -599,9 +599,27 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[ENTER ALL TEAM MEMBER CREDITS HERE!]
+  m_Text: 'Programmer - Dylan Dumesnil
 
-'
+    Programmer - Javier E Fajardo Z
+
+    Programmer - Hamza Faran
+
+    2D Art - Andrea Marie da Graca
+
+    2D Art and Animation - Madi Lamoureux
+
+    Composer - Llewellyn Littlemore
+
+    Sound Design - Christian Folk
+
+    Writer/Game Design -  R. Morgan Slade
+
+
+    Global Game Jam Vancouver 2016
+
+
+    Thank you for playing our game! :)'
 --- !u!222 &1941635373
 CanvasRenderer:
   m_ObjectHideFlags: 0
