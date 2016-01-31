@@ -165,6 +165,14 @@ Prefab:
       propertyPath: m_Size.y
       value: 0.59375
       objectReference: {fileID: 0}
+    - target: {fileID: 11436144, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: XboxInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476490, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: XboxInput
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11417710, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
@@ -275,7 +283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba41559f1a81e64ca77612ed0db36de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameStates: []
+  GameLevels: []
+  GrandpaStates: []
+  ChildStates: []
   Grandpa: {fileID: 1881514470}
   Child: {fileID: 362405421}
 --- !u!1 &2101544287

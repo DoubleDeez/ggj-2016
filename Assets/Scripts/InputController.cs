@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using XboxCtrlrInput;
 
 /// <summary>
 /// The InputController has hardcoded strings corresponding to Buttons and Joystick Axis in 
@@ -13,6 +13,7 @@ public class InputController : MonoBehaviour {
     public float PlayerVelocity = 6.0f;
     public float PlayerJumpHeight = 6.0f;
     public bool InvertXAxis = false;
+    public XboxController XboxInput;
 
 /// <summary>
 /// Private Variables
@@ -57,15 +58,15 @@ public class InputController : MonoBehaviour {
            PlayerAnimator = gameObject.GetComponent<Animator>();
            if(MainPlayer!=null && PlayerPhysics!=null)
            {
-               PlayerNumber = MainPlayer.PlayerNumber;
+               PlayerNumber = (int) XboxInput;
                Debug.Log("Setting up for input Player "+PlayerNumber);
                
-               JumpButton = string.Format("P{0}{1}",PlayerNumber,JumpButton); //TODO: Fix problems with Jump buttons
-               HorizontalAxis = string.Format("P{0}{1}",PlayerNumber,HorizontalAxis);
-               InteractButton = string.Format("P{0}{1}",PlayerNumber,InteractButton);
-               ActionButton = string.Format("P{0}{1}",PlayerNumber,ActionButton);
-               HintButton = string.Format("P{0}{1}",PlayerNumber,HintButton);
-               Keyboard = string.Format("P{0}{1}",PlayerNumber,Keyboard); 
+            //    JumpButton = string.Format("P{0}{1}",PlayerNumber,JumpButton); //TODO: Fix problems with Jump buttons
+            //    HorizontalAxis = string.Format("P{0}{1}",PlayerNumber,HorizontalAxis);
+            //    InteractButton = string.Format("P{0}{1}",PlayerNumber,InteractButton);
+            //    ActionButton = string.Format("P{0}{1}",PlayerNumber,ActionButton);
+            //    HintButton = string.Format("P{0}{1}",PlayerNumber,HintButton);
+            //    Keyboard = string.Format("P{0}{1}",PlayerNumber,Keyboard); 
            }
        }
        
@@ -78,13 +79,14 @@ public class InputController : MonoBehaviour {
         {
             ReadPlayerInput();
             AnimatePlayer();
+            ReadDebug();
         }
 	}
 
     // Check and read Input
     private void ReadPlayerInput()
     {
-        IsInteracting = Input.GetButton(InteractButton);
+        IsInteracting = XCI.GetButton(XboxButton.A);
         if(IsInteracting) {
             foreach(GameStateManager.LevelInteraction interaction in MainPlayer.GetLevelInteractionsColliding()) {
                 interaction.HasBeenInteracted = true;
@@ -96,30 +98,21 @@ public class InputController : MonoBehaviour {
         {
             VariableVelocity = PlayerVelocity;
             
-            if(Input.GetButtonDown(JumpButton))
+            if(XCI.GetButtonDown(XboxButton.X,XboxInput))
             {
-                PlayerPhysics.AddForce(
-                    new Vector2(0, PlayerPhysics.mass * PlayerJumpHeight ),
-                    ForceMode2D.Impulse
-                );
+                Jump();
             }
         }
         else
         {
             VariableVelocity -= Time.deltaTime*PlayerVelocity/2;
-            
         }
-
-        float horizontalJoystickIn = Input.GetAxis(HorizontalAxis);
-        float keyboardIn = Input.GetAxis(Keyboard);
-
-        TranslationMovement = Mathf.Abs(keyboardIn) > 0.01f ? keyboardIn : horizontalJoystickIn;
-        TranslationMovement *= InvertXAxis ? -1 : 1;
-        
+       
+        TranslationMovement =  XCI.GetAxis(XboxAxis.LeftStickX,XboxInput);
+       
         gameObject.transform.Translate(Time.deltaTime * VariableVelocity * TranslationMovement,0,0);
-        
-        
-        if(Input.GetButton(HintButton)) {
+         
+        if(XCI.GetButton(XboxButton.B,XboxInput)) {
             MainPlayer.ShowHint();
         }
     }
@@ -146,4 +139,115 @@ public class InputController : MonoBehaviour {
         return IsInteracting;
     }
     
+    private void Jump()
+    {
+        PlayerPhysics.AddForce(
+            new Vector2(0, PlayerPhysics.mass * PlayerJumpHeight ),
+            ForceMode2D.Impulse
+        );
+    }
+    
+    //We want our game to support only Xbox Gamepad input.
+    // However, we need hardcoded keyboard input for now...
+    private void ReadDebug()
+    {
+        if(XboxInput == XboxController.First)
+        {
+            DebugP1();
+        }
+        else
+        {
+            DebugP2();
+        }
+    }
+    
+    private void DebugP1()
+    {
+        IsInteracting = Input.GetKeyDown(KeyCode.E);
+        if(IsInteracting) {
+            foreach(GameStateManager.LevelInteraction interaction in MainPlayer.GetLevelInteractionsColliding()) {
+                interaction.HasBeenInteracted = true;
+                GameState.DoInteraction(interaction);
+            }
+        }
+        
+        if(IsGrounded())
+        {
+            VariableVelocity = PlayerVelocity;
+            
+            if(Input.GetKeyDown(KeyCode.W))
+            {
+                Jump();
+            }
+        }
+        else
+        {
+            VariableVelocity -= Time.deltaTime*PlayerVelocity/2;
+        }
+       
+        
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            TranslationMovement = -1.0f;
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            TranslationMovement = 1.0f;
+        }
+        else
+        {
+            TranslationMovement = 0.0f;
+        }
+       
+        gameObject.transform.Translate(Time.deltaTime * VariableVelocity * TranslationMovement,0,0);
+        
+         
+        if(Input.GetKeyDown(KeyCode.Q)) {
+            MainPlayer.ShowHint();
+        }
+    }
+    
+    private void DebugP2()
+    {
+        IsInteracting = Input.GetKeyDown(KeyCode.RightShift);
+        if(IsInteracting) {
+            foreach(GameStateManager.LevelInteraction interaction in MainPlayer.GetLevelInteractionsColliding()) {
+                interaction.HasBeenInteracted = true;
+                GameState.DoInteraction(interaction);
+            }
+        }
+        
+        if(IsGrounded())
+        {
+            VariableVelocity = PlayerVelocity;
+            
+            if(Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Jump();
+            }
+        }
+        else
+        {
+            VariableVelocity -= Time.deltaTime*PlayerVelocity/2;
+        }
+        
+        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            TranslationMovement = -1.0f;
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            TranslationMovement = 1.0f;
+        }
+        else
+        {
+            TranslationMovement = Mathf.Lerp(TranslationMovement,0.0f,Time.deltaTime);
+        }
+       
+        gameObject.transform.Translate(Time.deltaTime * VariableVelocity * TranslationMovement,0,0);
+         
+        if(Input.GetKeyDown(KeyCode.Return)) {
+            MainPlayer.ShowHint();
+        }
+    }
 }
