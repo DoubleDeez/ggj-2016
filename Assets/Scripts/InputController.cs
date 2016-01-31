@@ -31,6 +31,17 @@ public class InputController : MonoBehaviour {
     private bool IsInteracting=false;
     private float TranslationMovement;
     
+    // state int to be set to for changing animation
+    private enum AnimStates {
+        Idle=0,
+        Charge=2,
+        Grenade=3,
+        Jump=4,
+        Scared=5,
+        Touch=6,
+        Walk=1,
+        Whisper=7
+    }
 
 	// Use this for initialization
 	void Start () 
