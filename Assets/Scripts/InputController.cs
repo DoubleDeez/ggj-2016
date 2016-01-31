@@ -39,8 +39,6 @@ public class InputController : MonoBehaviour
     private float TranslationMovement;
     private string _currentDirection = "right";
 
-    private AudioSource audioSource;
-
     private const int KID_PLAYER_NUM = 1;
     private const int GRANDPA_PLAYER_NUM = 2;
 
@@ -63,8 +61,6 @@ public class InputController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-
         // Define state to name mapping for animations
         state_to_name.Add(0, "Idle");
         state_to_name.Add(1, "Walk");
@@ -271,10 +267,9 @@ public class InputController : MonoBehaviour
 
     private void _playSound(AudioClip sound)
     {
-        if (sound != audioSource.clip || !audioSource.isPlaying)
+        if (sound != GameState.GetAudioSource().clip || !GameState.GetAudioSource().isPlaying)
         {
-            audioSource.clip = sound;
-            audioSource.Play();
+            GameState.PlaySoundEffect(sound);
         }
     }
 
