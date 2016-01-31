@@ -90,6 +90,7 @@ public class GameStateManager : MonoBehaviour {
         } else if(interaction.InteractionName.Equals("HeirloomGrandpa")) {
             // @TODO : Activate dpad UI with football - can now tp to backyard
             Flags.Add("GRANDPA_HEIRLOOM", true);
+            Grandpa.GetComponent<Player>().EnableHeirloom(true);
             SetCurrentGrandpaState("No hints");
         } else if(interaction.InteractionName.Equals("Diary")) {
             // @TODO : Activate dpad UI with diary - can now tp to bedroom

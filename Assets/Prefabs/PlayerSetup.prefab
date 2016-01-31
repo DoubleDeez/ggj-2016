@@ -838,6 +838,10 @@ MonoBehaviour:
   HeirloomLeft: {fileID: 0}
   HeirloomRight: {fileID: 0}
   HeirloomDown: {fileID: 0}
+  GateUp: {fileID: 0}
+  GateLeft: {fileID: 0}
+  GateRight: {fileID: 0}
+  GateDown: {fileID: 0}
   AlternateSprite: {fileID: 0}
 --- !u!114 &11410588
 MonoBehaviour:
@@ -1400,6 +1404,10 @@ MonoBehaviour:
   HeirloomLeft: {fileID: 0}
   HeirloomRight: {fileID: 0}
   HeirloomDown: {fileID: 0}
+  GateUp: {fileID: 0}
+  GateLeft: {fileID: 0}
+  GateRight: {fileID: 0}
+  GateDown: {fileID: 0}
   AlternateSprite: {fileID: 0}
 --- !u!114 &11495686
 MonoBehaviour:
@@ -1638,7 +1646,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.67, y: 11.47}
-  m_SizeDelta: {x: 3.69, y: 1.11}
+  m_SizeDelta: {x: 3.6, y: 1.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22420564
 RectTransform:
@@ -1656,7 +1664,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.67, y: 11.47}
-  m_SizeDelta: {x: 3.69, y: 1.11}
+  m_SizeDelta: {x: 3.6, y: 1.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22427812
 RectTransform:

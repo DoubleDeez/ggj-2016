@@ -33,6 +33,10 @@ public class Player : MonoBehaviour {
     public Sprite HeirloomLeft;
     public Sprite HeirloomRight;
     public Sprite HeirloomDown;
+    public Image GateUp;
+    public Image GateLeft;
+    public Image GateRight;
+    public Image GateDown;
 
     public Sprite AlternateSprite;
     private Sprite MainSprite;
@@ -61,6 +65,11 @@ public class Player : MonoBehaviour {
         ChatPositionDelta = PlayerHintBubble.transform.position - transform.position;
         GameManager = FindObjectOfType<GameStateManager>();
         MainSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+        EnableHeirloom(false);
+        GateUp.enabled = false;
+        GateRight.enabled = false;
+        GateDown.enabled = false;
+        GateLeft.enabled = false;
 	}
     
     void OnEnable()
@@ -126,6 +135,27 @@ public class Player : MonoBehaviour {
 
     public List<GameStateManager.LevelInteraction> GetLevelInteractionsColliding() {
         return LevelInteractionsColliding;
+    }
+    
+    public void EnableHeirloom(bool enable) {
+        Heirloom.GetComponent<SpriteRenderer>().enabled = enable;
+    }
+    
+    public void EnableGate(string direction) {
+        switch(direction) {
+            case "up":
+                GateUp.enabled = true;
+                break;
+            case "right":
+                GateRight.enabled = true;
+                break;
+            case "down":
+                GateDown.enabled = true;
+                break;
+            case "left":
+                GateLeft.enabled = true;
+                break;
+        }
     }
 
     //@TODO : Confirm the order in which the check should go
