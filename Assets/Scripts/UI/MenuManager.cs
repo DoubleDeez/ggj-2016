@@ -18,6 +18,16 @@ public class MenuManager : MonoBehaviour {
     
     public void OnPressStart()
     {
-        SceneManager.LoadScene("StartLevel");
+        SceneManager.LoadScene("sandbox");
+    }
+    
+    public void OnPressCredits()
+    {
+        // SceneManager.LoadScene
+    }
+    
+    public void OnPressQuit()
+    {
+        Application.Quit();
     }
 }
