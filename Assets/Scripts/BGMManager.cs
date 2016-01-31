@@ -42,7 +42,7 @@ public class BGMManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scene_bgms[player_scene_map[teenager.CurrentLevel]].volume = 0.6f;
-        scene_bgms[player_scene_map[grandpa.CurrentLevel]].volume = 0.6f;
+        scene_bgms[player_scene_map[teenager.CurrentLevel]].volume = 0.3f;
+        scene_bgms[player_scene_map[grandpa.CurrentLevel]].volume = 0.3f;
     }
 }
