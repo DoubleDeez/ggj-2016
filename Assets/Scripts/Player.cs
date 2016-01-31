@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
     public SpawnPoint LeftSpawn;
     public SpawnPoint RightSpawn;
     
+    private GameStateManager GameManager;
     private List<GameStateManager.LevelInteraction> LevelInteractionsColliding;
     private List<string> Hints;
     private Vector3 ChatPositionDelta;
@@ -22,6 +23,7 @@ public class Player : MonoBehaviour {
         LevelInteractionsColliding = new List<GameStateManager.LevelInteraction>();
         PlayerHintBubble.SetActive(false);
         ChatPositionDelta = PlayerHintBubble.transform.position - transform.position;
+        GameManager = FindObjectOfType<GameStateManager>();
 	}
 	
 	// Update is called once per frame
@@ -70,24 +72,40 @@ public class Player : MonoBehaviour {
         return LevelInteractionsColliding;
     }
     
-    //PENDING: Add checks with the GameStateManager
+    //@TODO : Confirm the order in which the check should go
     public void OnDPadUp()
     {
-        
+        //Teleport to the Footbal Spawn
+        if( GameManager.QueryFlag("FOOTBALL_TELEPORT") && UpSpawn!=null)
+        {
+            UpSpawn.TeleportPlayer(this);
+        }
     }
     
     public void OnDPadDown()
     {
-        
+        //Teleport to Main Hub
+        if(GameManager.QueryFlag("GRANDPA_HEIRLOOM") && DownSpawn!=null)
+        {
+            DownSpawn.TeleportPlayer(this);
+        }
     }
     
     public void OnDPadLeft()
     {
-        
+        //Teleport to Diary
+        if(GameManager.QueryFlag("") && LeftSpawn!=null)
+        {
+            LeftSpawn.TeleportPlayer(this);
+        }
     }
     
     public void OnDPadRight()
     {
-        
+        //Teleport to Backyard
+        if(GameManager.QueryFlag("") && RightSpawn!=null)
+        {
+            RightSpawn.TeleportPlayer(this);
+        }
     }
 }
