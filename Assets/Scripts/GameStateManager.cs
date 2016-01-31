@@ -188,6 +188,7 @@ public class GameStateManager : MonoBehaviour {
         foreach(GameState state in GrandpaStates) {
             if(state.StateName.Equals(stateName)) {
                 CurrentGrandpaState = state;
+                Grandpa.GetComponent<Player>().SetHints(state.Hints);
             }
         }
     }
@@ -196,6 +197,7 @@ public class GameStateManager : MonoBehaviour {
         foreach(GameState state in ChildStates) {
             if(state.StateName.Equals(stateName)) {
                 CurrentChildState = state;
+                Child.GetComponent<Player>().SetHints(state.Hints);
             }
         }
     }

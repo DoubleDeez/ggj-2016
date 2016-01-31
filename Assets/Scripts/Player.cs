@@ -79,7 +79,7 @@ public class Player : MonoBehaviour {
 	}
     
     public void ShowHint() {
-        if(!PlayerHintBubble.activeSelf) {
+        if(!PlayerHintBubble.activeSelf && Hints.Count > 0) {
             ChatBubbleController chatBubble = PlayerHintBubble.GetComponentInChildren<ChatBubbleController>();
             chatBubble.ChatText.Clear();
             chatBubble.ChatText.Add(Hints[Random.Range(0, Hints.Count)]);
