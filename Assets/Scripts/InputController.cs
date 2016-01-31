@@ -134,6 +134,16 @@ public class InputController : MonoBehaviour {
         {
             MainPlayer.OnDPadRight();
         }
+        
+        if(XCI.GetDPadUp(XboxDPad.Up, XboxInput)) {
+            MainPlayer.OnDPadUpReleased();
+        } else if(XCI.GetDPadUp(XboxDPad.Down, XboxInput)) {
+            MainPlayer.OnDPadDownReleased();
+        } else if(XCI.GetDPadUp(XboxDPad.Left, XboxInput)) {
+            MainPlayer.OnDPadLeftReleased();
+        } else if(XCI.GetDPadUp(XboxDPad.Right, XboxInput)) {
+            MainPlayer.OnDPadRightReleased();
+        }
     }
     
     public bool IsGrounded()

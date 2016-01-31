@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
@@ -7,10 +8,17 @@ public class Player : MonoBehaviour {
     public float HintDisplayTime = 2.0f;
     public GameObject PlayerHintBubble;
     
+    public Image Heirloom;
     public GameObject UpSpawn;
     public GameObject DownSpawn;
     public GameObject LeftSpawn;
     public GameObject RightSpawn;
+    
+    public Sprite HeirloomStatic;
+    public Sprite HeirloomTop;
+    public Sprite HeirloomLeft;
+    public Sprite HeirloomRight;
+    public Sprite HeirloomDown;
     
     private GameStateManager GameManager;
     private List<GameStateManager.LevelInteraction> LevelInteractionsColliding;
@@ -75,6 +83,7 @@ public class Player : MonoBehaviour {
     //@TODO : Confirm the order in which the check should go
     public void OnDPadUp()
     {
+        Heirloom.sprite = HeirloomTop;
         //Teleport to the Footbal Spawn
         // if( (GameManager.QueryFlag("FOOTBALL_TELEPORT") || GameManager.QueryFlag("WW2_TELEPORT") ) && UpSpawn!=null)
         // {
@@ -85,6 +94,7 @@ public class Player : MonoBehaviour {
     
     public void OnDPadDown()
     {
+        Heirloom.sprite = HeirloomDown;
         //Teleport to Main Hub
         if( (GameManager.QueryFlag("GRANDPA_HEIRLOOM") || GameManager.QueryFlag("CHILD_HEIRLOOM") ) && DownSpawn!=null)
         {
@@ -94,6 +104,7 @@ public class Player : MonoBehaviour {
     
     public void OnDPadLeft()
     {
+        Heirloom.sprite = HeirloomLeft;
         //Teleport to Diary
         if( (GameManager.QueryFlag("DIARY_TELEPORT") || GameManager.QueryFlag("BAR_TELEPORT")) && LeftSpawn!=null)
         {
@@ -103,10 +114,27 @@ public class Player : MonoBehaviour {
     
     public void OnDPadRight()
     {
+        Heirloom.sprite = HeirloomRight;
         //Teleport to Backyard
         if( (GameManager.QueryFlag("BABY_TELEPORT") || GameManager.QueryFlag("STREET_TELEPORT")) && RightSpawn!=null)
         {
             RightSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
         }
+    }
+    
+    public void OnDPadUpReleased() {
+        Heirloom.sprite = HeirloomStatic;
+    }
+    
+    public void OnDPadRightReleased() {
+        Heirloom.sprite = HeirloomStatic;
+    }
+    
+    public void OnDPadLeftReleased() {
+        Heirloom.sprite = HeirloomStatic;
+    }
+    
+    public void OnDPadDownReleased() {
+        Heirloom.sprite = HeirloomStatic;
     }
 }

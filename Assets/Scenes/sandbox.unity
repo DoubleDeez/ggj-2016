@@ -428,11 +428,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 498896, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
   m_PrefabInternal: {fileID: 358481844}
---- !u!224 &497380874 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 22458496, guid: eedb52ab3955142eb84542431eaa5f47,
-    type: 2}
-  m_PrefabInternal: {fileID: 1989412749}
 --- !u!1 &511106776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1349,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1743813258}
   m_RootOrder: 0
+--- !u!114 &1304019266 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11485882, guid: eedb52ab3955142eb84542431eaa5f47,
+    type: 2}
+  m_PrefabInternal: {fileID: 1989412749}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1395352729
 Prefab:
   m_ObjectHideFlags: 0
@@ -1832,76 +1833,12 @@ Transform:
   - {fileID: 1026490246}
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!1 &1749163592
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 165850, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1749163593}
-  - 222: {fileID: 1749163595}
-  - 114: {fileID: 1749163594}
-  m_Layer: 5
-  m_Name: Heirloom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1749163593
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22448694, guid: eedb52ab3955142eb84542431eaa5f47,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1749163592}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
-  m_Children: []
-  m_Father: {fileID: 497380874}
-  m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: 50}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1749163594
+--- !u!114 &1749163594 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11420316, guid: eedb52ab3955142eb84542431eaa5f47,
     type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1749163592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabInternal: {fileID: 1989412749}
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6de1ab60e254747148f36fbc1445e961, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &1749163595
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22204576, guid: eedb52ab3955142eb84542431eaa5f47,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1749163592}
 --- !u!1 &1754733038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,10 +2058,64 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 22460848, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 11495364, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: Heirloom
+      value: 
+      objectReference: {fileID: 1749163594}
+    - target: {fileID: 11495364, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: HeirloomDown
+      value: 
+      objectReference: {fileID: 21300000, guid: b622eac6d86d346d5b7c7e155d7b1621,
+        type: 3}
+    - target: {fileID: 11495364, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: HeirloomLeft
+      value: 
+      objectReference: {fileID: 21300000, guid: 8de51fcea50534e2baf368993ef4a2c2,
+        type: 3}
+    - target: {fileID: 11495364, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: HeirloomRight
+      value: 
+      objectReference: {fileID: 21300000, guid: dfb2828abd88a42d4bd6bfd6dc8bf845,
+        type: 3}
+    - target: {fileID: 11495364, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: HeirloomTop
+      value: 
+      objectReference: {fileID: 21300000, guid: c32c4d52b70724127a970ec214ffd3e3,
+        type: 3}
+    - target: {fileID: 11495364, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: HeirloomStatic
+      value: 
+      objectReference: {fileID: 21300000, guid: 6de1ab60e254747148f36fbc1445e961,
+        type: 3}
+    - target: {fileID: 11408918, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: HeirloomDown
+      value: 
+      objectReference: {fileID: 21300000, guid: b622eac6d86d346d5b7c7e155d7b1621,
+        type: 3}
+    - target: {fileID: 11408918, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: HeirloomLeft
+      value: 
+      objectReference: {fileID: 21300000, guid: 8de51fcea50534e2baf368993ef4a2c2,
+        type: 3}
+    - target: {fileID: 11408918, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: HeirloomRight
+      value: 
+      objectReference: {fileID: 21300000, guid: dfb2828abd88a42d4bd6bfd6dc8bf845,
+        type: 3}
+    - target: {fileID: 11408918, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: HeirloomTop
+      value: 
+      objectReference: {fileID: 21300000, guid: c32c4d52b70724127a970ec214ffd3e3,
+        type: 3}
+    - target: {fileID: 11408918, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: HeirloomStatic
+      value: 
+      objectReference: {fileID: 21300000, guid: 6de1ab60e254747148f36fbc1445e961,
+        type: 3}
+    - target: {fileID: 11408918, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: Heirloom
+      value: 
+      objectReference: {fileID: 1304019266}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
   m_IsPrefabParent: 0
