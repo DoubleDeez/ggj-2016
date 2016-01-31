@@ -92,7 +92,6 @@ public class InputController : MonoBehaviour
             if (MainPlayer != null && PlayerPhysics != null)
             {
                 PlayerNumber = (int)XboxInput;
-                Debug.Log("Setting up for input Player " + PlayerNumber);
                 //No setup anymore!
             }
         }
