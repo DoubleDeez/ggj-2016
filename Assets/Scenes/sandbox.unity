@@ -2776,7 +2776,7 @@ Prefab:
         type: 3}
     - target: {fileID: 158636, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9505792, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
       propertyPath: m_Controller
@@ -3369,7 +3369,7 @@ Prefab:
         type: 3}
     - target: {fileID: 158636, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9505792, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
       propertyPath: m_Controller
@@ -3467,6 +3467,10 @@ Prefab:
     - target: {fileID: 430940, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 158636, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
@@ -3932,7 +3936,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 158636, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9505792, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
       propertyPath: m_Controller
@@ -6637,6 +6641,7 @@ MonoBehaviour:
   Box: {fileID: 1245035986}
   Medal: {fileID: 575208234}
   Bottlecaps: {fileID: 1910788577}
+  MedicalBills: {fileID: 0}
   IsPlayingScript: 1
 --- !u!1 &2102477526
 GameObject:
