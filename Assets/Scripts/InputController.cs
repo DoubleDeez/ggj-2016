@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using XboxCtrlrInput;
+using System.Collections.Generic;
 
 /// <summary>
 /// The InputController has hardcoded strings corresponding to Buttons and Joystick Axis in
@@ -122,7 +123,7 @@ public class InputController : MonoBehaviour {
         }
         else
         {
-            VariableVelocity -= Time.deltaTime*PlayerVelocity/2;
+            VariableVelocity -= Time.deltaTime*mVelocity/2;
         }
 
        //Movement (Horizontal only)
@@ -184,28 +185,54 @@ public class InputController : MonoBehaviour {
 
     private void AnimateWalk()
     {
-        Debug.Log(isCurrentAnimation(getAnimationName("Jump")));
-        Debug.Log(isCurrentAnimation(getAnimationName("Charge")));
+        Debug.Log(System.String.Format("Jump: {0}", isCurrentAnimation(getAnimationName("Jump"))));
+        Debug.Log(System.String.Format("Charge: {0}", isCurrentAnimation(getAnimationName("Charge"))));
+        Debug.Log(System.String.Format("Walk: {0}", isCurrentAnimation(getAnimationName("Walk"))));
+        Debug.Log(System.String.Format("Idle: {0}", isCurrentAnimation(getAnimationName("Idle"))));
         Debug.Log(currentAnimation);
         Debug.Log(animationPlayedTimes());
 
-        if (isCurrentAnimation(getAnimationName("Jump")) &&
-            animationPlayedTimes() >= 0.9f) {
+        //     private enum AnimStates {
+    //     Idle=0,
+    //     Charge=2,
+    //     Grenade=3,
+    //     Jump=4,
+    //     Scared=5,
+    //     Touch=6,
+    //     Walk=1,
+    //     Whisper=7
+    // }
+        Dictionary<int, string> state_to_name = new Dictionary<int, string>();
+
+        state_to_name.Add(0, "Idle");
+        state_to_name.Add(1, "Walk");
+        state_to_name.Add(2, "Charge");
+        state_to_name.Add(3, "Grenade");
+        state_to_name.Add(4, "Jump");
+        state_to_name.Add(5, "Scared");
+        state_to_name.Add(6, "Touch");
+        state_to_name.Add(7, "Whisper");
+
+        int actualAnimation = -1;
+        foreach (KeyValuePair<int, string> entry in state_to_name) {
+            if (isCurrentAnimation(getAnimationName(entry.Value))) {
+                actualAnimation = entry.Key;
+            }
+        }
+
+        if (actualAnimation != currentAnimation &&
+            currentAnimation == (int) AnimStates.Jump) {
+                PlayerAnimator.SetInteger("state", currentAnimation);
+                PlayerAnimator.Play(getAnimationName("Jump"), 0);
+                return;
+            }
+
+        if (actualAnimation == currentAnimation
+            && animationPlayedTimes() >= 0.9f) {
             currentAnimation = (int) AnimStates.Idle;
         }
 
-        if (isCurrentAnimation(getAnimationName("Charge")) &&
-            animationPlayedTimes() >= 0.9f) {
-            currentAnimation = (int) AnimStates.Idle;
-        }
-
-        if (isCurrentAnimation(getAnimationName("Walk")) &&
-            animationPlayedTimes() >= 0.9f) {
-            currentAnimation = (int) AnimStates.Idle;
-        }
-
-        if (IsGrounded() && currentAnimation != (int) AnimStates.Jump &&
-            currentAnimation != (int) AnimStates.Charge) {
+        if (IsGrounded() && currentAnimation == (int) AnimStates.Idle) {
             if(Mathf.Abs(TranslationMovement) < 0.1f)
             {
                 currentAnimation = (int) AnimStates.Idle;
@@ -216,8 +243,9 @@ public class InputController : MonoBehaviour {
             }
         }
         PlayerAnimator.SetInteger("state", currentAnimation);
-        //PlayerAnimator.Play(currentAnimation, 0);
-    }
+
+        // PlayerAnimator.Play(state_to_name[currentAnimation], 0);
+        }
 
     public bool Interacted() {
         return IsInteracting;
