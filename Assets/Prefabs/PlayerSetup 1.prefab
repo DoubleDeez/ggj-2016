@@ -1318,6 +1318,8 @@ MonoBehaviour:
   PlayerNumber: 1
   HintDisplayTime: 2
   PlayerHintBubble: {fileID: 124788}
+  WalkingSound: {fileID: 0}
+  RunningSound: {fileID: 0}
   Heirloom: {fileID: 11471468}
   UpSpawn: {fileID: 0}
   DownSpawn: {fileID: 0}
@@ -1355,6 +1357,8 @@ MonoBehaviour:
   PlayerNumber: 2
   HintDisplayTime: 2
   PlayerHintBubble: {fileID: 167154}
+  WalkingSound: {fileID: 0}
+  RunningSound: {fileID: 0}
   Heirloom: {fileID: 11442710}
   UpSpawn: {fileID: 0}
   DownSpawn: {fileID: 0}
@@ -1699,7 +1703,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.67, y: 11.47}
-  m_SizeDelta: {x: 3.69, y: 1.11}
+  m_SizeDelta: {x: 3.6, y: 1.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22471696
 RectTransform:
@@ -1717,7 +1721,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.67, y: 11.47}
-  m_SizeDelta: {x: 3.69, y: 1.11}
+  m_SizeDelta: {x: 3.6, y: 1.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22485602
 RectTransform:
