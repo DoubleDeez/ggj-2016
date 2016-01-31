@@ -128,6 +128,14 @@ public class GameStateManager : MonoBehaviour {
             SetCurrentGrandpaState("No hints");
         } else if(interaction.InteractionName.Equals("SexyTimeCloset")) {
             SetFlag("BABY_CHANGE", true);
+            
+            //Change their hair
+            Child.GetComponent<PlayerCustomizations>().RandomizeHair();
+            if(Random.value > 0.5f)
+            {
+                Child.GetComponent<PlayerCustomizations>().RandomizeTattoo();
+            }
+            
             SexyTimeDarkness.SetActive(false);
             Grandpa_SexyTime.GetComponent<ChatBubbleController>().Trigger();
         } else if(interaction.InteractionName.Equals("BabyMonitor")) {
@@ -172,6 +180,8 @@ public class GameStateManager : MonoBehaviour {
             SetFlag("VOLUNTEERED", true);
         } else if(interaction.InteractionName.Equals("DrunkPa")) {
             // Tattoo change, fade to house after tattoo sounds
+            
+            Grandpa.GetComponent<PlayerCustomizations>().RandomizeTattoo();
             SetFlag("WHISPERED", true);
             SetCurrentGrandpaState("No hints");
         } else if(interaction.InteractionName.Equals("StreetPa")) {

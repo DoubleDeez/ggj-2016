@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class PlayerCustomizations : MonoBehaviour {
     
+    public bool AllowRandomization;
+    
     public List<Sprite> Eyes; //Go at Y=1
     public int EyeSelection = 0;
     
@@ -42,6 +44,13 @@ public class PlayerCustomizations : MonoBehaviour {
         
         if(!IsInit)
         {
+            if(AllowRandomization)
+            {
+                HairSelection = (int) (Random.value*int.MaxValue) % HairStyles.Count;
+                EyeSelection = (int) (Random.value*int.MaxValue) % Eyes.Count;
+                // HatSelection = (int) (Random.value*1000) % Hats.Count;
+                TattooSelection = (int) (Random.value*int.MaxValue) % Tattoos.Count;
+            }
             HairSprite.sprite = HairStyles[HairSelection];
             EyesSprite.sprite = Eyes[EyeSelection];
             HatSprite.sprite = Hats[HatSelection];
@@ -52,7 +61,7 @@ public class PlayerCustomizations : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-
+       
 	}
     
     public void ChangeHair(int selection)
@@ -78,4 +87,17 @@ public class PlayerCustomizations : MonoBehaviour {
         TattooSelection = selection;
         TattooSprite.sprite = Tattoos[TattooSelection];
     }
+    
+    public void RandomizeHair()
+    {
+        HairSelection = (int) (Random.value*int.MaxValue) % HairStyles.Count;
+        HairSprite.sprite = HairStyles[HairSelection];
+    }
+    
+    public void RandomizeTattoo()
+    {
+        TattooSelection = (int) (Random.value*int.MaxValue) % Tattoos.Count;
+        TattooSprite.sprite = Tattoos[TattooSelection];
+    }
+    
 }
