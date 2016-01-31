@@ -36,12 +36,13 @@ public class BGMManager : MonoBehaviour
         player_scene_map.Add("BarWhispers", "WW2BarBGM");
         player_scene_map.Add("BabyRoom", "BabyRoomGrampsBGM");
         player_scene_map.Add("CarStreet", "NightStreetBGM");
+        player_scene_map.Add("WW2", "WW2BGM");
     }
 
     // Update is called once per frame
     void Update()
     {
-        scene_bgms[player_scene_map[teenager.CurrentLevel]].volume = 1;
-        scene_bgms[player_scene_map[grandpa.CurrentLevel]].volume = 1;
+        scene_bgms[player_scene_map[teenager.CurrentLevel]].volume = 0.6f;
+        scene_bgms[player_scene_map[grandpa.CurrentLevel]].volume = 0.6f;
     }
 }
