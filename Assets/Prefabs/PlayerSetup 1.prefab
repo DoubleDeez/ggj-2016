@@ -1895,8 +1895,7 @@ MonoBehaviour:
   TeleportFadeDuration: 1
   TeleportFadeTint: {r: 1, g: 1, b: 1, a: 1}
   FadeUI: {fileID: 11484470}
-  WalkingSound: {fileID: 8300000, guid: 076a038b883e4491caec25e64aa50ae2, type: 3}
-  RunningSound: {fileID: 8300000, guid: fcba3ae31fce3420d93e4921437686be, type: 3}
+  TeleportSound: {fileID: 0}
   Heirloom: {fileID: 0}
   UpSpawn: {fileID: 0}
   DownSpawn: {fileID: 0}
@@ -1974,8 +1973,7 @@ MonoBehaviour:
   TeleportFadeDuration: 1
   TeleportFadeTint: {r: 1, g: 1, b: 1, a: 1}
   FadeUI: {fileID: 11404258}
-  WalkingSound: {fileID: 0}
-  RunningSound: {fileID: 0}
+  TeleportSound: {fileID: 0}
   Heirloom: {fileID: 0}
   UpSpawn: {fileID: 0}
   DownSpawn: {fileID: 0}

@@ -296,6 +296,10 @@ Prefab:
       propertyPath: ChatText.Array.data[3]
       value: '*brkzkkt*'
       objectReference: {fileID: 0}
+    - target: {fileID: 11469880, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_Text
+      value: '*crzzkt*'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
   m_IsPrefabParent: 0
@@ -439,6 +443,10 @@ Prefab:
     - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: ChatText.Array.data[3]
       value: I NEVER SAID THAT!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469880, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: m_Text
+      value: How can you say that?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
@@ -4170,7 +4178,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11479680, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
       propertyPath: PlayerVelocity
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11479680, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
       propertyPath: jumpAllowed
@@ -4178,7 +4186,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11458356, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
       propertyPath: PlayerVelocity
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11458356, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
       propertyPath: PlayerChargeMultiplier
@@ -4267,6 +4275,18 @@ Prefab:
     - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
       propertyPath: GrandpaStates.Array.data[0].Hints.Array.data[0]
       value: So much crap for a kid who's not even born yet...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: TeleportSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fb68814f4be494a63952f6e80a6e341c, type: 3}
+    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: TeleportSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fb68814f4be494a63952f6e80a6e341c, type: 3}
+    - target: {fileID: 11458356, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: InvertXAxis
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}

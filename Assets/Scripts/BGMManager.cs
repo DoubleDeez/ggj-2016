@@ -37,6 +37,7 @@ public class BGMManager : MonoBehaviour
         player_scene_map.Add("BabyRoom", "BabyRoomGrampsBGM");
         player_scene_map.Add("CarStreet", "NightStreetBGM");
         player_scene_map.Add("WW2", "WW2BGM");
+        player_scene_map.Add("Backyard", "BackyardBGM");
     }
 
     // Update is called once per frame

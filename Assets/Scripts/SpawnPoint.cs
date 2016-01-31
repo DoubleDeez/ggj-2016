@@ -44,6 +44,7 @@ public class SpawnPoint : MonoBehaviour {
         
         PreviousPlayerPosition = new Vector3(aPlayer.transform.position.x,aPlayer.transform.position.y,aPlayer.transform.position.z);
         aPlayer.transform.position = this.transform.position;
+        aPlayer._playSound(aPlayer.TeleportSound);
         
         if(!aPlayer.DEBUG_BypassTeleportRestictions)
         {

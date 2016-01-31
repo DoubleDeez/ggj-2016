@@ -20,8 +20,8 @@ public class Player : MonoBehaviour {
 
     public Image FadeUI;
 
-    public AudioClip WalkingSound;
-    public AudioClip RunningSound;
+    public AudioClip TeleportSound;
+    private AudioSource audioSource;
 
     public GameObject Heirloom;
     public GameObject UpSpawn;
@@ -77,6 +77,8 @@ public class Player : MonoBehaviour {
         } else {
             GameManager.SetCurrentChildState("Sleep");
         }
+
+        audioSource = GetComponent<AudioSource>();
 	}
     
     void OnEnable()
@@ -105,6 +107,15 @@ public class Player : MonoBehaviour {
            FadeUI.color = color;
        }
 	}
+
+    public void _playSound(AudioClip sound)
+    {
+        if (sound != audioSource.clip || !audioSource.isPlaying)
+        {
+            audioSource.clip = sound;
+            audioSource.Play();
+        }
+    }
 
     public void ShowHint() {
         if(!PlayerHintBubble.activeSelf && Hints.Count > 0) {
