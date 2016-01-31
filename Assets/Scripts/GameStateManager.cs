@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using XboxCtrlrInput;
 using System.Collections.Generic;
 
 public class GameStateManager : MonoBehaviour {
@@ -152,20 +153,20 @@ public class GameStateManager : MonoBehaviour {
     
     private void ListenForPause()
     {
-        // bool pausePressed = Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause");
-        // if(pausePressed)
-        // {
-        //     Debug.Log("Game Paused");
-        //     GameIsPaused = !GameIsPaused;
-        //     if(GameIsPaused)
-        //     {
-        //         Time.timeScale = 0;
-        //     }
-        //     else
-        //     {
-        //         Time.timeScale = 1;
-        //     }
-        // }
+        bool pausePressed = Input.GetKeyDown(KeyCode.Escape) || XCI.GetButtonDown(XboxButton.Start);
+        if(pausePressed)
+        {
+            Debug.Log("Game Paused");
+            GameIsPaused = !GameIsPaused;
+            if(GameIsPaused)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+        }
     }
     
     private void SetCurrentGrandpaState(string stateName) {
