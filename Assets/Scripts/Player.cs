@@ -67,7 +67,7 @@ public class Player : MonoBehaviour {
     {
         if(FadeUI==null)
         {
-            Debug.LogError("Fading in and out might be broken. Check your player object to make sure you have a correct reference set!")
+            Debug.LogError("Fading in and out might be broken. Check your player object to make sure you have a correct reference set!");
         }
     }
 
