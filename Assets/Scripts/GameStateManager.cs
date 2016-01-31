@@ -80,7 +80,74 @@ public class GameStateManager : MonoBehaviour {
     }
     
     public void DoInteraction(LevelInteraction interaction) {
-        
+        // Grandpa Interactions
+        if(interaction.InteractionName.Equals("Football")) {
+            // @TODO : Grandpa needs to say a message here
+            // @TODO : Make heirloom glow
+            Flags.Add("FOOTBALL_TELEPORT", true);
+            SetCurrentGrandpaState("GlowingHeirloom");
+        } else if(interaction.InteractionName.Equals("HeirloomGrandpa")) {
+            // @TODO : Activate dpad UI with football - can now tp to backyard
+            Flags.Add("GRANDPA_HEIRLOOM", true);
+            SetCurrentGrandpaState("No hints");
+        } else if(interaction.InteractionName.Equals("Diary")) {
+            // @TODO : Activate dpad UI with diary - can now tp to bedroom
+            Flags.Add("DIARY_TELEPORT", true);
+            SetCurrentGrandpaState("No hints");
+        } else if(interaction.InteractionName.Equals("CribBox")) {
+            // @TODO : Activate dpad UI with diary - can now tp to baby room
+            Flags.Add("BABY_TELEPORT", true);
+            SetCurrentGrandpaState("No hints");
+        } else if(interaction.InteractionName.Equals("BackyardFootbal")) {
+            // @TODO : Kid can tackle, play animation
+            Flags.Add("BACKYARD_FOOTBALL", true);
+            SetCurrentGrandpaState("No hints");
+        } else if(interaction.InteractionName.Equals("SexyTimeCloset")) {
+            Flags.Add("BABY_CHANGE", true);
+        } else if(interaction.InteractionName.Equals("BabyMonitor")) {
+            // Static if no hearing
+            // Parents fighting if has hearing
+            Flags.Add("", true);
+        } else if(interaction.InteractionName.Equals("BabyMobile")) {
+            // @TODO save colour on right and set wallpaper for child
+            Flags.Add("", true);
+        } else if(interaction.InteractionName.Equals("Infant")) {
+            // Check for no walker
+            Flags.Add("", true);
+            SetCurrentGrandpaState("No hints");
+        }
+        // Child's Interactions
+        else if(interaction.InteractionName.Equals("HonorMedal")) {
+            Flags.Add("", true);
+            SetCurrentChildState("TheBox");
+        } else if(interaction.InteractionName.Equals("HeirloomKid")) {
+            Flags.Add("", true);
+            SetCurrentChildState("No hints");
+        } else if(interaction.InteractionName.Equals("BottleCaps")) {
+            Flags.Add("", true);
+            SetCurrentChildState("No hints");
+        } else if(interaction.InteractionName.Equals("MedicalBills")) {
+            Flags.Add("", true);
+            SetCurrentGrandpaState("No hints");
+        } else if(interaction.InteractionName.Equals("Grenade")) {
+            // Check for bravery
+            Flags.Add("", true);
+            SetCurrentGrandpaState("No hints");
+        } else if(interaction.InteractionName.Equals("Volunteer")) {
+            // Trigger grenade throw, maybe captain says something
+            Flags.Add("", true);
+        } else if(interaction.InteractionName.Equals("DrunkPa")) {
+            // Tattoo change, fade to house after tattoo sounds
+            Flags.Add("", true);
+            SetCurrentGrandpaState("No hints");
+        } else if(interaction.InteractionName.Equals("StreetPa")) {
+            Flags.Add("", true);
+            // Game over
+        }
+    }
+    
+    public bool QueryFlag(string name) {
+        return Flags.ContainsKey(name) && Flags[name];
     }
     
     private void ListenForPause()
@@ -99,5 +166,21 @@ public class GameStateManager : MonoBehaviour {
         //         Time.timeScale = 1;
         //     }
         // }
+    }
+    
+    private void SetCurrentGrandpaState(string stateName) {
+        foreach(GameState state in GrandpaStates) {
+            if(state.StateName.Equals(stateName)) {
+                CurrentGrandpaState = state;
+            }
+        }
+    }
+    
+    private void SetCurrentChildState(string stateName) {
+        foreach(GameState state in ChildStates) {
+            if(state.StateName.Equals(stateName)) {
+                CurrentChildState = state;
+            }
+        }
     }
 }
