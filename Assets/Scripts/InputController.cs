@@ -195,12 +195,12 @@ public class InputController : MonoBehaviour {
 
     private void AnimatePlayer()
     {
-        Debug.Log(System.String.Format("Jump: {0}", isCurrentAnimation(getAnimationName("Jump"))));
-        Debug.Log(System.String.Format("Charge: {0}", isCurrentAnimation(getAnimationName("Charge"))));
-        Debug.Log(System.String.Format("Walk: {0}", isCurrentAnimation(getAnimationName("Walk"))));
-        Debug.Log(System.String.Format("Idle: {0}", isCurrentAnimation(getAnimationName("Idle"))));
-        Debug.Log(currentAnimation);
-        Debug.Log(animationPlayedTimes());
+        // Debug.Log(System.String.Format("Jump: {0}", isCurrentAnimation(getAnimationName("Jump"))));
+        // Debug.Log(System.String.Format("Charge: {0}", isCurrentAnimation(getAnimationName("Charge"))));
+        // Debug.Log(System.String.Format("Walk: {0}", isCurrentAnimation(getAnimationName("Walk"))));
+        // Debug.Log(System.String.Format("Idle: {0}", isCurrentAnimation(getAnimationName("Idle"))));
+        // Debug.Log(currentAnimation);
+        // Debug.Log(animationPlayedTimes());
 
         // Figure out what actual animation is playing right now
         int actualAnimation = -1;
