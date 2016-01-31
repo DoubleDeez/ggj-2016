@@ -36,6 +36,13 @@ public class GameStateManager : MonoBehaviour {
     /** CHAT BUBBLES */
     public GameObject Grandpa_MomSaysWakeUp;
     public GameObject Grandpa_SexyTime;
+    public GameObject Grandpa_Static;
+    public GameObject Grandpa_Monitor;
+    
+    public GameObject Child_MomMessage;
+    public GameObject Child_Captain;
+    public GameObject Child_GrandpaWW2;
+    public GameObject Child_Bar;
     /** END CHAT BUBBLES */
     
     private bool GameIsPaused;
