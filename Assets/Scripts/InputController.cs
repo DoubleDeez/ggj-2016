@@ -97,7 +97,7 @@ public class InputController : MonoBehaviour {
         if (!GameState.IsGamePaused())
         {
             HandlePlayerInput();
-            AnimateWalk();
+            AnimatePlayer();
             ReadDebug();
         }
         // Debug work
@@ -193,8 +193,7 @@ public class InputController : MonoBehaviour {
         return PlayerPhysics.velocity.y < 0.001f && PlayerPhysics.velocity.y > -0.001f;
     }
 
-
-    private void AnimateWalk()
+    private void AnimatePlayer()
     {
         Debug.Log(System.String.Format("Jump: {0}", isCurrentAnimation(getAnimationName("Jump"))));
         Debug.Log(System.String.Format("Charge: {0}", isCurrentAnimation(getAnimationName("Charge"))));
@@ -203,6 +202,7 @@ public class InputController : MonoBehaviour {
         Debug.Log(currentAnimation);
         Debug.Log(animationPlayedTimes());
 
+        // Figure out what actual animation is playing right now
         int actualAnimation = -1;
         foreach (KeyValuePair<int, string> entry in state_to_name) {
             if (isCurrentAnimation(getAnimationName(entry.Value))) {
@@ -210,6 +210,7 @@ public class InputController : MonoBehaviour {
             }
         }
 
+        // If we want to jump, stop whatever we're doing currently and jump
         if (actualAnimation != currentAnimation &&
             currentAnimation == (int) AnimStates.Jump) {
                 PlayerAnimator.SetInteger("state", currentAnimation);
@@ -218,7 +219,7 @@ public class InputController : MonoBehaviour {
             }
 
         if (actualAnimation == currentAnimation
-            && animationPlayedTimes() >= 0.9f) {
+            && animationPlayedTimes() >= 0.95f) {
             currentAnimation = (int) AnimStates.Idle;
         }
 
