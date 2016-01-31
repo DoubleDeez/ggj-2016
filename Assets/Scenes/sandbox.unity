@@ -3549,6 +3549,10 @@ Prefab:
       propertyPath: ChatText.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: ChildStates.Array.data[7].Hints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3800,6 +3804,26 @@ Prefab:
     - target: {fileID: 22467888, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
       propertyPath: m_SizeDelta.y
       value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: ChildStates.Array.data[1].Hints.Array.data[0]
+      value: I wish I asked Gramps about his itme in the war...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: ChildStates.Array.data[1].StateName
+      value: I'm Late
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: ChildStates.Array.data[7].Hints.Array.data[2]
+      value: (Prank time, Haha!)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: ChildStates.Array.data[7].Hints.Array.data[1]
+      value: (Go home, Gramps, you're drunk...)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: ChildStates.Array.data[7].Hints.Array.data[0]
+      value: (Gramps won't recognize me for decades...)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
