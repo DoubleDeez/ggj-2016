@@ -1886,6 +1886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DEBUG_BypassTeleportRestictions: 1
   PlayerNumber: 1
+  CurrentLevel: House
   HintDisplayTime: 2
   PlayerHintBubble: {fileID: 124788}
   PrimaryScheme: {fileID: 9100000, guid: c8e9faca11a579743801fd65f4a32f85, type: 2}
@@ -1964,6 +1965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DEBUG_BypassTeleportRestictions: 0
   PlayerNumber: 2
+  CurrentLevel: House
   HintDisplayTime: 2
   PlayerHintBubble: {fileID: 167154}
   PrimaryScheme: {fileID: 0}

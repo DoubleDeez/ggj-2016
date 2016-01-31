@@ -1252,7 +1252,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fb68814f4be494a63952f6e80a6e341c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2162,6 +2162,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &611360369 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974,
+    type: 2}
+  m_PrefabInternal: {fileID: 1161054858}
+  m_Script: {fileID: 11500000, guid: 66385e9081147564baa2ecbdbdb6274b, type: 3}
 --- !u!114 &623649553 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974,
@@ -4400,6 +4406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bd65c92d6be4986ab992d437b5abbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teenager: {fileID: 611360369}
+  grandpa: {fileID: 1946301215}
 --- !u!1 &1489240174
 GameObject:
   m_ObjectHideFlags: 0
@@ -6295,6 +6303,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1946301215 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974,
+    type: 2}
+  m_PrefabInternal: {fileID: 1161054858}
+  m_Script: {fileID: 11500000, guid: 66385e9081147564baa2ecbdbdb6274b, type: 3}
 --- !u!1 &1952495668 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 122914, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
