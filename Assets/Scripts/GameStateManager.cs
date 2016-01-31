@@ -99,51 +99,60 @@ public class GameStateManager : MonoBehaviour {
             // @TODO : Activate dpad UI with diary - can now tp to baby room
             Flags.Add("BABY_TELEPORT", true);
             SetCurrentGrandpaState("No hints");
-        } else if(interaction.InteractionName.Equals("BackyardFootbal")) {
-            // @TODO : Kid can tackle, play animation
-            Flags.Add("BACKYARD_FOOTBALL", true);
+        } else if(interaction.InteractionName.Equals("BackyardFootball")) {
+            // @TODO : play animation
+            Flags.Add("CAN_TACKLE", true);
             SetCurrentGrandpaState("No hints");
         } else if(interaction.InteractionName.Equals("SexyTimeCloset")) {
             Flags.Add("BABY_CHANGE", true);
         } else if(interaction.InteractionName.Equals("BabyMonitor")) {
-            // Static if no hearing
-            // Parents fighting if has hearing
-            Flags.Add("", true);
+            if(QueryFlag("HAS_HEARING")) {
+                Flags.Add("HEARD_FIGHTING", true);
+            } else {
+                Flags.Add("HEARD_STATIC", true);
+            }
         } else if(interaction.InteractionName.Equals("BabyMobile")) {
             // @TODO save colour on right and set wallpaper for child
-            Flags.Add("", true);
+            Flags.Add("CHANGED_WALLPAPER", true);
         } else if(interaction.InteractionName.Equals("Infant")) {
-            // Check for no walker
-            Flags.Add("", true);
-            SetCurrentGrandpaState("No hints");
+            if(QueryFlag("NO_WALKER")) {
+                Flags.Add("IS_BRAVE", true);
+                SetCurrentGrandpaState("No hints");
+            }
         }
         // Child's Interactions
         else if(interaction.InteractionName.Equals("HonorMedal")) {
-            Flags.Add("", true);
+            // @TODO : Activate dpad UI with Medal - can now tp to ww2
+            Flags.Add("WW2_TELEPORT", true);
             SetCurrentChildState("TheBox");
         } else if(interaction.InteractionName.Equals("HeirloomKid")) {
-            Flags.Add("", true);
+            // @TODO : Activate dpad UI
+            Flags.Add("CHILD_HEIRLOOM", true);
             SetCurrentChildState("No hints");
         } else if(interaction.InteractionName.Equals("BottleCaps")) {
-            Flags.Add("", true);
+            // @TODO : Activate dpad UI with bottle caps - can now tp to ww2bar
+            Flags.Add("BAR_TELEPORT", true);
             SetCurrentChildState("No hints");
         } else if(interaction.InteractionName.Equals("MedicalBills")) {
-            Flags.Add("", true);
+            // @TODO : Activate dpad UI with med bills - can now tp to street
+            Flags.Add("STREET_TELEPORT", true);
             SetCurrentGrandpaState("No hints");
         } else if(interaction.InteractionName.Equals("Grenade")) {
-            // Check for bravery
-            Flags.Add("", true);
-            SetCurrentGrandpaState("No hints");
+            if(QueryFlag("IS_BRAVE") && QueryFlag("VOLUNTEERED")) {
+                Flags.Add("HAS_HEARING", true);
+                SetCurrentGrandpaState("No hints");
+            }
         } else if(interaction.InteractionName.Equals("Volunteer")) {
             // Trigger grenade throw, maybe captain says something
-            Flags.Add("", true);
+            Flags.Add("VOLUNTEERED", true);
         } else if(interaction.InteractionName.Equals("DrunkPa")) {
             // Tattoo change, fade to house after tattoo sounds
-            Flags.Add("", true);
+            Flags.Add("WHISPERED", true);
             SetCurrentGrandpaState("No hints");
         } else if(interaction.InteractionName.Equals("StreetPa")) {
-            Flags.Add("", true);
-            // Game over
+            if(QueryFlag("CAN_TACKLE") && QueryFlag("STREET_TELEPORT")) {
+                Flags.Add("NO_WALKER", true);
+            }
         }
     }
     
