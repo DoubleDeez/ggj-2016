@@ -29,30 +29,43 @@ public class GameStateManager : MonoBehaviour {
     public GameObject Grandpa;
     public GameObject Child;
     
+    public float DelayToBegin = 3.0f;
+    
+    /** CHAT BUBBLES */
+    public GameObject Grandpa_MomSaysWakeUp;
+    /** END CHAT BUBBLES */
+    
     private bool GameIsPaused;
     private bool InputDisabled;
     private GameState CurrentGrandpaState;
     private GameState CurrentChildState;
     
     private Dictionary<string, bool> Flags;
+    
+    private float StartTime;
 
 	// Use this for initialization
 	void Start () {
         Flags = new Dictionary<string, bool>();
         GameIsPaused = false;
-        InputDisabled = false;
+        InputDisabled = true;
         CurrentGrandpaState = GrandpaStates[0];
         CurrentChildState = ChildStates[0];
         Player grandpaPlayer = Grandpa.GetComponent<Player>();
         grandpaPlayer.SetHints(CurrentGrandpaState.Hints);
         Player childPlayer = Child.GetComponent<Player>();
         childPlayer.SetHints(CurrentChildState.Hints);
+        StartTime = Time.time + DelayToBegin;
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
 	   ListenForPause();
+       if(Time.time > StartTime) {
+           StartTime = float.MaxValue;
+           InputDisabled = false;
+       }
 	}
     
     void OnValidate() {
@@ -83,8 +96,6 @@ public class GameStateManager : MonoBehaviour {
     public void DoInteraction(LevelInteraction interaction) {
         // Grandpa Interactions
         if(interaction.InteractionName.Equals("Football")) {
-            // @TODO : Grandpa needs to say a message here
-            // @TODO : Make heirloom glow
             SetFlag("FOOTBALL_TELEPORT", true);
             SetCurrentGrandpaState("GlowingHeirloom");
             Grandpa.GetComponent<Player>().EnableGate("right");
