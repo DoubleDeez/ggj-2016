@@ -5257,19 +5257,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22411020, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 5.33
+      value: 9.86
       objectReference: {fileID: 0}
     - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: ChatText.Array.data[0]
-      value: HONEY, GET UP!!!
+      value: How's your essay going, sweetie?
       objectReference: {fileID: 0}
     - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: ChatText.Array.data[1]
-      value: YOU'RE LATE FOR SCHOOL!!
+      value: I brought down Grandpa's things for you!
       objectReference: {fileID: 0}
     - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: ChatText.Array.data[2]
-      value: Grab your show&tell project and GET MOVING!!!!!
+      value: Have fun studying, honeybunches!!!
       objectReference: {fileID: 0}
     - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: ChatText.Array.data[3]
