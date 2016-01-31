@@ -816,9 +816,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66385e9081147564baa2ecbdbdb6274b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DEBUG_BypassTeleportRestictions: 0
   PlayerNumber: 1
   HintDisplayTime: 2
   PlayerHintBubble: {fileID: 120498}
+  PrimaryScheme: {fileID: 0}
+  SecondaryScheme: {fileID: 0}
+  TeleportFadeSpeed: 1.5
+  TeleportFadeDuration: 2
+  TeleportFadeTint: {r: 1, g: 1, b: 1, a: 1}
+  FadeUI: {fileID: 0}
+  WalkingSound: {fileID: 0}
+  RunningSound: {fileID: 0}
   Heirloom: {fileID: 0}
   UpSpawn: {fileID: 0}
   DownSpawn: {fileID: 0}
@@ -829,6 +838,7 @@ MonoBehaviour:
   HeirloomLeft: {fileID: 0}
   HeirloomRight: {fileID: 0}
   HeirloomDown: {fileID: 0}
+  AlternateSprite: {fileID: 0}
 --- !u!114 &11410588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1138,6 +1148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerVelocity: 6
   PlayerJumpHeight: 6
+  PlayerChargeMultiplier: 3
   InvertXAxis: 0
   XboxInput: 1
 --- !u!114 &11442926
@@ -1301,6 +1312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerVelocity: 6
   PlayerJumpHeight: 6
+  PlayerChargeMultiplier: 3
   InvertXAxis: 0
   XboxInput: 2
 --- !u!114 &11485882
@@ -1362,9 +1374,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66385e9081147564baa2ecbdbdb6274b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DEBUG_BypassTeleportRestictions: 0
   PlayerNumber: 2
   HintDisplayTime: 2
   PlayerHintBubble: {fileID: 152370}
+  PrimaryScheme: {fileID: 0}
+  SecondaryScheme: {fileID: 0}
+  TeleportFadeSpeed: 1.5
+  TeleportFadeDuration: 2
+  TeleportFadeTint: {r: 1, g: 1, b: 1, a: 1}
+  FadeUI: {fileID: 0}
+  WalkingSound: {fileID: 0}
+  RunningSound: {fileID: 0}
   Heirloom: {fileID: 0}
   UpSpawn: {fileID: 0}
   DownSpawn: {fileID: 0}
@@ -1375,6 +1396,7 @@ MonoBehaviour:
   HeirloomLeft: {fileID: 0}
   HeirloomRight: {fileID: 0}
   HeirloomDown: {fileID: 0}
+  AlternateSprite: {fileID: 0}
 --- !u!114 &11495686
 MonoBehaviour:
   m_ObjectHideFlags: 1
