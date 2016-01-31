@@ -253,6 +253,7 @@ public class Player : MonoBehaviour {
                 CurrentLevel = "Backyard";
             } else {
                 GameManager.SetCurrentChildState("WW2");
+                CurrentLevel = "WW2";
             }
         }
     }
