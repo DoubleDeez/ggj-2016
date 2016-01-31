@@ -114,6 +114,23 @@ public class GameStateManager : MonoBehaviour {
             Flags.Add("", true);
         }
         // Child's Interactions
+        else if(interaction.InteractionName.Equals("HonorMedal")) {
+            Flags.Add("", true);
+        } else if(interaction.InteractionName.Equals("HeirloomKid")) {
+            Flags.Add("", true);
+        } else if(interaction.InteractionName.Equals("BottleCaps")) {
+            Flags.Add("", true);
+        } else if(interaction.InteractionName.Equals("MedicalBills")) {
+            Flags.Add("", true);
+        }  else if(interaction.InteractionName.Equals("Grenade")) {
+            Flags.Add("", true);
+        } else if(interaction.InteractionName.Equals("Volunteer")) {
+            Flags.Add("", true);
+        } else if(interaction.InteractionName.Equals("DrunkPa")) {
+            Flags.Add("", true);
+        } else if(interaction.InteractionName.Equals("StreetPa")) {
+            Flags.Add("", true);
+        }
     }
     
     private void ListenForPause()
