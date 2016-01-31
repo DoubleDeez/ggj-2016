@@ -76,7 +76,7 @@ public class Player : MonoBehaviour {
     public void OnDPadUp()
     {
         //Teleport to the Footbal Spawn
-        if( GameManager.QueryFlag("FOOTBALL_TELEPORT") && UpSpawn!=null)
+        if( (GameManager.QueryFlag("FOOTBALL_TELEPORT") || GameManager.QueryFlag("WW2_TELEPORT") ) && UpSpawn!=null)
         {
             UpSpawn.TeleportPlayer(this);
         }
@@ -85,7 +85,7 @@ public class Player : MonoBehaviour {
     public void OnDPadDown()
     {
         //Teleport to Main Hub
-        if(GameManager.QueryFlag("GRANDPA_HEIRLOOM") && DownSpawn!=null)
+        if( (GameManager.QueryFlag("GRANDPA_HEIRLOOM") || GameManager.QueryFlag("CHILD_HEIRLOOM") ) && DownSpawn!=null)
         {
             DownSpawn.TeleportPlayer(this);
         }
@@ -94,7 +94,7 @@ public class Player : MonoBehaviour {
     public void OnDPadLeft()
     {
         //Teleport to Diary
-        if(GameManager.QueryFlag("") && LeftSpawn!=null)
+        if( (GameManager.QueryFlag("DIARY_TELEPORT") || GameManager.QueryFlag("BAR_TELEPORT")) && LeftSpawn!=null)
         {
             LeftSpawn.TeleportPlayer(this);
         }
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour {
     public void OnDPadRight()
     {
         //Teleport to Backyard
-        if(GameManager.QueryFlag("") && RightSpawn!=null)
+        if( (GameManager.QueryFlag("BABY_TELEPORT") || GameManager.QueryFlag("STREET_TELEPORT")) && RightSpawn!=null)
         {
             RightSpawn.TeleportPlayer(this);
         }
