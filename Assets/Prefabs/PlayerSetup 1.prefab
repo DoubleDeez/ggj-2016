@@ -1131,6 +1131,7 @@ MonoBehaviour:
     Hints: []
   Grandpa: {fileID: 112134}
   Child: {fileID: 130816}
+  Car: {fileID: 0}
   DelayToBegin: 3
   SexyTimeDarkness: {fileID: 0}
   Grandpa_MomSaysWakeUp: {fileID: 0}
@@ -1886,6 +1887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DEBUG_BypassTeleportRestictions: 1
   PlayerNumber: 1
+  CurrentLevel: House
   HintDisplayTime: 2
   PlayerHintBubble: {fileID: 124788}
   PrimaryScheme: {fileID: 9100000, guid: c8e9faca11a579743801fd65f4a32f85, type: 2}
@@ -1894,8 +1896,7 @@ MonoBehaviour:
   TeleportFadeDuration: 1
   TeleportFadeTint: {r: 1, g: 1, b: 1, a: 1}
   FadeUI: {fileID: 11484470}
-  WalkingSound: {fileID: 8300000, guid: 076a038b883e4491caec25e64aa50ae2, type: 3}
-  RunningSound: {fileID: 8300000, guid: fcba3ae31fce3420d93e4921437686be, type: 3}
+  TeleportSound: {fileID: 0}
   Heirloom: {fileID: 0}
   UpSpawn: {fileID: 0}
   DownSpawn: {fileID: 0}
@@ -1964,6 +1965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DEBUG_BypassTeleportRestictions: 0
   PlayerNumber: 2
+  CurrentLevel: House
   HintDisplayTime: 2
   PlayerHintBubble: {fileID: 167154}
   PrimaryScheme: {fileID: 0}
@@ -1972,8 +1974,7 @@ MonoBehaviour:
   TeleportFadeDuration: 1
   TeleportFadeTint: {r: 1, g: 1, b: 1, a: 1}
   FadeUI: {fileID: 11404258}
-  WalkingSound: {fileID: 0}
-  RunningSound: {fileID: 0}
+  TeleportSound: {fileID: 0}
   Heirloom: {fileID: 0}
   UpSpawn: {fileID: 0}
   DownSpawn: {fileID: 0}

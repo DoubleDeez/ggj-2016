@@ -33,3 +33,5 @@ sysinfo.txt
 
 # Build/Binaries
 build/
+
+*.app

@@ -39,8 +39,6 @@ public class InputController : MonoBehaviour
     private float TranslationMovement;
     private string _currentDirection = "right";
 
-    private AudioSource audioSource;
-
     private const int KID_PLAYER_NUM = 2;
     private const int GRANDPA_PLAYER_NUM = 1;
 
@@ -63,8 +61,6 @@ public class InputController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-
         // Define state to name mapping for animations
         state_to_name.Add(0, "Idle");
         state_to_name.Add(1, "Walk");
@@ -92,7 +88,6 @@ public class InputController : MonoBehaviour
             if (MainPlayer != null && PlayerPhysics != null)
             {
                 PlayerNumber = (int)XboxInput;
-                Debug.Log("Setting up for input Player " + PlayerNumber);
                 //No setup anymore!
             }
         }
@@ -124,8 +119,11 @@ public class InputController : MonoBehaviour
         {
             foreach (GameStateManager.LevelInteraction interaction in MainPlayer.GetLevelInteractionsColliding())
             {
-                interaction.HasBeenInteracted = true;
-                GameState.DoInteraction(interaction);
+                if(!interaction.HasBeenInteracted) {
+                    interaction.HasBeenInteracted = true;
+                    GameState.DoInteraction(interaction);
+                    GameObject.Find(interaction.InteractionName).SetActive(false);
+                }
             }
         }
 
@@ -269,31 +267,16 @@ public class InputController : MonoBehaviour
         PlayerAnimator.SetInteger("state", currentAnimation);
     }
 
-    private void _playSound(AudioClip sound)
-    {
-        if (sound != audioSource.clip || !audioSource.isPlaying)
-        {
-            audioSource.clip = sound;
-            audioSource.Play();
-        }
-    }
-
     private void playSoundForAnim(int anim)
     {
         // @TODO Add sounds for rest of animations
         if (anim == (int)AnimStates.Charge)
         {
-            _playSound(playerRunningSound);
+            MainPlayer._playSound(playerRunningSound);
         }
         else if (anim == (int)AnimStates.Walk)
         {
-            _playSound(playerWalkingSound);
-        }
-        else
-        {
-            Debug.LogWarning(
-                System.String.Format("No such sound for anim {0}", anim)
-            );
+            MainPlayer._playSound(playerWalkingSound);
         }
     }
 

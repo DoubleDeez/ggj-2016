@@ -57,12 +57,14 @@ public class ChatBubbleController : MonoBehaviour {
 	}
     
     void UpdateText() {
-        int chatIndex = ((int)Time.time % (int)(ChatTextTime * ChatText.Count)) / (int)ChatTextTime;
-        TextObject.text = ChatText[chatIndex];
-        TextObject.fontSize = FontSize;
-        GUIStyle style = new GUIStyle();
-        style.fontSize = FontSize;
-        Canvas.sizeDelta = (style.CalcSize(new GUIContent(ChatText[chatIndex])) + Padding) / 100;
+        if(ChatTextTime > 0 && ChatText.Count > 0) {
+            int chatIndex = (int)(((int)Time.time % (int)(ChatTextTime * ChatText.Count)) / ChatTextTime);
+            TextObject.text = ChatText[chatIndex];
+            TextObject.fontSize = FontSize;
+            GUIStyle style = new GUIStyle();
+            style.fontSize = FontSize;
+            Canvas.sizeDelta = (style.CalcSize(new GUIContent(ChatText[chatIndex])) + Padding) / 100;
+        }
     }
     
     public void Trigger() {
