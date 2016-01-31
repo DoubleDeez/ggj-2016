@@ -9,6 +9,7 @@ public class KidHouse : MonoBehaviour {
     public GameObject Box;
     public GameObject Medal;
     public GameObject Bottlecaps;
+    public GameObject MedicalBills;
 
     private SpriteRenderer OpenDoorRenderer;
     private float StartTime=0.0f;
@@ -64,12 +65,16 @@ public class KidHouse : MonoBehaviour {
               {
                   Medal.SetActive(true);
               }
-              if(Bottlecaps!=null)
-              {
-                  Bottlecaps.SetActive(true);
-              }
               //End it here
               IsPlayingScript = false;
+          }
+        if(distance < 1.5f && Bottlecaps!=null)
+        {
+            Bottlecaps.SetActive(true);
+        }
+          
+          if(distance < 4.7f && MedicalBills!=null) {
+            MedicalBills.SetActive(true);
           }
        }
 	}
