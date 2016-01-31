@@ -45,9 +45,12 @@ public class SpawnPoint : MonoBehaviour {
         PreviousPlayerPosition = new Vector3(aPlayer.transform.position.x,aPlayer.transform.position.y,aPlayer.transform.position.z);
         aPlayer.transform.position = this.transform.position;
         
-        TimeStarted = Time.time;
-        IsCountingTime = true;
-        TimeRemaining = TimeLimitInSeconds;
+        if(!aPlayer.DEBUG_BypassTeleportRestictions)
+        {
+            TimeStarted = Time.time;
+            IsCountingTime = true;
+            TimeRemaining = TimeLimitInSeconds;
+        }
     }
     
     private void RecallPlayer()
