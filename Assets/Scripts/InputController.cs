@@ -50,12 +50,23 @@ public class InputController : MonoBehaviour {
         Walk=1,
         Whisper=7
     }
+    private Dictionary<int, string> state_to_name = new Dictionary<int, string>();
 
     private int currentAnimation = (int) AnimStates.Idle;
 
 	// Use this for initialization
 	void Start ()
     {
+       // Define state to name mapping for animations
+       state_to_name.Add(0, "Idle");
+       state_to_name.Add(1, "Walk");
+       state_to_name.Add(2, "Charge");
+       state_to_name.Add(3, "Grenade");
+       state_to_name.Add(4, "Jump");
+       state_to_name.Add(5, "Scared");
+       state_to_name.Add(6, "Touch");
+       state_to_name.Add(7, "Whisper");
+
        GameState = FindObjectOfType<GameStateManager>();
 
 	   if(GameState==null)
@@ -192,27 +203,6 @@ public class InputController : MonoBehaviour {
         Debug.Log(currentAnimation);
         Debug.Log(animationPlayedTimes());
 
-        //     private enum AnimStates {
-    //     Idle=0,
-    //     Charge=2,
-    //     Grenade=3,
-    //     Jump=4,
-    //     Scared=5,
-    //     Touch=6,
-    //     Walk=1,
-    //     Whisper=7
-    // }
-        Dictionary<int, string> state_to_name = new Dictionary<int, string>();
-
-        state_to_name.Add(0, "Idle");
-        state_to_name.Add(1, "Walk");
-        state_to_name.Add(2, "Charge");
-        state_to_name.Add(3, "Grenade");
-        state_to_name.Add(4, "Jump");
-        state_to_name.Add(5, "Scared");
-        state_to_name.Add(6, "Touch");
-        state_to_name.Add(7, "Whisper");
-
         int actualAnimation = -1;
         foreach (KeyValuePair<int, string> entry in state_to_name) {
             if (isCurrentAnimation(getAnimationName(entry.Value))) {
@@ -243,9 +233,7 @@ public class InputController : MonoBehaviour {
             }
         }
         PlayerAnimator.SetInteger("state", currentAnimation);
-
-        // PlayerAnimator.Play(state_to_name[currentAnimation], 0);
-        }
+    }
 
     public bool Interacted() {
         return IsInteracting;
