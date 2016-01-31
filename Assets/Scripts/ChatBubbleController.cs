@@ -10,9 +10,18 @@ public class ChatBubbleController : MonoBehaviour {
     public Vector2 Padding = new Vector2(25,40);
     public Text TextObject;
     public RectTransform Canvas;
+    
+    public bool IsTriggered = false;
+    public bool LoopTrigger = false;
+    
+    private bool IsCycling = false;
+    private float CycleNextLineTime;
+    private int CycleChatIndex = 0;
 
 	void Start () {
-	
+	   if(IsTriggered) {
+           gameObject.SetActive(false);
+       }
 	}
     
     void OnValidate() {
@@ -20,7 +29,31 @@ public class ChatBubbleController : MonoBehaviour {
     }
 	
 	void Update () {
-        UpdateText();
+        if(IsTriggered) {
+            if(IsCycling) {
+                TextObject.text = ChatText[CycleChatIndex];
+                TextObject.fontSize = FontSize;
+                GUIStyle style = new GUIStyle();
+                style.fontSize = FontSize;
+                Canvas.sizeDelta = (style.CalcSize(new GUIContent(ChatText[CycleChatIndex])) + Padding) / 100;
+                if(Time.time > CycleNextLineTime) {
+                    if(CycleChatIndex >= ChatText.Count) {
+                        if(LoopTrigger) {
+                            CycleChatIndex = 0;
+                            CycleNextLineTime = Time.time + ChatTextTime;
+                        } else {
+                            IsCycling = false;
+                            gameObject.SetActive(false);
+                        }
+                    } else {
+                        CycleChatIndex++;
+                        CycleNextLineTime = Time.time + ChatTextTime;
+                    }
+                }
+            }
+        } else {
+            UpdateText();
+        }
 	}
     
     void UpdateText() {
@@ -30,5 +63,11 @@ public class ChatBubbleController : MonoBehaviour {
         GUIStyle style = new GUIStyle();
         style.fontSize = FontSize;
         Canvas.sizeDelta = (style.CalcSize(new GUIContent(ChatText[chatIndex])) + Padding) / 100;
+    }
+    
+    public void Trigger() {
+        IsCycling = true;
+        gameObject.SetActive(true);
+        CycleNextLineTime = Time.time + ChatTextTime;
     }
 }

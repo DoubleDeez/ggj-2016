@@ -29,30 +29,47 @@ public class GameStateManager : MonoBehaviour {
     public GameObject Grandpa;
     public GameObject Child;
     
+    public float DelayToBegin = 3.0f;
+    
+    public GameObject SexyTimeDarkness;
+    
+    /** CHAT BUBBLES */
+    public GameObject Grandpa_MomSaysWakeUp;
+    public GameObject Grandpa_SexyTime;
+    /** END CHAT BUBBLES */
+    
     private bool GameIsPaused;
     private bool InputDisabled;
     private GameState CurrentGrandpaState;
     private GameState CurrentChildState;
     
     private Dictionary<string, bool> Flags;
+    
+    private float StartTime;
 
 	// Use this for initialization
 	void Start () {
         Flags = new Dictionary<string, bool>();
         GameIsPaused = false;
-        InputDisabled = false;
+        InputDisabled = true;
         CurrentGrandpaState = GrandpaStates[0];
         CurrentChildState = ChildStates[0];
         Player grandpaPlayer = Grandpa.GetComponent<Player>();
         grandpaPlayer.SetHints(CurrentGrandpaState.Hints);
         Player childPlayer = Child.GetComponent<Player>();
         childPlayer.SetHints(CurrentChildState.Hints);
+        StartTime = Time.time + DelayToBegin;
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
 	   ListenForPause();
+       if(Time.time > StartTime) {
+           StartTime = float.MaxValue;
+           InputDisabled = false;
+           Grandpa_MomSaysWakeUp.GetComponent<ChatBubbleController>().Trigger();
+       }
 	}
     
     void OnValidate() {
@@ -83,23 +100,18 @@ public class GameStateManager : MonoBehaviour {
     public void DoInteraction(LevelInteraction interaction) {
         // Grandpa Interactions
         if(interaction.InteractionName.Equals("Football")) {
-            // @TODO : Grandpa needs to say a message here
-            // @TODO : Make heirloom glow
             SetFlag("FOOTBALL_TELEPORT", true);
             SetCurrentGrandpaState("GlowingHeirloom");
             Grandpa.GetComponent<Player>().EnableGate("right");
         } else if(interaction.InteractionName.Equals("HeirloomGrandpa")) {
-            // @TODO : Activate dpad UI with football - can now tp to backyard
             SetFlag("GRANDPA_HEIRLOOM", true);
             Grandpa.GetComponent<Player>().EnableHeirloom(true);
             SetCurrentGrandpaState("No hints");
         } else if(interaction.InteractionName.Equals("Diary")) {
-            // @TODO : Activate dpad UI with diary - can now tp to bedroom
             SetFlag("DIARY_TELEPORT", true);
             SetCurrentGrandpaState("No hints");
             Grandpa.GetComponent<Player>().EnableGate("down");
         } else if(interaction.InteractionName.Equals("CribBox")) {
-            // @TODO : Activate dpad UI with diary - can now tp to baby room
             SetFlag("BABY_TELEPORT", true);
             SetCurrentGrandpaState("No hints");
             Grandpa.GetComponent<Player>().EnableGate("left");
@@ -109,6 +121,8 @@ public class GameStateManager : MonoBehaviour {
             SetCurrentGrandpaState("No hints");
         } else if(interaction.InteractionName.Equals("SexyTimeCloset")) {
             SetFlag("BABY_CHANGE", true);
+            SexyTimeDarkness.SetActive(false);
+            Grandpa_SexyTime.GetComponent<ChatBubbleController>().Trigger();
         } else if(interaction.InteractionName.Equals("BabyMonitor")) {
             if(QueryFlag("HAS_HEARING")) {
                 SetFlag("HEARD_FIGHTING", true);
@@ -116,7 +130,7 @@ public class GameStateManager : MonoBehaviour {
                 SetFlag("HEARD_STATIC", true);
             }
         } else if(interaction.InteractionName.Equals("BabyMobile")) {
-            // @TODO save colour on right and set wallpaper for child
+            // @TODO save colour on right of mobile and set wallpaper for child
             SetFlag("CHANGED_WALLPAPER", true);
         } else if(interaction.InteractionName.Equals("Infant")) {
             if(QueryFlag("NO_WALKER")) {
@@ -176,10 +190,6 @@ public class GameStateManager : MonoBehaviour {
         AudioSource audioSource = GetComponent<AudioSource>();
         audioSource.clip = sound;
         audioSource.Play();
-    }
-    
-    public AudioSource GetAudioSource() {
-        return GetComponent<AudioSource>();
     }
     
     private void ListenForPause()

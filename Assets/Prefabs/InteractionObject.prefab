@@ -58,6 +58,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 430940}
   - 212: {fileID: 21248660}
+  - 95: {fileID: 9505792}
   m_Layer: 0
   m_Name: InteractionIcon
   m_TagString: Untagged
@@ -130,6 +131,23 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!95 &9505792
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188852}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11478950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a737df5821e470a99edcad38f310fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameState: {fileID: 0}
   InteractionIcon: {fileID: 188852}
   InteractionObjectDefault: {fileID: 111350}
   InteractionIconHighlighted: {fileID: 183884}
