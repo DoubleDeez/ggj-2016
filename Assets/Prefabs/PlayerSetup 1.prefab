@@ -1131,6 +1131,8 @@ MonoBehaviour:
     Hints: []
   Grandpa: {fileID: 112134}
   Child: {fileID: 130816}
+  DelayToBegin: 3
+  Grandpa_MomSaysWakeUp: {fileID: 0}
 --- !u!114 &11401918
 MonoBehaviour:
   m_ObjectHideFlags: 1
