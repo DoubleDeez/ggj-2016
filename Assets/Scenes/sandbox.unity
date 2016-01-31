@@ -3825,6 +3825,10 @@ Prefab:
       propertyPath: ChildStates.Array.data[7].Hints.Array.data[0]
       value: (Gramps won't recognize me for decades...)
       objectReference: {fileID: 0}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: GrandpaStates.Array.data[0].Hints.Array.data[0]
+      value: So much crap for a kid who's not even born yet...
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
   m_IsPrefabParent: 0
