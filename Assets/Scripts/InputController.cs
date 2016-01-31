@@ -17,6 +17,7 @@ public class InputController : MonoBehaviour {
     public bool InvertXAxis = false;
     public XboxController XboxInput;
     public AudioClip playerRunningSound;
+    public AudioClip playerWalkingSound;
 
 /// <summary>
 /// Private Variables
@@ -245,13 +246,20 @@ public class InputController : MonoBehaviour {
         PlayerAnimator.SetInteger("state", currentAnimation);
     }
 
+    private void _playSound(AudioClip sound) {
+        if (sound != audioSource.clip || !audioSource.isPlaying) {
+            audioSource.clip = sound;
+            audioSource.Play();
+        }
+    }
+
     private void playSoundForAnim(int anim) {
         // @TODO Add sounds for rest of animations
         if (anim == (int) AnimStates.Charge) {
-            if (!audioSource.isPlaying) {
-                audioSource.clip = playerRunningSound;
-                audioSource.Play();
-            }
+            _playSound(playerRunningSound);
+        }
+        else if (anim == (int) AnimStates.Walk) {
+            _playSound(playerWalkingSound);
         }
         else {
             Debug.LogWarning(

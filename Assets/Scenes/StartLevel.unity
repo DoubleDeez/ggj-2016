@@ -249,6 +249,10 @@ Prefab:
       propertyPath: playerRunningSound
       value: 
       objectReference: {fileID: 8300000, guid: fcba3ae31fce3420d93e4921437686be, type: 3}
+    - target: {fileID: 11436144, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: playerWalkingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 076a038b883e4491caec25e64aa50ae2, type: 3}
     m_RemovedComponents:
     - {fileID: 11417710, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
