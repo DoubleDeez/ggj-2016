@@ -227,6 +227,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &151994
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 22484066}
+  - 222: {fileID: 22270712}
+  - 114: {fileID: 11423816}
+  m_Layer: 5
+  m_Name: Heirloom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &152370
 GameObject:
   m_ObjectHideFlags: 1
@@ -400,7 +417,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 76.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 456768}
@@ -480,7 +497,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8, y: 0, z: -100}
+  m_LocalPosition: {x: 2.800003, y: 0, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22458496}
@@ -624,9 +641,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.004498586, y: -0.0027395487}
+  m_Offset: {x: 0.004498577, y: -0.0016984463}
   serializedVersion: 2
-  m_Size: {x: 0.19025859, y: 0.1867404}
+  m_Size: {x: 0.1902586, y: 0.57586116}
 --- !u!61 &6114802
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -688,7 +705,7 @@ Animator:
   m_GameObject: {fileID: 171622}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 186052b007727c24daabeb234db027d9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -854,9 +871,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba41559f1a81e64ca77612ed0db36de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameLevels: []
-  GrandpaStates: []
-  ChildStates: []
+  GameLevels:
+  - Interactions:
+    - InteractionName: Football
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+    - InteractionName: HeirloomGrandpa
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+    - InteractionName: CribBox
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+    - InteractionName: Diary
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+  - Interactions:
+    - InteractionName: BackyardFootball
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+  - Interactions:
+    - InteractionName: SexyTimeCloset
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+  - Interactions:
+    - InteractionName: BabyMonitor
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+    - InteractionName: BabyMobile
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+    - InteractionName: Infant
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+  - Interactions:
+    - InteractionName: HonorMedal
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+    - InteractionName: HeirloomKid
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+    - InteractionName: BottleCaps
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+    - InteractionName: MedicalBills
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+  - Interactions:
+    - InteractionName: Grenade
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+    - InteractionName: Volunteer
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+  - Interactions:
+    - InteractionName: DrunkPa
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+  - Interactions:
+    - InteractionName: StreetPa
+      IsPlayerColliding: 0
+      HasBeenInteracted: 0
+  GrandpaStates:
+  - StateName: GameStartGramp
+    Hints:
+    - So much crap for a kid who's mot even born yet...
+  - StateName: GlowingHeirloom
+    Hints:
+    - What's that glow?
+  - StateName: No hints
+    Hints: []
+  - StateName: Backyard
+    Hints:
+    - That football's lookin' lonely...
+    - Kid just needs a little coaching...
+  - StateName: SexyTime
+    Hints:
+    - (..?)
+  - StateName: BabyRoom
+    Hints: []
+  - StateName: 
+    Hints: []
+  ChildStates:
+  - StateName: Sleep
+    Hints:
+    - Zzzz...
+  - StateName: ImLate
+    Hints:
+    - What can I bring to class?
+  - StateName: TheBox
+    Hints:
+    - What's that glow?
+  - StateName: NoHints
+    Hints: []
+  - StateName: WW2
+    Hints:
+    - Wonder how Gramps earned his medal...
+  - StateName: PostBox
+    Hints:
+    - Mom's right, I guess...
+  - StateName: CarStreet
+    Hints:
+    - Gramps? GRAMPS!
+    - Grandpa, WATCH OUT!
+    - Oh no, Gramps!!!
+  - StateName: BarWhispers
+    Hints:
+    - Gramps won't know me for decades...
+    - Prank time, Haha!
+  - StateName: 
+    Hints: []
   Grandpa: {fileID: 124656}
   Child: {fileID: 171622}
 --- !u!114 &11418438
@@ -920,6 +1043,33 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11423816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 6de1ab60e254747148f36fbc1445e961, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &11426690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -966,7 +1116,7 @@ MonoBehaviour:
   PlayerVelocity: 6
   PlayerJumpHeight: 6
   InvertXAxis: 0
-  XboxInput: 0
+  XboxInput: 1
 --- !u!114 &11442926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1129,7 +1279,7 @@ MonoBehaviour:
   PlayerVelocity: 6
   PlayerJumpHeight: 6
   InvertXAxis: 0
-  XboxInput: 0
+  XboxInput: 2
 --- !u!114 &11487990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1235,7 +1385,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 99
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -1265,9 +1415,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_SortingOrder: 99
+  m_Sprite: {fileID: 21300004, guid: d4b0502c3521274478e903756ba911ec, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!222 &22213934
@@ -1300,6 +1450,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122386}
+--- !u!222 &22270712
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151994}
 --- !u!222 &22273436
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -1477,6 +1633,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 22454510}
+  - {fileID: 22484066}
   m_Father: {fileID: 402622}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
@@ -1535,6 +1692,23 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1500, y: 176.45}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &22484066
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_Children: []
+  m_Father: {fileID: 22454552}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 50}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22490858
 RectTransform:
