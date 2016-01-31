@@ -98,7 +98,7 @@ public class InputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameState.IsGamePaused())
+        if (!GameState.IsGamePaused() && !GameState.IsInputDisabled())
         {
             HandlePlayerInput();
             AnimatePlayer();
@@ -465,4 +465,5 @@ public class InputController : MonoBehaviour
             MainPlayer.ShowHint();
         }
     }
+    
 }
