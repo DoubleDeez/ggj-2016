@@ -1,0 +1,214 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Warground
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 1.05
+        value: {x: -58, y: -1.6851841, z: 0}
+        inSlope: {x: 123.41954, y: 0, z: 0}
+        outSlope: {x: 123.41954, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: 
+  m_ScaleCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 1.05
+        value: {x: 5.566562, y: 3.0375054, z: 1}
+        inSlope: {x: 13.04732, y: 0, z: 0}
+        outSlope: {x: 13.04732, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: 
+  m_FloatCurves: []
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 99731e63bdfa0421e80f15f8d2605b44, type: 3}
+    - time: 0.15
+      value: {fileID: 21300000, guid: dca9f2c0f8a1749b0922ce07e6c46c8e, type: 3}
+    - time: 0.3
+      value: {fileID: 21300000, guid: 47e339956a87947ddbe8e2e9651f91c8, type: 3}
+    - time: 0.45
+      value: {fileID: 21300000, guid: 588227c6cb7bb4a41a04ec5f0576b8c9, type: 3}
+    - time: 0.6
+      value: {fileID: 21300000, guid: 8fa1b3157879646f5833777d0859bb47, type: 3}
+    - time: 0.75
+      value: {fileID: 21300000, guid: 3231526c9313f4cda8c930c95cbb6e0a, type: 3}
+    - time: 0.9
+      value: {fileID: 21300000, guid: 3d010aaf7c2014148bc0913b2198f20a, type: 3}
+    - time: 1.05
+      value: {fileID: 21300000, guid: 3d010aaf7c2014148bc0913b2198f20a, type: 3}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
+  m_SampleRate: 20
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - path: 0
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 0
+      attribute: 3
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 0
+      attribute: 0
+      script: {fileID: 0}
+      classID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: 99731e63bdfa0421e80f15f8d2605b44, type: 3}
+    - {fileID: 21300000, guid: dca9f2c0f8a1749b0922ce07e6c46c8e, type: 3}
+    - {fileID: 21300000, guid: 47e339956a87947ddbe8e2e9651f91c8, type: 3}
+    - {fileID: 21300000, guid: 588227c6cb7bb4a41a04ec5f0576b8c9, type: 3}
+    - {fileID: 21300000, guid: 8fa1b3157879646f5833777d0859bb47, type: 3}
+    - {fileID: 21300000, guid: 3231526c9313f4cda8c930c95cbb6e0a, type: 3}
+    - {fileID: 21300000, guid: 3d010aaf7c2014148bc0913b2198f20a, type: 3}
+    - {fileID: 21300000, guid: 3d010aaf7c2014148bc0913b2198f20a, type: 3}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 1.0999999
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 1.05
+        value: -58
+        inSlope: 123.41954
+        outSlope: 123.41954
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 1.05
+        value: -1.6851841
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 1.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 1.05
+        value: 5.566562
+        inSlope: 13.04732
+        outSlope: 13.04732
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.x
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 1.05
+        value: 3.0375054
+        inSlope: 5.821444
+        outSlope: 5.821444
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.y
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 1.05
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.z
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 1
+  m_HasMotionFloatCurves: 0
+  m_GenerateMotionCurves: 0
+  m_Events: []
