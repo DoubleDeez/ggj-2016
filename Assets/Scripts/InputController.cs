@@ -121,6 +121,7 @@ public class InputController : MonoBehaviour
             {
                 interaction.HasBeenInteracted = true;
                 GameState.DoInteraction(interaction);
+                GameObject.Find(interaction.InteractionName).SetActive(false);
             }
         }
 

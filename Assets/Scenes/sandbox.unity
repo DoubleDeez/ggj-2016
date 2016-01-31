@@ -6664,7 +6664,7 @@ MonoBehaviour:
   StartY: -10
   EndY: -20
   ScaleSpeed: 0.1
-  RunHimDown: 1
+  RunHimDown: 0
 --- !u!61 &1806578380
 BoxCollider2D:
   m_ObjectHideFlags: 0
