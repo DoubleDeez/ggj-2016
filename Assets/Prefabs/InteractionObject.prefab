@@ -59,6 +59,7 @@ GameObject:
   - 4: {fileID: 430940}
   - 212: {fileID: 21248660}
   - 95: {fileID: 9505792}
+  - 114: {fileID: 11468410}
   m_Layer: 0
   m_Name: InteractionIcon
   m_TagString: Untagged
@@ -148,6 +149,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11468410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58168120f52f54cd5a439bef2b827939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FloatingAmplitude: 0.25
+  FloatingSpeed: 1.5
 --- !u!114 &11478950
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -147,28 +147,28 @@ public class GameStateManager : MonoBehaviour {
         }
         // Child's Interactions
         else if(interaction.InteractionName.Equals("HonorMedal")) {
-            // @TODO : Activate dpad UI with Medal - can now tp to ww2
             SetFlag("WW2_TELEPORT", true);
             SetCurrentChildState("TheBox");
+            Child.GetComponent<Player>().EnableGate("right");
         } else if(interaction.InteractionName.Equals("HeirloomKid")) {
-            // @TODO : Activate dpad UI
             SetFlag("CHILD_HEIRLOOM", true);
             SetCurrentChildState("No hints");
+            Child.GetComponent<Player>().EnableHeirloom(true);
         } else if(interaction.InteractionName.Equals("BottleCaps")) {
-            // @TODO : Activate dpad UI with bottle caps - can now tp to ww2bar
             SetFlag("BAR_TELEPORT", true);
             SetCurrentChildState("No hints");
+            Child.GetComponent<Player>().EnableGate("down");
         } else if(interaction.InteractionName.Equals("MedicalBills")) {
-            // @TODO : Activate dpad UI with med bills - can now tp to street
             SetFlag("STREET_TELEPORT", true);
             SetCurrentGrandpaState("No hints");
+            Child.GetComponent<Player>().EnableGate("left");
         } else if(interaction.InteractionName.Equals("Grenade")) {
             if(QueryFlag("IS_BRAVE") && QueryFlag("VOLUNTEERED")) {
                 SetFlag("HAS_HEARING", true);
                 SetCurrentGrandpaState("No hints");
             }
         } else if(interaction.InteractionName.Equals("Volunteer")) {
-            // Trigger grenade throw, maybe captain says something
+            // Trigger grenade throw
             SetFlag("VOLUNTEERED", true);
         } else if(interaction.InteractionName.Equals("DrunkPa")) {
             // Tattoo change, fade to house after tattoo sounds
