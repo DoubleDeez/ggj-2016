@@ -15,6 +15,8 @@ public class InputController : MonoBehaviour
     public float PlayerVelocity = 6.0f;
     public float PlayerJumpHeight = 6.0f;
     public float PlayerChargeMultiplier = 3.0f;
+    // set false or true depending on whether Grandpa or Kid and can jump
+    public bool jumpAllowed=true;
     public bool InvertXAxis = false;
     public XboxController XboxInput;
     public AudioClip playerRunningSound;
@@ -34,15 +36,13 @@ public class InputController : MonoBehaviour
     private int PlayerNumber = 1;
     private bool IsMoving = false;
     private bool IsInteracting = false;
-    // set false or true depending on whether Grandpa or Kid and can jump
-    private bool jumpAllowed = true;
     private float TranslationMovement;
     private string _currentDirection = "right";
 
     private AudioSource audioSource;
 
-    private const int KID_PLAYER_NUM = 1;
-    private const int GRANDPA_PLAYER_NUM = 2;
+    private const int KID_PLAYER_NUM = 2;
+    private const int GRANDPA_PLAYER_NUM = 1;
 
     // state int to be set to for changing animation
     private enum AnimStates
@@ -130,7 +130,7 @@ public class InputController : MonoBehaviour
         }
 
         float mVelocity = PlayerVelocity;
-        if (isCurrentAnimation("Charge"))
+        if (isCurrentAnimation(getAnimationName("Charge")))
         {
             mVelocity *= PlayerChargeMultiplier;
         }
@@ -470,5 +470,5 @@ public class InputController : MonoBehaviour
             MainPlayer.ShowHint();
         }
     }
-    
+
 }
