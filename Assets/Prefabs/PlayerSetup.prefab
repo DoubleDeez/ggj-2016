@@ -1151,6 +1151,8 @@ MonoBehaviour:
   PlayerChargeMultiplier: 3
   InvertXAxis: 0
   XboxInput: 1
+  playerRunningSound: {fileID: 0}
+  playerWalkingSound: {fileID: 0}
 --- !u!114 &11442926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1315,6 +1317,8 @@ MonoBehaviour:
   PlayerChargeMultiplier: 3
   InvertXAxis: 0
   XboxInput: 2
+  playerRunningSound: {fileID: 0}
+  playerWalkingSound: {fileID: 0}
 --- !u!114 &11485882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1634,7 +1638,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.67, y: 11.47}
-  m_SizeDelta: {x: 3.6, y: 1.11}
+  m_SizeDelta: {x: 3.69, y: 1.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22420564
 RectTransform:
@@ -1652,7 +1656,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.67, y: 11.47}
-  m_SizeDelta: {x: 3.6, y: 1.11}
+  m_SizeDelta: {x: 3.69, y: 1.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22427812
 RectTransform:

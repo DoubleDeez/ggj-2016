@@ -62,6 +62,14 @@ public class Player : MonoBehaviour {
         GameManager = FindObjectOfType<GameStateManager>();
         MainSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
 	}
+    
+    void OnEnable()
+    {
+        if(FadeUI==null)
+        {
+            Debug.LogError("Fading in and out might be broken. Check your player object to make sure you have a correct reference set!")
+        }
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -69,15 +77,17 @@ public class Player : MonoBehaviour {
        if(PlayerHintBubble.activeSelf && Time.time > TimeToHideHint) {
            HideHint();
        }
+       
        // @TODO This causes NullReferenceException
-       // Color color = FadeUI.color;
-    //    if(Time.time < FadeOpaqueEnd) {
-    //        color.a = Mathf.Lerp(FadeUI.color.a, 1.0f, (Time.time - FadeOpaqueStart) / (FadeOpaqueEnd - FadeOpaqueStart));
-    //        FadeUI.color = color;
-    //    } else if(Time.time > FadeTransparentStart && Time.time < FadeTransparentEnd) {
-    //        color.a = Mathf.Lerp(FadeUI.color.a, 0.0f, (Time.time - FadeTransparentStart) / (FadeTransparentEnd - FadeTransparentStart));
-    //        FadeUI.color = color;
-    //    }
+       // foxtrot94: Could not confirm that it does. Must set FadeUI from editor though...
+       Color color = FadeUI.color;
+       if(Time.time < FadeOpaqueEnd) {
+           color.a = Mathf.Lerp(FadeUI.color.a, 1.0f, (Time.time - FadeOpaqueStart) / (FadeOpaqueEnd - FadeOpaqueStart));
+           FadeUI.color = color;
+       } else if(Time.time > FadeTransparentStart && Time.time < FadeTransparentEnd) {
+           color.a = Mathf.Lerp(FadeUI.color.a, 0.0f, (Time.time - FadeTransparentStart) / (FadeTransparentEnd - FadeTransparentStart));
+           FadeUI.color = color;
+       }
 	}
 
     public void ShowHint() {
