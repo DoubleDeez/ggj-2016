@@ -2361,6 +2361,14 @@ Prefab:
       propertyPath: ChildStates.Array.data[7].Hints.Array.data[1]
       value: Prank time, Haha!
       objectReference: {fileID: 0}
+    - target: {fileID: 11436144, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: XboxInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476490, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: XboxInput
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
   m_IsPrefabParent: 0
