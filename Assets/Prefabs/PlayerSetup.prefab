@@ -785,6 +785,10 @@ MonoBehaviour:
   PlayerNumber: 1
   HintDisplayTime: 2
   PlayerHintBubble: {fileID: 120498}
+  UpSpawn: {fileID: 0}
+  DownSpawn: {fileID: 0}
+  LeftSpawn: {fileID: 0}
+  RightSpawn: {fileID: 0}
 --- !u!114 &11410588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1161,6 +1165,10 @@ MonoBehaviour:
   PlayerNumber: 2
   HintDisplayTime: 2
   PlayerHintBubble: {fileID: 152370}
+  UpSpawn: {fileID: 0}
+  DownSpawn: {fileID: 0}
+  LeftSpawn: {fileID: 0}
+  RightSpawn: {fileID: 0}
 --- !u!114 &11495686
 MonoBehaviour:
   m_ObjectHideFlags: 1

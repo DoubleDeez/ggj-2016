@@ -173,6 +173,10 @@ Prefab:
       propertyPath: XboxInput
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11408918, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
+      propertyPath: UpSpawn
+      value: 
+      objectReference: {fileID: 1859915554}
     m_RemovedComponents:
     - {fileID: 11417710, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}
@@ -250,6 +254,46 @@ BoxCollider2D:
   m_Offset: {x: -0.27006862, y: -1.0658141e-16}
   serializedVersion: 2
   m_Size: {x: 0.7398626, y: 1.2799997}
+--- !u!1 &1859915554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1859915556}
+  - 114: {fileID: 1859915555}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1859915555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1859915554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f2eca625e1e2d409e3a20af9975ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeLimitInSeconds: 5
+--- !u!4 &1859915556
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1859915554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.62, y: 10.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1 &1881514470 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 124656, guid: eedb52ab3955142eb84542431eaa5f47, type: 2}

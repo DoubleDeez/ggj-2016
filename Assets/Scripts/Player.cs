@@ -7,10 +7,10 @@ public class Player : MonoBehaviour {
     public float HintDisplayTime = 2.0f;
     public GameObject PlayerHintBubble;
     
-    public SpawnPoint UpSpawn;
-    public SpawnPoint DownSpawn;
-    public SpawnPoint LeftSpawn;
-    public SpawnPoint RightSpawn;
+    public GameObject UpSpawn;
+    public GameObject DownSpawn;
+    public GameObject LeftSpawn;
+    public GameObject RightSpawn;
     
     private GameStateManager GameManager;
     private List<GameStateManager.LevelInteraction> LevelInteractionsColliding;
@@ -76,10 +76,11 @@ public class Player : MonoBehaviour {
     public void OnDPadUp()
     {
         //Teleport to the Footbal Spawn
-        if( (GameManager.QueryFlag("FOOTBALL_TELEPORT") || GameManager.QueryFlag("WW2_TELEPORT") ) && UpSpawn!=null)
-        {
-            UpSpawn.TeleportPlayer(this);
-        }
+        // if( (GameManager.QueryFlag("FOOTBALL_TELEPORT") || GameManager.QueryFlag("WW2_TELEPORT") ) && UpSpawn!=null)
+        // {
+            Debug.Log("Player "+this.PlayerNumber+" Calling Up");
+            UpSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
+        // }
     }
     
     public void OnDPadDown()
@@ -87,7 +88,7 @@ public class Player : MonoBehaviour {
         //Teleport to Main Hub
         if( (GameManager.QueryFlag("GRANDPA_HEIRLOOM") || GameManager.QueryFlag("CHILD_HEIRLOOM") ) && DownSpawn!=null)
         {
-            DownSpawn.TeleportPlayer(this);
+            DownSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
         }
     }
     
@@ -96,7 +97,7 @@ public class Player : MonoBehaviour {
         //Teleport to Diary
         if( (GameManager.QueryFlag("DIARY_TELEPORT") || GameManager.QueryFlag("BAR_TELEPORT")) && LeftSpawn!=null)
         {
-            LeftSpawn.TeleportPlayer(this);
+            LeftSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
         }
     }
     
@@ -105,7 +106,7 @@ public class Player : MonoBehaviour {
         //Teleport to Backyard
         if( (GameManager.QueryFlag("BABY_TELEPORT") || GameManager.QueryFlag("STREET_TELEPORT")) && RightSpawn!=null)
         {
-            RightSpawn.TeleportPlayer(this);
+            RightSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
         }
     }
 }

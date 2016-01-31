@@ -107,19 +107,19 @@ public class InputController : MonoBehaviour {
         }
         
         //DPad - Let the player handle this logic 
-        if(XCI.GetDPad(XboxDPad.Up))
+        if(XCI.GetDPadDown(XboxDPad.Up,XboxInput))
         {
             MainPlayer.OnDPadUp();
         }
-        else if( XCI.GetDPad(XboxDPad.Down))
+        else if( XCI.GetDPadDown(XboxDPad.Down,XboxInput))
         {
             MainPlayer.OnDPadDown();
         }
-        else if( XCI.GetDPad(XboxDPad.Left))
+        else if( XCI.GetDPadDown(XboxDPad.Left,XboxInput))
         {
             MainPlayer.OnDPadLeft();
         }
-        else if( XCI.GetDPad(XboxDPad.Right))
+        else if( XCI.GetDPadDown(XboxDPad.Right,XboxInput))
         {
             MainPlayer.OnDPadRight();
         }
