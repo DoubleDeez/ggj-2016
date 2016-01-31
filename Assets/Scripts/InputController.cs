@@ -97,7 +97,6 @@ public class InputController : MonoBehaviour {
         if(IsGrounded())
         {
             VariableVelocity = PlayerVelocity;
-            
             if(XCI.GetButtonDown(XboxButton.X,XboxInput))
             {
                 Jump();
@@ -174,7 +173,10 @@ public class InputController : MonoBehaviour {
             new Vector2(0, PlayerPhysics.mass * PlayerJumpHeight ),
             ForceMode2D.Impulse
         );
-        PlayerAnimator.SetInteger("state", (int)AnimStates.Jump);
+
+        PlayerAnimator.Play("KidJump", 0);
+        // XXX So the following should work, but it doesn't. Obviously. Because Unity.
+        //PlayerAnimator.SetInteger("state", (int)AnimStates.Walk);
     }
     
     //We want our game to support only Xbox Gamepad input.
