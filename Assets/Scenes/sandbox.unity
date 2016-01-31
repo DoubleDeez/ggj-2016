@@ -2725,6 +2725,18 @@ Prefab:
       propertyPath: m_Size.y
       value: 0.6760547
       objectReference: {fileID: 0}
+    - target: {fileID: 11458356, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: playerWalkingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c675798b04814c9886a300d0d8d6489, type: 3}
+    - target: {fileID: 11479680, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: playerWalkingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1823819a1e4c246049c79e9904e8c3a5, type: 3}
+    - target: {fileID: 11479680, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: playerRunningSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e1df1e0077b2f488d835c6f759fde02a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
   m_IsPrefabParent: 0
