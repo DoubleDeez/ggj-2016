@@ -105,31 +105,44 @@ public class GameStateManager : MonoBehaviour {
         } else if(interaction.InteractionName.Equals("SexyTimeCloset")) {
             Flags.Add("BABY_CHANGE", true);
         } else if(interaction.InteractionName.Equals("BabyMonitor")) {
-            // 
+            // Static if no hearing
+            // Parents fighting if has hearing
             Flags.Add("", true);
         } else if(interaction.InteractionName.Equals("BabyMobile")) {
             // @TODO save colour on right and set wallpaper for child
             Flags.Add("", true);
         } else if(interaction.InteractionName.Equals("Infant")) {
+            // Check for no walker
             Flags.Add("", true);
+            SetCurrentGrandpaState("No hints");
         }
         // Child's Interactions
         else if(interaction.InteractionName.Equals("HonorMedal")) {
             Flags.Add("", true);
+            SetCurrentChildState("TheBox");
         } else if(interaction.InteractionName.Equals("HeirloomKid")) {
             Flags.Add("", true);
+            SetCurrentChildState("No hints");
         } else if(interaction.InteractionName.Equals("BottleCaps")) {
             Flags.Add("", true);
+            SetCurrentChildState("No hints");
         } else if(interaction.InteractionName.Equals("MedicalBills")) {
             Flags.Add("", true);
-        }  else if(interaction.InteractionName.Equals("Grenade")) {
+            SetCurrentGrandpaState("No hints");
+        } else if(interaction.InteractionName.Equals("Grenade")) {
+            // Check for bravery
             Flags.Add("", true);
+            SetCurrentGrandpaState("No hints");
         } else if(interaction.InteractionName.Equals("Volunteer")) {
+            // Trigger grenade throw, maybe captain says something
             Flags.Add("", true);
         } else if(interaction.InteractionName.Equals("DrunkPa")) {
+            // Tattoo change, fade to house after tattoo sounds
             Flags.Add("", true);
+            SetCurrentGrandpaState("No hints");
         } else if(interaction.InteractionName.Equals("StreetPa")) {
             Flags.Add("", true);
+            // Game over
         }
     }
     
