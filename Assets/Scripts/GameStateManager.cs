@@ -217,7 +217,7 @@ public class GameStateManager : MonoBehaviour {
         }
     }
     
-    private void SetCurrentGrandpaState(string stateName) {
+    public void SetCurrentGrandpaState(string stateName) {
         foreach(GameState state in GrandpaStates) {
             if(state.StateName.Equals(stateName)) {
                 CurrentGrandpaState = state;
@@ -226,7 +226,7 @@ public class GameStateManager : MonoBehaviour {
         }
     }
     
-    private void SetCurrentChildState(string stateName) {
+    public void SetCurrentChildState(string stateName) {
         foreach(GameState state in ChildStates) {
             if(state.StateName.Equals(stateName)) {
                 CurrentChildState = state;

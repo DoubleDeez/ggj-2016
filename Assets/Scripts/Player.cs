@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     public bool DEBUG_BypassTeleportRestictions = false;
 
     public int PlayerNumber;
+    public string CurrentLevel = "House";
     public float HintDisplayTime = 2.0f;
     public GameObject PlayerHintBubble;
 
@@ -70,6 +71,12 @@ public class Player : MonoBehaviour {
         GateRight.SetActive(false);
         GateDown.SetActive(false);
         GateLeft.SetActive(false);
+        
+        if(PlayerNumber == 1) {
+            GameManager.SetCurrentGrandpaState("GameStartGramp");
+        } else {
+            GameManager.SetCurrentChildState("Sleep");
+        }
 	}
     
     void OnEnable()
@@ -163,15 +170,22 @@ public class Player : MonoBehaviour {
     {
         Heirloom.GetComponent<Image>().sprite = HeirloomTop;
         //Teleport to the Footbal Spawn
-        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("FOOTBALL_TELEPORT") || GameManager.QueryFlag("WW2_TELEPORT") ) && UpSpawn!=null && !HasTakenTeleport))
+        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("GRANDPA_HEIRLOOM") || GameManager.QueryFlag("CHILD_HEIRLOOM") ) && UpSpawn!=null))
         {
             FadeInOut(TeleportFadeDuration, TeleportFadeSpeed, TeleportFadeTint);
             UpSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
             
-            if(DEBUG_BypassTeleportRestictions)
+            if(!DEBUG_BypassTeleportRestictions)
             {
                 HasTakenTeleport = true;
             }
+            
+            if(PlayerNumber == 1) {
+                GameManager.SetCurrentGrandpaState("No hints");
+            } else {
+                GameManager.SetCurrentChildState("NoHints");
+            }
+            CurrentLevel = "House";
         }
     }
 
@@ -179,14 +193,22 @@ public class Player : MonoBehaviour {
     {
         Heirloom.GetComponent<Image>().sprite = HeirloomDown;
         //Teleport to Main Hub
-        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("GRANDPA_HEIRLOOM") || GameManager.QueryFlag("CHILD_HEIRLOOM") ) && DownSpawn!=null && !HasTakenTeleport))
+        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("DIARY_TELEPORT") || GameManager.QueryFlag("BAR_TELEPORT") ) && (GameManager.QueryFlag("GRANDPA_HEIRLOOM") || GameManager.QueryFlag("CHILD_HEIRLOOM") ) && DownSpawn!=null && !HasTakenTeleport))
         {
             FadeInOut(TeleportFadeDuration, TeleportFadeSpeed, TeleportFadeTint);
             DownSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
             
-            if(DEBUG_BypassTeleportRestictions)
+            if(!DEBUG_BypassTeleportRestictions)
             {
                 HasTakenTeleport = true;
+            }
+            
+            if(PlayerNumber == 1) {
+                GameManager.SetCurrentGrandpaState("SexyTime");
+                CurrentLevel = "SexyTime";
+            } else {
+                GameManager.SetCurrentChildState("BarWhispers");
+                CurrentLevel = "BarWhispers";
             }
         }
     }
@@ -195,14 +217,22 @@ public class Player : MonoBehaviour {
     {
         Heirloom.GetComponent<Image>().sprite = HeirloomLeft;
         //Teleport to Diary
-        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("DIARY_TELEPORT") || GameManager.QueryFlag("BAR_TELEPORT")) && LeftSpawn!=null && !HasTakenTeleport))
+        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("BABY_TELEPORT") || GameManager.QueryFlag("STREET_TELEPORT")) && (GameManager.QueryFlag("GRANDPA_HEIRLOOM") || GameManager.QueryFlag("CHILD_HEIRLOOM") ) && LeftSpawn!=null && !HasTakenTeleport))
         {
             FadeInOut(TeleportFadeDuration, TeleportFadeSpeed, TeleportFadeTint);
             LeftSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
             
-            if(DEBUG_BypassTeleportRestictions)
+            if(!DEBUG_BypassTeleportRestictions)
             {
                 HasTakenTeleport = true;
+            }
+            
+            if(PlayerNumber == 1) {
+                GameManager.SetCurrentGrandpaState("BabyRoom");
+                CurrentLevel = "BabyRoom";
+            } else {
+                GameManager.SetCurrentChildState("CarStreet");
+                CurrentLevel = "CarStreet";
             }
         }
     }
@@ -211,14 +241,21 @@ public class Player : MonoBehaviour {
     {
         Heirloom.GetComponent<Image>().sprite = HeirloomRight;
         //Teleport to Backyard
-        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("BABY_TELEPORT") || GameManager.QueryFlag("STREET_TELEPORT")) && RightSpawn!=null && !HasTakenTeleport))
+        if(DEBUG_BypassTeleportRestictions || ((GameManager.QueryFlag("FOOTBALL_TELEPORT") || GameManager.QueryFlag("WW2_TELEPORT")) && (GameManager.QueryFlag("GRANDPA_HEIRLOOM") || GameManager.QueryFlag("CHILD_HEIRLOOM") ) && RightSpawn!=null && !HasTakenTeleport))
         {
             FadeInOut(TeleportFadeDuration, TeleportFadeSpeed, TeleportFadeTint);
             RightSpawn.GetComponent<SpawnPoint>().TeleportPlayer(this);
             
-            if(DEBUG_BypassTeleportRestictions)
+            if(!DEBUG_BypassTeleportRestictions)
             {
                 HasTakenTeleport = true;
+            }
+            
+            if(PlayerNumber == 1) {
+                GameManager.SetCurrentGrandpaState("Backyard");
+                CurrentLevel = "Backyard";
+            } else {
+                GameManager.SetCurrentChildState("WW2");
             }
         }
     }
