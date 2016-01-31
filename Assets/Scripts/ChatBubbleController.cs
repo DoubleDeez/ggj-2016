@@ -19,7 +19,9 @@ public class ChatBubbleController : MonoBehaviour {
     private int CycleChatIndex = 0;
 
 	void Start () {
-	
+	   if(IsTriggered) {
+           gameObject.SetActive(false);
+       }
 	}
     
     void OnValidate() {

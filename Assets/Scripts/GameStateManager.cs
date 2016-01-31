@@ -68,6 +68,7 @@ public class GameStateManager : MonoBehaviour {
        if(Time.time > StartTime) {
            StartTime = float.MaxValue;
            InputDisabled = false;
+           Grandpa_MomSaysWakeUp.GetComponent<ChatBubbleController>().Trigger();
        }
 	}
     
