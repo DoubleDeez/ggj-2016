@@ -33,6 +33,7 @@ public class InputController : MonoBehaviour {
     // set false or true depending on whether Grandpa or Kid and can jump
     private bool jumpAllowed=true;
     private float TranslationMovement;
+    private string _currentDirection = "right";
 
     private const int KID_PLAYER_NUM = 1;
     private const int GRANDPA_PLAYER_NUM = 2;
@@ -119,7 +120,12 @@ public class InputController : MonoBehaviour {
 
        //Movement (Horizontal only)
         TranslationMovement =  XCI.GetAxis(XboxAxis.LeftStickX,XboxInput);
-
+        if (TranslationMovement >= 0.0f) {
+            changeDirection("right");
+        } else {
+            changeDirection("left");
+            TranslationMovement *= -1;
+        }
         gameObject.transform.Translate(Time.deltaTime * VariableVelocity * TranslationMovement,0,0);
 
         // Hint
@@ -218,6 +224,21 @@ public class InputController : MonoBehaviour {
             anim_name = "Kid" + animationName;
         }
         return anim_name;
+    }
+
+    private void changeDirection(string direction) {
+        if (_currentDirection != direction) {
+            if (direction == "right")
+             {
+             gameObject.transform.Rotate(0, 180, 0);
+             _currentDirection = "right";
+             }
+             else if (direction == "left")
+             {
+             gameObject.transform.Rotate(0, -180, 0);
+             _currentDirection = "left";
+             }
+        }
     }
 
     //We want our game to support only Xbox Gamepad input.
