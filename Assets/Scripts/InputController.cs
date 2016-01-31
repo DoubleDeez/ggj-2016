@@ -50,6 +50,8 @@ public class InputController : MonoBehaviour {
         Whisper=7
     }
 
+    private int currentAnimation = (int) AnimStates.Idle;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -182,14 +184,39 @@ public class InputController : MonoBehaviour {
 
     private void AnimateWalk()
     {
-        if(Mathf.Abs(TranslationMovement) < 0.1f)
-        {
-            PlayerAnimator.SetInteger("state", (int) AnimStates.Idle);
+        Debug.Log(isCurrentAnimation(getAnimationName("Jump")));
+        Debug.Log(isCurrentAnimation(getAnimationName("Charge")));
+        Debug.Log(currentAnimation);
+        Debug.Log(animationPlayedTimes());
+
+        if (isCurrentAnimation(getAnimationName("Jump")) &&
+            animationPlayedTimes() >= 0.9f) {
+            currentAnimation = (int) AnimStates.Idle;
         }
-        else
-        {
-            PlayerAnimator.SetInteger("state", (int) AnimStates.Walk);
+
+        if (isCurrentAnimation(getAnimationName("Charge")) &&
+            animationPlayedTimes() >= 0.9f) {
+            currentAnimation = (int) AnimStates.Idle;
         }
+
+        if (isCurrentAnimation(getAnimationName("Walk")) &&
+            animationPlayedTimes() >= 0.9f) {
+            currentAnimation = (int) AnimStates.Idle;
+        }
+
+        if (IsGrounded() && currentAnimation != (int) AnimStates.Jump &&
+            currentAnimation != (int) AnimStates.Charge) {
+            if(Mathf.Abs(TranslationMovement) < 0.1f)
+            {
+                currentAnimation = (int) AnimStates.Idle;
+            }
+            else
+            {
+                currentAnimation = (int) AnimStates.Walk;
+            }
+        }
+        PlayerAnimator.SetInteger("state", currentAnimation);
+        //PlayerAnimator.Play(currentAnimation, 0);
     }
 
     public bool Interacted() {
@@ -206,17 +233,14 @@ public class InputController : MonoBehaviour {
             new Vector2(0, PlayerPhysics.mass * PlayerJumpHeight ),
             ForceMode2D.Impulse
         );
-
-        PlayerAnimator.Play(getAnimationName("Jump"), 0);
-        // XXX So the following should work, but it doesn't. Obviously. Because Unity.
-        // PlayerAnimator.SetInteger("state", (int)AnimStates.Walk);
+        currentAnimation = (int) AnimStates.Jump;
     }
 
     private void Charge() {
-        if (isCurrentAnimation(getAnimationName("Charge"))) {
-            return;
-        }
-        PlayerAnimator.Play(getAnimationName("Charge"), 0);
+        // if (isCurrentAnimation(getAnimationName("Charge"))) {
+        //     return;
+        // }
+        currentAnimation = (int) AnimStates.Charge;
     }
 
     private bool isCurrentAnimation(string name) {
@@ -244,6 +268,10 @@ public class InputController : MonoBehaviour {
              _currentDirection = "left";
              }
         }
+    }
+
+    private float animationPlayedTimes() {
+        return PlayerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime;
     }
 
     //We want our game to support only Xbox Gamepad input.
