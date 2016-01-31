@@ -27,24 +27,26 @@ public class ChatBubbleController : MonoBehaviour {
     }
 	
 	void Update () {
-        if(IsTriggered && IsCycling) {
-            TextObject.text = ChatText[CycleChatIndex];
-            TextObject.fontSize = FontSize;
-            GUIStyle style = new GUIStyle();
-            style.fontSize = FontSize;
-            Canvas.sizeDelta = (style.CalcSize(new GUIContent(ChatText[CycleChatIndex])) + Padding) / 100;
-            if(Time.time > CycleNextLineTime) {
-                if(CycleChatIndex >= ChatText.Count) {
-                    if(LoopTrigger) {
-                        CycleChatIndex = 0;
-                        CycleNextLineTime = Time.time + ChatTextTime;
+        if(IsTriggered) {
+            if(IsCycling) {
+                TextObject.text = ChatText[CycleChatIndex];
+                TextObject.fontSize = FontSize;
+                GUIStyle style = new GUIStyle();
+                style.fontSize = FontSize;
+                Canvas.sizeDelta = (style.CalcSize(new GUIContent(ChatText[CycleChatIndex])) + Padding) / 100;
+                if(Time.time > CycleNextLineTime) {
+                    if(CycleChatIndex >= ChatText.Count) {
+                        if(LoopTrigger) {
+                            CycleChatIndex = 0;
+                            CycleNextLineTime = Time.time + ChatTextTime;
+                        } else {
+                            IsCycling = false;
+                            gameObject.SetActive(false);
+                        }
                     } else {
-                        IsCycling = false;
-                        gameObject.SetActive(false);
+                        CycleChatIndex++;
+                        CycleNextLineTime = Time.time + ChatTextTime;
                     }
-                } else {
-                    CycleChatIndex++;
-                    CycleNextLineTime = Time.time + ChatTextTime;
                 }
             }
         } else {
