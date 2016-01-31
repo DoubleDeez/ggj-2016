@@ -148,11 +148,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: -57.9
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -9.6
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.z
@@ -238,11 +238,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 34.3
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.z
@@ -274,11 +274,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22411020, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 3.6
+      value: 2.64
       objectReference: {fileID: 0}
     - target: {fileID: 22411020, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_SizeDelta.y
       value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatText.Array.data[0]
+      value: '*crzzkt*'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatText.Array.data[1]
+      value: '*static*'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatText.Array.data[2]
+      value: (unintelligible)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatText.Array.data[3]
+      value: '*brkzkkt*'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
@@ -366,11 +382,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 39.7
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -2.3
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.z
@@ -402,11 +418,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22411020, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 3.6
+      value: 6.68
       objectReference: {fileID: 0}
     - target: {fileID: 22411020, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_SizeDelta.y
       value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatText.Array.data[0]
+      value: How can you say that?
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatText.Array.data[1]
+      value: I'M NOT YELLING!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatText.Array.data[2]
+      value: NO, YOU CALM DOWN!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatText.Array.data[3]
+      value: I NEVER SAID THAT!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
@@ -784,11 +816,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: -64.7
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -10.4
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1719,7 +1751,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: ChatText.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1755,11 +1787,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: ChatText.Array.data[2]
-      value: I am good.
+      value: Are you sure?
       objectReference: {fileID: 0}
     - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: ChatText.Array.data[3]
-      value: Cool story, bro.
+      value: All I hear is your heartbeat, baby...
       objectReference: {fileID: 0}
     - target: {fileID: 22411020, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_SizeDelta.x
@@ -1788,6 +1820,10 @@ Prefab:
     - target: {fileID: 22411020, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_SizeDelta.y
       value: 1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404944, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
+      propertyPath: ChatText.Array.data[4]
+      value: (*smooching*)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
@@ -4764,11 +4800,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: -91.5
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -10.2
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6140,11 +6176,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: -12.5
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -12.2
       objectReference: {fileID: 0}
     - target: {fileID: 476948, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
       propertyPath: m_LocalPosition.z
