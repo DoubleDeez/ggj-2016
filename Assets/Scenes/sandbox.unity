@@ -3715,7 +3715,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11479680, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
       propertyPath: XboxInput
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11458356, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
       propertyPath: XboxInput
