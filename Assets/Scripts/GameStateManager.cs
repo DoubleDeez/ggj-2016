@@ -146,6 +146,10 @@ public class GameStateManager : MonoBehaviour {
         }
     }
     
+    public bool QueryFlag(string name) {
+        return Flags.ContainsKey(name) && Flags[name];
+    }
+    
     private void ListenForPause()
     {
         bool pausePressed = Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause");
