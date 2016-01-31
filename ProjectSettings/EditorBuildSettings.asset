@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Scenes/StartLevel.unity
   - enabled: 1
     path: Assets/Scenes/sandbox.unity
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
