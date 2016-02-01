@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using XboxCtrlrInput;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 public class GameStateManager : MonoBehaviour {
@@ -216,7 +217,12 @@ public class GameStateManager : MonoBehaviour {
     
     private void ListenForPause()
     {
-        bool pausePressed = Input.GetKeyDown(KeyCode.Escape) || XCI.GetButtonDown(XboxButton.Start);
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+        
+        bool pausePressed =  XCI.GetButtonDown(XboxButton.Start);
         if(pausePressed)
         {
             Debug.Log("Game Paused");
