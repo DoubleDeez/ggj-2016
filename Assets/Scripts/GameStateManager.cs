@@ -133,6 +133,7 @@ public class GameStateManager : MonoBehaviour {
             
             //Change their hair
             Child.GetComponent<PlayerCustomizations>().RandomizeHair();
+            Child.GetComponent<PlayerCustomizations>().RandomizeEyes();
             if(Random.value > 0.5f)
             {
                 Child.GetComponent<PlayerCustomizations>().RandomizeTattoo();

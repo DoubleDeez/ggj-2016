@@ -100,4 +100,10 @@ public class PlayerCustomizations : MonoBehaviour {
         TattooSprite.sprite = Tattoos[TattooSelection];
     }
     
+    public void RandomizeEyes()
+    {
+        EyeSelection = (int) (Random.value*int.MaxValue) % Eyes.Count;
+        EyesSprite.sprite = Eyes[EyeSelection];
+    }
+    
 }

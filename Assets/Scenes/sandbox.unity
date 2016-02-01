@@ -492,6 +492,120 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 122914, guid: 1ffcfee2c0bab4ed0a1d356c78760c06, type: 2}
   m_PrefabInternal: {fileID: 57823464}
+--- !u!1001 &62765867
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 25.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 132956, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: m_Name
+      value: PlayerSetup
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: UpSpawn
+      value: 
+      objectReference: {fileID: 520129757}
+    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: DownSpawn
+      value: 
+      objectReference: {fileID: 920858724}
+    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: LeftSpawn
+      value: 
+      objectReference: {fileID: 1004454802}
+    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: RightSpawn
+      value: 
+      objectReference: {fileID: 55072976}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: SexyTimeDarkness
+      value: 
+      objectReference: {fileID: 163453098}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: Grandpa_MomSaysWakeUp
+      value: 
+      objectReference: {fileID: 1952495668}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: Grandpa_SexyTime
+      value: 
+      objectReference: {fileID: 538816171}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: Grandpa_Static
+      value: 
+      objectReference: {fileID: 21249643}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: Grandpa_Monitor
+      value: 
+      objectReference: {fileID: 57823466}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: Child_MomMessage
+      value: 
+      objectReference: {fileID: 1607711207}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: Child_Captain
+      value: 
+      objectReference: {fileID: 8026040}
+    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: Child_GrandpaWW2
+      value: 
+      objectReference: {fileID: 287211631}
+    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: UpSpawn
+      value: 
+      objectReference: {fileID: 661795849}
+    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: DownSpawn
+      value: 
+      objectReference: {fileID: 1016017185}
+    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: LeftSpawn
+      value: 
+      objectReference: {fileID: 331367213}
+    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: RightSpawn
+      value: 
+      objectReference: {fileID: 1590675765}
+    - target: {fileID: 21204134, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+      propertyPath: m_SortingOrder
+      value: 99
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &116216575
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,15 +732,11 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 101
+  m_SortingOrder: 105
   m_Sprite: {fileID: 21300000, guid: 36c68f7ec772c4e20be8fddd90046385, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &193978474 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 127760, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
 --- !u!1 &234243616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,14 +1784,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!1 &457920983 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 110358, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
---- !u!1 &483146546 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100044, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
 --- !u!1 &502962047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,95 +2415,17 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 498896, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
   m_PrefabInternal: {fileID: 607471404}
---- !u!1 &611360366 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 130816, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
---- !u!82 &611360367
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 611360366}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &611360369 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974,
     type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
+  m_PrefabInternal: {fileID: 62765867}
   m_Script: {fileID: 11500000, guid: 66385e9081147564baa2ecbdbdb6274b, type: 3}
 --- !u!114 &623649553 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974,
     type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
+  m_PrefabInternal: {fileID: 62765867}
   m_Script: {fileID: 11500000, guid: 5ba41559f1a81e64ca77612ed0db36de, type: 3}
 --- !u!1 &661795849 stripped
 GameObject:
@@ -2905,10 +2929,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 498896, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
   m_PrefabInternal: {fileID: 836383449}
---- !u!1 &870380069 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 188774, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
 --- !u!1 &875368394
 GameObject:
   m_ObjectHideFlags: 0
@@ -3887,10 +3907,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 498896, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
   m_PrefabInternal: {fileID: 1084047007}
---- !u!1 &1094537512 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 117170, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
 --- !u!1 &1099709239
 GameObject:
   m_ObjectHideFlags: 0
@@ -4158,320 +4174,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1001 &1161054858
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 11496954, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: ChatText.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: ChildStates.Array.data[7].Hints.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 25.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 419364, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: UpSpawn
-      value: 
-      objectReference: {fileID: 520129757}
-    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: DownSpawn
-      value: 
-      objectReference: {fileID: 920858724}
-    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: LeftSpawn
-      value: 
-      objectReference: {fileID: 1004454802}
-    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: RightSpawn
-      value: 
-      objectReference: {fileID: 55072976}
-    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: UpSpawn
-      value: 
-      objectReference: {fileID: 661795849}
-    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: DownSpawn
-      value: 
-      objectReference: {fileID: 1016017185}
-    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: LeftSpawn
-      value: 
-      objectReference: {fileID: 331367213}
-    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: RightSpawn
-      value: 
-      objectReference: {fileID: 1590675765}
-    - target: {fileID: 132956, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_Name
-      value: PlayerSetup
-      objectReference: {fileID: 0}
-    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: Heirloom
-      value: 
-      objectReference: {fileID: 2027381185}
-    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: GateUp
-      value: 
-      objectReference: {fileID: 1767497649}
-    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: GateDown
-      value: 
-      objectReference: {fileID: 2001169608}
-    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: GateLeft
-      value: 
-      objectReference: {fileID: 193978474}
-    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: GateRight
-      value: 
-      objectReference: {fileID: 1638518408}
-    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: RunningSound
-      value: 
-      objectReference: {fileID: 8300000, guid: fcba3ae31fce3420d93e4921437686be, type: 3}
-    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: WalkingSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 076a038b883e4491caec25e64aa50ae2, type: 3}
-    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: Heirloom
-      value: 
-      objectReference: {fileID: 2120119288}
-    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: GateRight
-      value: 
-      objectReference: {fileID: 483146546}
-    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: GateDown
-      value: 
-      objectReference: {fileID: 457920983}
-    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: GateUp
-      value: 
-      objectReference: {fileID: 1094537512}
-    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: GateLeft
-      value: 
-      objectReference: {fileID: 870380069}
-    - target: {fileID: 188064, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: DEBUG_BypassTeleportRestictions
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: Grandpa_SexyTime
-      value: 
-      objectReference: {fileID: 538816171}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: SexyTimeDarkness
-      value: 
-      objectReference: {fileID: 163453098}
-    - target: {fileID: 6169712, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_Offset.x
-      value: 0.00000061988834
-      objectReference: {fileID: 0}
-    - target: {fileID: 6169712, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_Offset.y
-      value: -0.03837738
-      objectReference: {fileID: 0}
-    - target: {fileID: 6169712, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_Size.y
-      value: 0.6760547
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458356, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: playerWalkingSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 9c675798b04814c9886a300d0d8d6489, type: 3}
-    - target: {fileID: 11479680, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: playerWalkingSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 1823819a1e4c246049c79e9904e8c3a5, type: 3}
-    - target: {fileID: 11479680, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: playerRunningSound
-      value: 
-      objectReference: {fileID: 8300000, guid: e1df1e0077b2f488d835c6f759fde02a, type: 3}
-    - target: {fileID: 6184972, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6184972, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11479680, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: XboxInput
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458356, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: XboxInput
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458356, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: jumpAllowed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11479680, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: PlayerVelocity
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11479680, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: jumpAllowed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458356, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: PlayerVelocity
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458356, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: PlayerChargeMultiplier
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: Grandpa_MomSaysWakeUp
-      value: 
-      objectReference: {fileID: 1952495668}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: Child_Captain
-      value: 
-      objectReference: {fileID: 8026040}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: Child_GrandpaWW2
-      value: 
-      objectReference: {fileID: 287211631}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: Child_MomMessage
-      value: 
-      objectReference: {fileID: 1607711207}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: Grandpa_Static
-      value: 
-      objectReference: {fileID: 21249643}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: Grandpa_Monitor
-      value: 
-      objectReference: {fileID: 57823466}
-    - target: {fileID: 400392, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 11496954, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: ChatText.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11496954, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: ChatText.Array.data[0]
-      value: Hello World
-      objectReference: {fileID: 0}
-    - target: {fileID: 11496954, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: ChatText.Array.data[1]
-      value: How are you?
-      objectReference: {fileID: 0}
-    - target: {fileID: 11496954, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: ChatText.Array.data[2]
-      value: I am good.
-      objectReference: {fileID: 0}
-    - target: {fileID: 22471696, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 3.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 22471696, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 1.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 22467888, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 3.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 22467888, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 1.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: ChildStates.Array.data[1].Hints.Array.data[0]
-      value: I wish I asked Gramps about his itme in the war...
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: ChildStates.Array.data[1].StateName
-      value: I'm Late
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: ChildStates.Array.data[7].Hints.Array.data[2]
-      value: (Prank time, Haha!)
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: ChildStates.Array.data[7].Hints.Array.data[1]
-      value: (Go home, Gramps, you're drunk...)
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: ChildStates.Array.data[7].Hints.Array.data[0]
-      value: (Gramps won't recognize me for decades...)
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: GrandpaStates.Array.data[0].Hints.Array.data[0]
-      value: So much crap for a kid who's not even born yet...
-      objectReference: {fileID: 0}
-    - target: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: TeleportSound
-      value: 
-      objectReference: {fileID: 8300000, guid: fb68814f4be494a63952f6e80a6e341c, type: 3}
-    - target: {fileID: 11491290, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: TeleportSound
-      value: 
-      objectReference: {fileID: 8300000, guid: fb68814f4be494a63952f6e80a6e341c, type: 3}
-    - target: {fileID: 11458356, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: InvertXAxis
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 476874, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -79.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 476874, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -25.05
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1223466485
 Prefab:
   m_ObjectHideFlags: 0
@@ -5590,7 +5292,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 102
   m_Sprite: {fileID: 21300000, guid: 4818f1cde559e48de9dad22d2c254ea9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5741,10 +5443,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &1638518408 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 109774, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
 --- !u!1 &1645215578
 GameObject:
   m_ObjectHideFlags: 0
@@ -6401,10 +6099,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &1767497649 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 189884, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
 --- !u!1 &1767937586
 GameObject:
   m_ObjectHideFlags: 0
@@ -6967,89 +6661,11 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 158636, guid: bc69e73899e9e42e5a3c4d11a4ad371f, type: 2}
   m_PrefabInternal: {fileID: 1084047007}
---- !u!1 &1946301212 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 112134, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
---- !u!82 &1946301213
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1946301212}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &1946301215 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11482072, guid: 893a2be9e9b38b8448c0a5dbc28f7974,
     type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
+  m_PrefabInternal: {fileID: 62765867}
   m_Script: {fileID: 11500000, guid: 66385e9081147564baa2ecbdbdb6274b, type: 3}
 --- !u!1 &1952495668 stripped
 GameObject:
@@ -7132,10 +6748,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &2001169608 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 163062, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
 --- !u!1 &2002538980
 GameObject:
   m_ObjectHideFlags: 0
@@ -7171,10 +6783,6 @@ Transform:
   - {fileID: 1082156365}
   m_Father: {fileID: 1076575712}
   m_RootOrder: 3
---- !u!1 &2027381185 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 181890, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
 --- !u!1 &2036229124
 GameObject:
   m_ObjectHideFlags: 0
@@ -7572,7 +7180,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2036229125}
   m_RootOrder: 0
---- !u!1 &2120119288 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 130556, guid: 893a2be9e9b38b8448c0a5dbc28f7974, type: 2}
-  m_PrefabInternal: {fileID: 1161054858}
